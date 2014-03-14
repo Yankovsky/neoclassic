@@ -1,0 +1,274 @@
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 960px;
+    background: black;
+    margin: 0 auto;
+}
+
+body > * {
+    margin-top: 20px;
+}
+
+.menu {
+    background: white;
+    height: 60px;
+}
+
+.menu:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.menu * {
+    height: 60px;
+    line-height: 60px;
+}
+
+.menu-icon {
+    background: #a9c421 url('../images/menu.png') no-repeat center;
+    width: 60px;
+    float: left
+}
+
+nav {
+    float: left;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #475055;
+    font-size: 16px;
+}
+
+nav ul li a:hover, nav ul ul li a.current {
+    color: #a9c421;
+}
+
+.menu .buttons {
+    float: right;
+    height: 100%;
+}
+
+.menu .buttons ul li {
+    display: inline-block;
+    list-style: none;
+    border-left: 1px solid #dde2e4;
+    width: 60px;
+    height: 60px;
+}
+
+.menu .buttons ul li a {
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+.facebook {
+    background-image: url('../images/facebook.png');
+}
+
+.vk {
+    background-image: url('../images/vk.png');
+}
+
+.search {
+    background-image: url('../images/search.png');
+}
+
+.slider {
+    border: 1px solid #a9c421;
+    height: 540px;
+    position: relative;
+}
+
+.slider .slides {
+}
+.slider .slides img {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: none;
+    position: absolute;
+    width: 960px;
+    height: 540px;
+}
+.slider .slides img.current {
+    display: block;
+}
+
+.slider .arrow {
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 34px;
+    height: 52px;
+}
+
+.slider .left-arrow {
+    left: -2px;
+    background: url("../images/left-arrow.png") no-repeat;
+}
+
+.slider .right-arrow {
+    right: 0;
+    background: url("../images/right-arrow.png") no-repeat;
+}
+
+.slider .details {
+    text-decoration: none;
+    width: 170px;
+    height: 50px;
+    border: 1px solid #abc526;
+    border-radius: 2px;
+    color: #a9c420;
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: 400px;
+    left: 100px;
+}
+
+.slider .bullets {
+    padding-top: 500px;
+    text-align: center;
+}
+
+.slider .bullets .bullet{
+    width: 18px;
+    height: 18px;
+    margin: 3px 0;
+    display: inline-block;
+    background-image: url('../images/bullet.png');
+}
+.slider .bullets .bullet.current {
+    background-image: url('../images/bullet-current.png');
+}
+
+.video-block {
+    height: 300px;
+    color: #ffffff;
+}
+
+.video-block:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.video-block > * {
+    float: left;
+    height: 100%;
+}
+
+.video-block .info {
+    width: 350px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding-top: 40px;
+    background: #596b00 url("../images/video.png") 0 40px no-repeat;
+    padding-left: 60px;
+}
+
+.video-block .info .name {
+    font-size: 24px;
+}
+
+.video-block .info .details {
+    font-size: 14px;
+}
+
+.video-block .buttons {
+    width: 140px;
+    background: #414141;
+    font-size: 16px;
+}
+
+.video-block .buttons > * {
+    height: 100px;
+    background-position: center 25px;
+    background-repeat: no-repeat;
+    padding-top: 65px;
+    text-align: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.video-block .buttons .like {
+    background-image: url('../images/like.png');
+}
+
+.video-block .buttons .share {
+    background-image: url('../images/share.png');
+}
+
+.video-block .buttons .all-videos {
+    background-image: url('../images/all-videos.png');
+}
+
+.video-block .player {
+    width: 470px;
+    background: #787878;
+}
+
+footer {
+    height: 225px;
+    margin-bottom: 20px;
+}
+
+footer > * {
+    height: 100%;
+}
+
+footer:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+footer .contact-info {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: #414141;
+    width: 715px;
+    float: left;
+    padding-left: 15px;
+    padding-top: 40px;
+    font-size: 14px;
+}
+
+footer .contact-info > * {
+    color: #ffffff;
+    padding-left: 45px;
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+footer .contact-info .phone {
+    background-image: url('../images/phone.png');
+}
+
+footer .contact-info .email {
+    background-image: url('../images/email.png');
+}
+
+footer .qr-code {
+    margin-left: 20px;
+    width: 225px;
+    float: left;
+    background: #a7c31b url('../images/qr-code.png') no-repeat center;
+}
