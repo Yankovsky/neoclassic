@@ -34,6 +34,7 @@
     <a class="details" href="#">Подробнее</a>
     <div class="bullets"></div>
 </div>
+<div class="bullets"></div>
 
 <div class="video-block">
     <div class="info">
@@ -61,8 +62,21 @@
     </div>
     <div class="qr-code"></div>
 </footer>
-<script type="application/javascript" src="js/underscore.js"></script>
-<script type="application/javascript" src="js/jquery-2.1.0.js"></script>
-<script type="application/javascript" src="js/slider.js"></script>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript">
+    $('#slider').slider([
+        {src: 'images/slides/slide1.png', url: '/about', alt: ''},
+        {src: 'images/slides/slide1.png', url: '/about', alt: ''},
+        {src: 'images/slides/slide1.png', url: '/about', alt: ''},
+        {src: 'images/slides/slide1.png', url: '/about', alt: ''},
+        {src: 'images/slides/slide1.png', url: '/about', alt: ''},
+        {src: 'images/slides/slide1.png', url: '/about', alt: ''},
+        {src: 'images/slides/slide1.png', url: '/about', alt: ''},
+        {src: 'images/slides/slide1.png', url: '/about', alt: ''},
+        {src: 'images/slides/slide2.png', url: '/contacts', alt: ''}
+    ], 1000, 500)
+</script>
 </body>
 </html>

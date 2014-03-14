@@ -99,18 +99,17 @@ nav ul li a:hover, nav ul ul li a.current {
 .slider .slides img {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    display: none;
     position: absolute;
     width: 960px;
     height: 540px;
-}
-.slider .slides img.current {
-    display: block;
+    z-index: 0;
+    display: none;
 }
 
 .slider .arrow {
     margin: auto 0;
     position: absolute;
+    z-index: 100;
     top: 0;
     bottom: 0;
     width: 34px;
@@ -140,11 +139,18 @@ nav ul li a:hover, nav ul ul li a.current {
     position: absolute;
     top: 400px;
     left: 100px;
+    z-index: 100;
 }
 
 .slider .bullets {
-    padding-top: 500px;
+    top: 500px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     text-align: center;
+    z-index: 100;
 }
 
 .slider .bullets .bullet{
@@ -154,7 +160,7 @@ nav ul li a:hover, nav ul ul li a.current {
     display: inline-block;
     background-image: url('../images/bullet.png');
 }
-.slider .bullets .bullet.current {
+.slider .bullets .bullet.current, .slider .bullets .bullet:hover {
     background-image: url('../images/bullet-current.png');
 }
 
