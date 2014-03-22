@@ -1,0 +1,217 @@
+ul
+  padding 0
+  margin 0
+
+body
+  width 960px
+  background black
+  margin 0 auto
+  & > *
+    margin-top 20px
+
+.menu
+  background white
+  height 60px
+  &:after
+    content ''
+    display block
+    clear both
+  *
+    height 60px
+    line-height 60px
+  .buttons
+    float right
+    height 100%
+    ul
+      li
+        display inline-block
+        list-style none
+        border-left 1px solid #dde2e4
+        width 60px
+        height 60px
+        a
+          background-repeat no-repeat
+          background-position center
+          display block
+          width 60px
+          height 60px
+
+.menu-icon
+  background #a9c421 url('../images/menu.png') no-repeat center
+  width 60px
+  float left
+
+nav
+  float left
+  ul
+    li
+      display inline-block
+      list-style none
+      padding-left 30px
+      a
+        text-decoration none
+        color #475055
+        font-size 16px
+
+nav ul li a:hover, nav ul ul li a.current
+  color #a9c421
+
+.facebook
+  background-image url('../images/facebook.png')
+
+.vk
+  background-image url('../images/vk.png')
+
+.search
+  background-image url('../images/search.png')
+
+.slider
+  border 1px solid #a9c421
+  height 540px
+  position relative
+  .slides
+    img
+      box-sizing border-box
+      -moz-box-sizing border-box
+      position absolute
+      width 960px
+      height 540px
+      z-index 0
+      display none
+  &:hover
+    .arrow
+      opacity 1
+  .arrow
+    transition opacity 0.3s ease-out
+    opacity 0
+    margin auto 0
+    position absolute
+    z-index 100
+    top 0
+    bottom 0
+    width 38px
+    height 56px
+  .left-arrow
+    left - 2px
+    background url("../images/left-arrow.png") no-repeat
+  .right-arrow
+    right - 2px
+    background url("../images/right-arrow.png") no-repeat
+  .details
+    text-decoration none
+    width 170px
+    height 50px
+    border 1px solid #abc526
+    border-radius 2px
+    color #a9c420
+    font-size 16px
+    text-align center
+    line-height 50px
+    position absolute
+    top 400px
+    left 100px
+    z-index 100
+  .bullets
+    top 500px
+    position absolute
+    margin-left auto
+    margin-right auto
+    left 0
+    right 0
+    text-align center
+    z-index 100
+    .bullet
+      width 18px
+      height 18px
+      margin 3px 0
+      display inline-block
+      background-image url('../images/bullet.png')
+
+.slider .bullets .bullet.current, .slider .bullets .bullet:hover
+  background-image url('../images/bullet-current.png')
+
+.video-block
+  height 300px
+  color #ffffff
+  &:after
+    content ''
+    display block
+    clear both
+  & > *
+    float left
+    height 100%
+  .info
+    width 350px
+    box-sizing border-box
+    -moz-box-sizing border-box
+    padding-top 40px
+    background #596b00 url("../images/video.png") 0 40px no-repeat
+    padding-left 60px
+    .name
+      font-size 24px
+    .details
+      font-size 14px
+  .buttons
+    width 140px
+    background #414141
+    font-size 16px
+    & > *
+      height 100px
+      background-position center 25px
+      background-repeat no-repeat
+      padding-top 65px
+      text-align center
+      box-sizing border-box
+      -moz-box-sizing border-box
+    .like
+      background-image url('../images/like.png')
+    .share
+      background-image url('../images/share.png')
+    .all-videos
+      background-image url('../images/all-videos.png')
+  .player
+    background #787878
+
+.videos-carousel
+  a
+    width 120px
+    height 90px
+  &:after
+    content ''
+    display block
+    clear both
+
+footer
+  height 225px
+  margin-bottom 20px
+  & > *
+    height 100%
+  &:after
+    content ''
+    display block
+    clear both
+  .contact-info
+    box-sizing border-box
+    -moz-box-sizing border-box
+    background #414141
+    width 715px
+    float left
+    padding-left 15px
+    padding-top 40px
+    font-size 14px
+    & > *
+      color #ffffff
+      padding-left 45px
+      margin-top 20px
+      background-repeat no-repeat
+      background-position left center
+    .phone
+      background-image url('../images/phone.png')
+    .email
+      background-image url('../images/email.png')
+  .qr-code
+    margin-left 20px
+    width 225px
+    float left
+    background #a7c31b url('../images/qr-code.png') no-repeat center
+
