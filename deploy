@@ -1,0 +1,3 @@
+yo angular-fullstack:deploy heroku
+cd dist && git push heroku master
+cd ..
