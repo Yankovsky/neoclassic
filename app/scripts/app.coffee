@@ -4,7 +4,8 @@ angular.module('neoclassicApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ])
 .config ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider

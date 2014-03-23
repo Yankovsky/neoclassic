@@ -1,0 +1,184 @@
+//#slider.slider
+//  .slides
+//  a.arrow.left-arrow(href='#')
+//  a.arrow.right-arrow(href='#')
+//
+//  .bullets
+
+.slider
+  border 1px solid #a9c421
+  height 540px
+  position relative
+  .slides
+    img
+      box-sizing border-box
+      -moz-box-sizing border-box
+      position absolute
+      width 960px
+      height 540px
+      z-index 0
+      display none
+
+  .details
+    text-decoration none
+    width 170px
+    height 50px
+    border 1px solid #abc526
+    border-radius 2px
+    color #a9c420
+    font-size 16px
+    text-align center
+    line-height 50px
+    position absolute
+    top 400px
+    left 100px
+    z-index 100
+  .bullets
+    top 500px
+    position absolute
+    margin-left auto
+    margin-right auto
+    left 0
+    right 0
+    text-align center
+    z-index 100
+    .bullet
+      width 18px
+      height 18px
+      margin 3px 0
+      display inline-block
+      background-image url('../images/bullet.png')
+
+.slider .bullets .bullet.current, .slider .bullets .bullet:hover
+  background-image url('../images/bullet-current.png')
+
+
+.carousel
+  position relative
+  margin-bottom 20px
+  line-height 1
+  &:hover
+    .carousel-control
+      opacity 0.5
+
+  .carousel-inner
+    position relative
+    width 100%
+    overflow hidden
+    & > .item
+      position relative
+      display none
+      transition 0.6s ease-in-out left
+    & > .active
+      left 0
+      &.left
+        left -100%
+      &.right
+        left 100%
+    & > .next
+      left 100%
+    & > .prev
+      left -100%
+
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img
+    display block
+    line-height 1
+
+  .carousel-inner > .active,
+  .carousel-inner > .next,
+  .carousel-inner > .prev
+    display block
+
+  .carousel-inner > .next,
+  .carousel-inner > .prev
+    position absolute
+    top 0
+    width 100%
+
+  .carousel-inner > .next.left,
+  .carousel-inner > .prev.right
+    left 0
+
+  .carousel-control
+    opacity 0
+    transition opacity 0.2s ease-out
+    position absolute
+    top 40%
+    width 40px
+    height 40px
+    margin-top -20px
+    font-size 60px
+    font-weight 100
+    line-height 30px
+    color #ffffff
+    text-align center
+    background #222222
+    border 3px solid #ffffff
+    border-radius 23px
+    &.left
+      left 15px
+      background url("../images/left-arrow.png") no-repeat
+
+    &.right
+      right 15px
+
+    .arrow
+      opacity 0
+      margin auto 0
+      position absolute
+      z-index 100
+      top 0
+      bottom 0
+      width 38px
+      height 56px
+    .left-arrow
+      left - 2px
+    .right-arrow
+      right - 2px
+      background url("../images/right-arrow.png") no-repeat
+
+
+  .carousel-control:hover,
+  .carousel-control:focus
+    color #ffffff
+    text-decoration none
+    opacity 0.9
+
+  .carousel-indicators
+    position absolute
+    top 15px
+    right 15px
+    z-index 5
+    margin 0
+    list-style none
+    li
+      display block
+      float left
+      width 10px
+      height 10px
+      margin-left 5px
+      text-indent -999px
+      background-color #ccc
+      background-color rgba(255, 255, 255, 0.25)
+      border-radius 5px
+    .active
+      background-color #fff
+
+  .carousel-caption
+    position absolute
+    right 0
+    bottom 0
+    left 0
+    padding 15px
+    background #333333
+    background rgba(0, 0, 0, 0.75)
+    h4
+      margin 0 0 5px
+    p
+      margin-bottom 0
+
+  .carousel-caption h4,
+  .carousel-caption p
+    line-height 20px
+    color #ffffff

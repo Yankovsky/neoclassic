@@ -1,34 +1,4 @@
-div(ng-include='\'partials/navbar\'')
-
-#slider.slider
-  .slides
-  a.arrow.left-arrow(href='#')
-  a.arrow.right-arrow(href='#')
-  a.details(href='#') Подробнее
-  .bullets
-.bullets
+div(ng-include="'partials/slider'")
 .video-block
-  .info
-    .name Название видео
-    .details Краткое описание ролика, не более 6-ти строк
-  .buttons
-    .like Нравится
-    .share Поделиться
-    .all-videos Все ролики
-  .player
-    #youtube-player
-.videos-carousel
-footer
-  ul
-    li
-      a.facebook(href='https://www.facebook.com/NeoClassic.pro')
-    li
-      a.vk(href='http://vk.com/yankovskiy_neoclassic')
-  .contact-info
-    .phone
-      div Тел. СПб: +7(965) 015 95 84
-      div Тел. МСК: +7(926) 091 72 12
-    .email
-      div E-mail: pr@neoclassic.pro
-      div Web-сайт: www.neoclassic.pro
-  .qr-code
+  youtube-player
+  div(ng-include="'partials/videos-carousel'")
