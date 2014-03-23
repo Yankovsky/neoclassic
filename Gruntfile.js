@@ -67,7 +67,7 @@ module.exports = function(grunt) {
           '<%= yeoman.app %>/views/{,*//*}*.{html,jade}',
           '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.styl',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
-          '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
 
         options: {
@@ -79,28 +79,12 @@ module.exports = function(grunt) {
           'server.js',
           'lib/**/*.{js,json}'
         ],
-        tasks: ['newer:jshint:server', 'express:dev', 'wait'],
+        tasks: ['express:dev', 'wait'],
         options: {
           livereload: true,
           nospawn: true //Without this option specified express won't be reloaded
         }
       }
-    },
-
-    // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      server: {
-        options: {
-          jshintrc: 'lib/.jshintrc'
-        },
-        src: [ 'lib/{,*/}*.js']
-      },
-      all: [
-      ]
     },
 
     // Empties folders to start fresh
@@ -540,7 +524,14 @@ module.exports = function(grunt) {
     'clean:dist',
     'bower-install',
     'useminPrepare',
-    'concurrent:dist',
+
+//    make these 5 tasks concurrent
+    'coffee',
+    'stylus',
+    'imagemin',
+    'svgmin',
+    'htmlmin',
+
     'autoprefixer',
     'concat',
     'ngmin',
@@ -558,7 +549,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
-    'newer:jshint',
     'test',
     'build'
   ]);

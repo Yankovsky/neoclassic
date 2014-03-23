@@ -89,7 +89,6 @@ _.each pidor, (item) ->
   img = $("<img/>").attr("src", item.thumbnail)
   videoLink = $("<a></a>").attr("href", "https://www.youtube.com/watch?v=" + item.id).data("video-id", item.id).append(img)
   videosCarousel.append videoLink
-  return
 
 videosCarousel.find("a").click ->
   player.loadVideoById $(this).data("video-id")

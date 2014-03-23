@@ -1,3 +1,3 @@
-yo angular-fullstack:deploy heroku
+grunt build
 cd dist && git push heroku master
 cd ..
