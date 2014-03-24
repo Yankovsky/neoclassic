@@ -14,7 +14,6 @@ angular.module('neoclassicApp')
           password: $scope.user.password
         )
         .then ->
-            # Logged in, redirect to home
             $location.path '/'
         .catch (err) ->
             err = err.data;

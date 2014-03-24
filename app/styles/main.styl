@@ -1,77 +1,73 @@
+@import 'nib'
+
+.clearfix
+  clearfix()
+
 ul
   padding 0
   margin 0
+
+input
+  box-sizing border-box
+
+article
+  background #fff
+  margin-top 20px
 
 body
   width 960px
   background black
   margin 0 auto
-  & > *
-    margin-top 20px
 
-.menu
-  background white
-  height 60px
-  &:after
-    content ''
+.admin-bar
+  height 20px
+  position relative
+  >*
+    position absolute
+    right: 0
+  .login
+    width 20px
+    height 100%
     display block
-    clear both
+    background #222
+  .logged-in
+    color #fff
+    *
+      margin-left 20px
+
+header
+  height 60px
+  background #fff
   *
     height 60px
     line-height 60px
-  .buttons
-    float right
-    height 100%
+  .menu-icon
+    background #a9c421 url('../images/menu.png') no-repeat center
+    width 60px
+    float left
+  nav
+    float left
     ul
       li
         display inline-block
         list-style none
-        border-left 1px solid #dde2e4
-        width 60px
-        height 60px
+        padding-left 30px
         a
-          background-repeat no-repeat
-          background-position center
-          display block
-          width 60px
-          height 60px
-
-.menu-icon
-  background #a9c421 url('../images/menu.png') no-repeat center
-  width 60px
-  float left
-
-nav
-  float left
-  ul
-    li
-      display inline-block
-      list-style none
-      padding-left 30px
-      a
-        text-decoration none
-        color #475055
-        font-size 16px
-
-nav ul li a:hover, nav ul ul li a.current
-  color #a9c421
-
-.facebook
-  background-image url('../images/facebook.png')
-
-.vk
-  background-image url('../images/vk.png')
-
-.search
-  background-image url('../images/search.png')
+          text-decoration none
+          color #475055
+          font-size 16px
+          &.active, &:hover
+            color #a9c421
+          &.active
+            pointer-events none
+            cursor default
+  .search-form
+    float right
+    input
+      background url('../images/search.png') no-repeat right center
 
 .video-block
   height 300px
-  color #ffffff
-  &:after
-    content ''
-    display block
-    clear both
   & > *
     float left
     height 100%
@@ -106,25 +102,16 @@ nav ul li a:hover, nav ul ul li a.current
       background-image url('../images/all-videos.png')
   .player
     background #787878
-
-.videos-carousel
-  a
-    width 120px
-    height 90px
-  &:after
-    content ''
-    display block
-    clear both
+  .videos-carousel
+    a
+      width 120px
+      height 90px
 
 footer
   height 225px
-  margin-bottom 20px
+  margin 20px 0
   & > *
     height 100%
-  &:after
-    content ''
-    display block
-    clear both
   .contact-info
     box-sizing border-box
     -moz-box-sizing border-box
@@ -135,7 +122,7 @@ footer
     padding-top 40px
     font-size 14px
     & > *
-      color #ffffff
+      color #fff
       padding-left 45px
       margin-top 20px
       background-repeat no-repeat
@@ -144,9 +131,12 @@ footer
       background-image url('../images/phone.png')
     .email
       background-image url('../images/email.png')
+  .facebook
+    background-image url('../images/facebook.png')
+  .vk
+    background-image url('../images/vk.png')
   .qr-code
     margin-left 20px
     width 225px
     float left
     background #a7c31b url('../images/qr-code.png') no-repeat center
-

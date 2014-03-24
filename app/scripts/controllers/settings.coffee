@@ -1,17 +1,11 @@
-'use strict'
-
 angular.module('neoclassicApp')
-.controller 'SettingsCtrl', ($scope, User, Auth) ->
+.controller 'SettingsCtrl', ($scope, Auth) ->
     $scope.errors = {}
-
     $scope.changePassword = (form) ->
       $scope.submitted = true
-
       if form.$valid
-        Auth.changePassword($scope.user.oldPassword, $scope.user.newPassword)
+        Auth.changePassword($scope.user.newPassword)
         .then(->
             $scope.message = 'Password successfully changed.'
-          ).catch(->
-          form.password.$setValidity 'mongoose', false
-          $scope.errors.other = 'Incorrect password'
-        )
+          , (err) ->
+            $scope.message = err)

@@ -1,16 +1,18 @@
 angular.module('neoclassicApp')
-.controller 'NavbarCtrl', ($scope, $location, Auth) ->
+.controller 'NavbarCtrl', ($scope, $location) ->
     $scope.menu = [
-      title: 'Home'
+      title: 'Главная'
       link: '/'
     ,
-      title: 'Settings'
-      link: '/settings'
+      title: 'О проекте'
+      link: '/about'
+    ,
+      title: 'Афиша'
+      link: '/schedule'
+    ,
+      title: 'Контакты'
+      link: '/contacts'
     ]
-
-    $scope.logout = ->
-      Auth.logout().then ->
-        $location.path "/login"
 
     $scope.isActive = (route) ->
       route is $location.path()
