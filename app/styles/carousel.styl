@@ -1,62 +1,9 @@
-//#slider.slider
-//  .slides
-//  a.arrow.left-arrow(href='#')
-//  a.arrow.right-arrow(href='#')
-//
-//  .bullets
-
-.slider
-  border 1px solid #a9c421
-  height 540px
-  position relative
-  .slides
-    img
-      box-sizing border-box
-      -moz-box-sizing border-box
-      position absolute
-      width 960px
-      height 540px
-      z-index 0
-      display none
-
-  .details
-    text-decoration none
-    width 170px
-    height 50px
-    border 1px solid #abc526
-    border-radius 2px
-    color #a9c420
-    font-size 16px
-    text-align center
-    line-height 50px
-    position absolute
-    top 400px
-    left 100px
-    z-index 100
-  .bullets
-    top 500px
-    position absolute
-    margin-left auto
-    margin-right auto
-    left 0
-    right 0
-    text-align center
-    z-index 100
-    .bullet
-      width 18px
-      height 18px
-      margin 3px 0
-      display inline-block
-      background-image url('../images/bullet.png')
-
-.slider .bullets .bullet.current, .slider .bullets .bullet:hover
-  background-image url('../images/bullet-current.png')
-
-
 .carousel
   position relative
   margin-bottom 20px
   line-height 1
+  border 1px solid #a9c421
+  height 540px
   &:hover
     .carousel-control
       opacity 0.5
@@ -147,10 +94,13 @@
 
   .carousel-indicators
     position absolute
-    top 15px
-    right 15px
+    left 0
+    right 0
+    bottom 40px
+    text-align center
     z-index 5
-    margin 0
+    margin-left auto
+    margin-right auto
     list-style none
     li
       display block
@@ -162,8 +112,9 @@
       background-color #ccc
       background-color rgba(255, 255, 255, 0.25)
       border-radius 5px
+      border-color #a9c421
     .active
-      background-color #fff
+      background-color #a9c421
 
   .carousel-caption
     position absolute
@@ -173,12 +124,24 @@
     padding 15px
     background #333333
     background rgba(0, 0, 0, 0.75)
+    p, h4
+      line-height 20px
+      color #ffffff
     h4
       margin 0 0 5px
     p
       margin-bottom 0
-
-  .carousel-caption h4,
-  .carousel-caption p
-    line-height 20px
-    color #ffffff
+    .details
+      text-decoration none
+      width 170px
+      height 50px
+      border 1px solid #abc526
+      border-radius 2px
+      color #a9c420
+      font-size 16px
+      text-align center
+      line-height 50px
+      position absolute
+      top 400px
+      left 100px
+      z-index 100

@@ -1,5 +1,3 @@
-'use strict'
-
 describe 'Directive: youtubePlayer', () ->
 
   # load the directive's module

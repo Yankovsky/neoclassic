@@ -1,5 +1,3 @@
-'use strict'
-
 describe 'Controller: VideosCarouselCtrl', () ->
 
   # load the controller's module

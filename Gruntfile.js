@@ -1,6 +1,3 @@
-// Generated on 2014-03-21 using generator-angular-fullstack 1.3.2
-'use strict';
-
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -10,10 +7,10 @@
 module.exports = function(grunt) {
 
   // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt)
 
   // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt);
+  require('time-grunt')(grunt)
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -172,15 +169,15 @@ module.exports = function(grunt) {
           },
           callback: function(nodemon) {
             nodemon.on('log', function(event) {
-              console.log(event.colour);
-            });
+              console.log(event.colour)
+            })
 
             // opens browser on initial server start
             nodemon.on('config:update', function() {
               setTimeout(function() {
-                require('open')('http://localhost:8080/debug?port=5858');
-              }, 500);
-            });
+                require('open')('http://localhost:8080/debug?port=5858')
+              }, 500)
+            })
           }
         }
       }
@@ -444,27 +441,27 @@ module.exports = function(grunt) {
         NODE_ENV: 'test'
       }
     }
-  });
+  })
 
   // Used for delaying livereload until after server has restarted
   grunt.registerTask('wait', function() {
-    grunt.log.ok('Waiting for server reload...');
+    grunt.log.ok('Waiting for server reload...')
 
-    var done = this.async();
+    var done = this.async()
 
     setTimeout(function() {
-      grunt.log.writeln('Done waiting!');
-      done();
-    }, 500);
-  });
+      grunt.log.writeln('Done waiting!')
+      done()
+    }, 500)
+  })
 
   grunt.registerTask('express-keepalive', 'Keep grunt running', function() {
-    this.async();
-  });
+    this.async()
+  })
 
   grunt.registerTask('serve', function(target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive']);
+      return grunt.task.run(['build', 'express:prod', 'open', 'express-keepalive'])
     }
 
     if (target === 'debug') {
@@ -474,7 +471,7 @@ module.exports = function(grunt) {
         'concurrent:server',
         'autoprefixer',
         'concurrent:debug'
-      ]);
+      ])
     }
 
     grunt.task.run([
@@ -485,20 +482,20 @@ module.exports = function(grunt) {
       'express:dev',
       'open',
       'watch'
-    ]);
-  });
+    ])
+  })
 
   grunt.registerTask('server', function() {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
-  });
+    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.')
+    grunt.task.run(['serve'])
+  })
 
   grunt.registerTask('test', function(target) {
     if (target === 'server') {
       return grunt.task.run([
         'env:test',
         'mochaTest'
-      ]);
+      ])
     }
 
     if (target === 'client') {
@@ -507,7 +504,7 @@ module.exports = function(grunt) {
         'concurrent:test',
         'autoprefixer',
         'karma'
-      ]);
+      ])
     }
 
     grunt.task.run([
@@ -517,8 +514,8 @@ module.exports = function(grunt) {
       'concurrent:test',
       'autoprefixer',
       'karma'
-    ]);
-  });
+    ])
+  })
 
   grunt.registerTask('build', [
     'clean:dist',
@@ -541,15 +538,15 @@ module.exports = function(grunt) {
     'uglify',
     'rev',
     'usemin'
-  ]);
+  ])
 
   grunt.registerTask('heroku', function() {
-    grunt.log.warn('The `heroku` task has been deprecated. Use `grunt build` to build for deployment.');
-    grunt.task.run(['build']);
-  });
+    grunt.log.warn('The `heroku` task has been deprecated. Use `grunt build` to build for deployment.')
+    grunt.task.run(['build'])
+  })
 
   grunt.registerTask('default', [
     'test',
     'build'
-  ]);
-};
+  ])
+}

@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('neoclassicApp')
 .controller 'MainCtrl', ($scope, $http) ->
     $http.get('/api/awesomeThings').success (awesomeThings) ->

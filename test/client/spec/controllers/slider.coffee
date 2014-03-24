@@ -1,5 +1,3 @@
-'use strict'
-
 describe 'Controller: SliderCtrl', () ->
 
   # load the controller's module

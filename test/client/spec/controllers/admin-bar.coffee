@@ -1,5 +1,3 @@
-'use strict'
-
 describe 'Controller: AdminBarCtrl', () ->
 
   # load the controller's module
