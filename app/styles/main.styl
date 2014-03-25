@@ -1,5 +1,14 @@
 @import 'nib'
 
+body
+  font-family "Open Sans", "Arial", "Helvetica", sans-serif
+
+.active
+  pointer-events none
+  cursor default
+  *
+    pointer-events auto
+
 .clearfix
   clearfix()
 
@@ -60,9 +69,6 @@ header
           font-size 16px
           &.active, &:hover
             color #a9c421
-          &.active
-            pointer-events none
-            cursor default
   .search-form
     float right
     input

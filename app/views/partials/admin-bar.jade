@@ -1,5 +1,5 @@
 .admin-bar(ng-controller='AdminBarCtrl')
-  a.login(href=href='/login', ng-hide='currentUser')
+  a.login(href='/login', ng-hide='currentUser')
   .logged-in(ng-show='currentUser')
     span {{ currentUser.name }}
     a(href='/settings') сменить пароль

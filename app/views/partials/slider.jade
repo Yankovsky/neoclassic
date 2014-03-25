@@ -1,9 +1,6 @@
-article.slider(ng-controller='SliderCtrl')
+article(ng-controller='SliderCtrl')
   carousel(interval='5000')
     slide(ng-repeat='slide in slides', active='slide.active')
-      div {{slide.src}}
-      img(ng-src='{{slide.src}}', style='margin: auto;')
-      .carousel-caption
-        h4 Slide {{$index}}
-        p {{slide.text}}
-        a.details(href='{{slide.url}}') Подробнее
+      img(ng-src='{{slide.src}}')
+      p {{slide.text}}
+      a(ng-href='{{slide.url}}') Подробнее
