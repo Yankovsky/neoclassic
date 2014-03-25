@@ -2,33 +2,19 @@
 
 .carousel
   position relative
-  margin-bottom 20px
-  line-height 1
-  border 1px solid #a9c421
-  height 540px
-  box-sizing border-box
   &:hover
     .carousel-control
       opacity 1
 
   > .carousel-indicators
-    absolute top 500px
+    absolute left right
     margin auto
-    left 0
-    right 0
     text-align center
     z-index 1
     list-style none
     > li
       display inline-block
-      width 10px
-      height 10px
-      margin-left 5px
-      border-radius 5px
-      border 1px solid #a9c421
       cursor pointer
-      &.active, &:hover, &:focus
-        background-color #a9c421
 
   > .carousel-inner
     position relative
@@ -39,7 +25,6 @@
       position relative
       display none
       transition 0.6s ease-in-out left
-      background url("../images/logo.png") no-repeat 50px 30px
       width 100%
       height 100%
       &.active
@@ -60,44 +45,14 @@
       &.next.left,
       &.prev.right
         left 0
-      p
-        color #fff
-        font-size 14px
-        line-height  20px
-        absolute left 110px top 260px
-        width 465px
-        overflow hidden
-      a
-        absolute left 110px top 420px
-        text-decoration none
-        width 170px
-        height 50px
-        border 1px solid #abc526
-        border-radius 2px
-        color #a9c420
-        font-size 16px
-        text-align center
-        line-height 50px
-      img
-        absolute right bottom top
-        margin auto
 
   > .carousel-control
     absolute top bottom
     margin auto
-    width 34px
-    height 52px
     cursor pointer
-    background #eee no-repeat center
     opacity 0
     transition opacity 0.2s ease-out
     &.left
       left 0
-      border-radius 0 2px 2px 0
-      background-image url('../images/left-arrow.png')
     &.right
       right 0
-      border-radius 2px 0 0 2px
-      background-image url('../images/right-arrow.png')
-    &:hover, &:focus
-      background-color #fff

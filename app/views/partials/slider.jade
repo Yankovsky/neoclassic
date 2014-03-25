@@ -1,4 +1,4 @@
-article(ng-controller='SliderCtrl')
+article.slider(ng-controller='SliderCtrl')
   carousel(interval='5000')
     slide(ng-repeat='slide in slides', active='slide.active')
       img(ng-src='{{slide.src}}')

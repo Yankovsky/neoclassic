@@ -1,9 +1,9 @@
-describe 'Controller: VideosCarouselCtrl', () ->
+describe 'Controller: VideosBlockCtrl', () ->
 
   # load the controller's module
   beforeEach module 'neoclassicApp'
 
-  VideosCarouselCtrl = {}
+  VideosBlockCtrl = {}
   scope = {}
   $httpBackend = {}
 
@@ -12,7 +12,7 @@ describe 'Controller: VideosCarouselCtrl', () ->
     $httpBackend = _$httpBackend_
     $httpBackend.expectGET('/api/awesomeThings').respond ['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']
     scope = $rootScope.$new()
-    VideosCarouselCtrl = $controller 'VideosCarouselCtrl', {
+    VideosBlockCtrl = $controller 'VideosBlockCtrl', {
       $scope: scope
     }
 
