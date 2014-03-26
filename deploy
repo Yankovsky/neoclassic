@@ -1,3 +1,0 @@
-grunt
-cd dist && git push heroku master
-cd ..
