@@ -1,22 +1,17 @@
 describe 'Controller: SliderCtrl', () ->
-
-  # load the controller's module
   beforeEach module 'neoclassicApp'
-
   SliderCtrl = {}
   scope = {}
   $httpBackend = {}
-
-  # Initialize the controller and a mock scope
   beforeEach inject (_$httpBackend_, $controller, $rootScope) ->
     $httpBackend = _$httpBackend_
-    $httpBackend.expectGET('/api/awesomeThings').respond ['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']
+    $httpBackend.expectGET('/api/slides').respond [1, 2]
     scope = $rootScope.$new()
     SliderCtrl = $controller 'SliderCtrl', {
       $scope: scope
     }
 
-  it 'should attach a list of awesomeThings to the scope', () ->
-    expect(scope.awesomeThings).toBeUndefined()
+  it 'should attach a list of slides to the scope', () ->
+    expect(scope.slides).toBeUndefined()
     $httpBackend.flush()
-    expect(scope.awesomeThings.length).toBe 4
+    expect(scope.slides).toEqual [1, 2]

@@ -1,22 +1,17 @@
 describe 'Controller: VideosBlockCtrl', () ->
-
-  # load the controller's module
   beforeEach module 'neoclassicApp'
-
   VideosBlockCtrl = {}
   scope = {}
   $httpBackend = {}
-
-  # Initialize the controller and a mock scope
   beforeEach inject (_$httpBackend_, $controller, $rootScope) ->
     $httpBackend = _$httpBackend_
-    $httpBackend.expectGET('/api/awesomeThings').respond ['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']
+    $httpBackend.expectGET('/api/videos').respond [1, 2, 3, 4, 5, 6, 7, 8, 9]
     scope = $rootScope.$new()
     VideosBlockCtrl = $controller 'VideosBlockCtrl', {
       $scope: scope
     }
 
-  it 'should attach a list of awesomeThings to the scope', () ->
-    expect(scope.awesomeThings).toBeUndefined()
+  it 'should load list of videos and group them by 4', () ->
+    expect(scope.videosGroupedByFour).toBeUndefined()
     $httpBackend.flush()
-    expect(scope.awesomeThings.length).toBe 4
+    expect(scope.videosGroupedByFour).toEqual { 0: [1, 2, 3, 4], 1: [5, 6, 7, 8], 2: [9]}

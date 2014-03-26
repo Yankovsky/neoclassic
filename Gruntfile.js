@@ -1,3 +1,5 @@
+'use strict';
+
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -49,7 +51,7 @@ module.exports = function(grunt) {
         tasks: ['newer:coffee:dist']
       },
       coffeeTest: {
-        files: ['test/spec/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        files: ['test/client/{,*/}*.{coffee,litcoffee,coffee.md}'],
         tasks: ['newer:coffee:test', 'karma']
       },
       styles: {
@@ -117,7 +119,6 @@ module.exports = function(grunt) {
     stylus: {
       compile: {
         options: {
-          compress: true,
           paths: ['node_modules/grunt-contrib-stylus/node_modules']
         },
         files: [
@@ -252,12 +253,15 @@ module.exports = function(grunt) {
         '<%= yeoman.dist %>/views/{,*/}*.jade'],
       css: ['<%= yeoman.dist %>/public/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>/public']
+        assetsDirs: ['<%= yeoman.dist %>/public', '<%= yeoman.dist %>/public/images']
       }
     },
 
     // The following *-min tasks produce minified files in the dist folder
     imagemin: {
+      options: {
+        cache: false
+      },
       dist: {
         files: [
           {
@@ -521,14 +525,7 @@ module.exports = function(grunt) {
     'clean:dist',
     'bower-install',
     'useminPrepare',
-
-//    make these 5 tasks concurrent
-    'coffee',
-    'stylus',
-    'imagemin',
-    'svgmin',
-    'htmlmin',
-
+    'concurrent:dist',
     'autoprefixer',
     'concat',
     'ngmin',

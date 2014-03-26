@@ -3,6 +3,6 @@ article.videos-block(ng-controller='VideosBlockCtrl')
   carousel(interval='-1')
     slide(ng-repeat='(i, fourVideos) in videosGroupedByFour', active='fourVideos.active')
       ol.clearfix
-        li(ng-repeat='video in fourVideos', title='{{video.title}}')
+        li(ng-repeat='video in fourVideos', tooltip='{{video.title}}', tooltip-trigger='click')
           a(href='', ng-click='playVideo(video.id)')
-            img(ng-src='{{video.thumbnail}}')
+            img(ng-src='{{video.thumbnail}}', width='240', height='135')

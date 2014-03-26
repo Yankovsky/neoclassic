@@ -52,7 +52,17 @@
     cursor pointer
     opacity 0
     transition opacity 0.2s ease-out
+    width 34px
+    height 52px
+    box-sizing border-box
+    background #eee no-repeat center
     &.left
       left 0
+      border-radius 0 2px 2px 0
+      background-image url('../images/left-arrow.png')
     &.right
       right 0
+      border-radius 2px 0 0 2px
+      background-image url('../images/right-arrow.png')
+    &:hover, &:focus
+      background-color #fff

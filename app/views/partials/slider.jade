@@ -4,3 +4,12 @@ article.slider(ng-controller='SliderCtrl')
       img(ng-src='{{slide.src}}')
       p {{slide.text}}
       a(ng-href='{{slide.url}}') Подробнее
+div.background-white(ng-show='currentUser')
+  form
+    label текст
+    textarea()
+    label файл
+    input(type='file')
+    label url
+    input(type='text')
+    input(type='submit')

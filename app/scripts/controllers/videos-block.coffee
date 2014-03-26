@@ -4,5 +4,5 @@ angular.module('neoclassicApp')
       $scope.videosGroupedByFour = _.groupBy(videos, (video, i) ->
         return parseInt(i / 4)
       )
-      $scope.playVideo = (id) ->
-        youtubePlayerSvc() && youtubePlayerSvc().loadVideoById(id)
+    $scope.playVideo = (id) ->
+      youtubePlayerSvc.play(id)

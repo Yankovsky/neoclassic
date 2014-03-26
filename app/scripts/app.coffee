@@ -9,7 +9,6 @@ angular.module('neoclassicApp', [
     $routeProvider
     .when '/',
         templateUrl: 'partials/main'
-        controller: 'MainCtrl'
     .when '/login',
         templateUrl: 'partials/login'
         controller: 'LoginCtrl'
@@ -17,6 +16,8 @@ angular.module('neoclassicApp', [
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
         authenticate: true
+    .when '/about',
+        templateUrl: 'partials/about'
     .otherwise
         redirectTo: '/'
 

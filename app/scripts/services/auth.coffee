@@ -6,29 +6,29 @@ angular.module('neoclassicApp').factory 'Auth', ($location, $rootScope, $http, $
     $http.post('/api/session',
       email: user.email
       password: user.password
-    ,(user) ->
+    )
+    .success (user) ->
       $rootScope.currentUser = user
       callback && callback()
-    ,(err) ->
+    .error (err) ->
       callback && callback err
-    )
 
   logout: (callback) ->
-    $http.delete('/api/session',->
+    $http.delete('/api/session')
+    .success ->
       $rootScope.currentUser = null
       callback && callback()
-    ,(err) ->
+    .error (err) ->
       callback && cb err
-    )
 
   changePassword: (newPassword, callback) ->
     $http.put('/api/changePassword',
       newPassword: newPassword
-    ,(user) ->
-      callback && cb user
-    ,(err) ->
-      callback && cb err
     )
+    .success (user) ->
+      callback && cb user
+    .error (err) ->
+      callback && cb err
 
   isLoggedIn: ->
     user = $rootScope.currentUser
