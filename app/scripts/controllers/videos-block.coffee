@@ -6,3 +6,6 @@ angular.module('neoclassicApp')
       )
     $scope.playVideo = (id) ->
       youtubePlayerSvc.play(id)
+
+    $scope.addVideo = ->
+      console.log($scope)

@@ -1,8 +1,20 @@
-article.videos-block(ng-controller='VideosBlockCtrl')
-  youtube-player
-  carousel(interval='-1')
-    slide(ng-repeat='(i, fourVideos) in videosGroupedByFour', active='fourVideos.active')
-      ol.clearfix
-        li(ng-repeat='video in fourVideos', tooltip='{{video.title}}', tooltip-trigger='click')
-          a(href='', ng-click='playVideo(video.id)')
-            img(ng-src='{{video.thumbnail}}', width='240', height='135')
+div(ng-controller='VideosBlockCtrl')
+  article.videos-block
+    youtube-player
+    carousel(interval='-1')
+      slide(ng-repeat='(i, fourVideos) in videosGroupedByFour', active='fourVideos.active')
+        ol.clearfix
+          li(ng-repeat='video in fourVideos', tooltip='{{video.title}}', tooltip-trigger='click')
+            a(href='', ng-click='playVideo(video.id)')
+              img(ng-src='{{video.thumbnail}}', width='240', height='135')
+  div.background-white(ng-show='currentUser')
+    form(name='newVideoForm', ng-submit='newVideoForm.$valid && addVideo()', novalidate)
+      input(name='videoUrl', type='text', ng-model='videoUrl', required, placeholder='скопируй ссылку с youtube сюда')
+      input(type='submit', value='добавить')
+  div.background-white
+    div userType = {{videoUrl}}
+    div userType = {{newVideoForm}}
+    div myForm.input.$valid = {{newVideoForm.videoUrl.$valid}}
+    div myForm.input.$error = {{newVideoForm.videoUrl.$error}}
+    div myForm.$valid = {{newVideoForm.$valid}}
+    div myForm.$error.required = {{!!newVideoForm.$error.required}}

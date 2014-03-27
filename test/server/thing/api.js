@@ -2,11 +2,24 @@ var should = require('should'),
   app = require('../../../server'),
   request = require('supertest')
 
-describe('GET /api/awesomeThings', function() {
-
+describe('GET /api/videos', function() {
   it('should respond with JSON array', function(done) {
     request(app)
-      .get('/api/awesomeThings')
+      .get('/api/videos')
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end(function(err, res) {
+        if (err) return done(err)
+        res.body.should.be.instanceof(Array)
+        done()
+      })
+  })
+})
+
+describe('GET /api/slides', function() {
+  it('should respond with JSON array', function(done) {
+    request(app)
+      .get('/api/slides')
       .expect(200)
       .expect('Content-Type', /json/)
       .end(function(err, res) {

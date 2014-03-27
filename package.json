@@ -8,7 +8,9 @@
     "connect-mongo": "~0.4.0",
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
-    "jade": "~1.2.0"
+    "jade": "~1.2.0",
+    "underscore": "~1.6.0",
+    "aws-sdk": "~2.0.0-rc13"
   },
   "devDependencies": {
     "optipng-bin": "0.3.1",
