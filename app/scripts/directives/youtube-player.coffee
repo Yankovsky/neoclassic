@@ -1,5 +1,5 @@
 angular.module('neoclassicApp')
-.directive('youtubePlayer', (youtubePlayerSvc, errorsSvc) ->
+.directive('youtubePlayer', (youtubePlayerSvc, loggingSvc) ->
     template: '<div id="youtube-player"></div>'
     restrict: 'E',
     scope: {},
@@ -13,10 +13,9 @@ angular.module('neoclassicApp')
           events:
             onReady: ->
               youtubePlayerSvc.set player if !scope.destroyed
-            onStateChange: ->
-              errorsSvc.push('onStateChange', arguments)
-            onError: (e) ->
-              errorsSvc.push('ERROR PLAYER', arguments)
+            onError: (errorCode) ->
+              loggingSvc.push('Youtube player error ' + errorCode + errorCode.errorCode)
+              scope.$apply()
         )
 
       scope.$on('$destroy', ->

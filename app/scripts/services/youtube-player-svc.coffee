@@ -1,13 +1,9 @@
 angular.module('neoclassicApp')
-  .factory 'youtubePlayerSvc', (errorsSvc) ->
+  .factory 'youtubePlayerSvc', () ->
     youtubePlayer = null
     play: (id) ->
       if youtubePlayer
-        try
-          youtubePlayer.asfafa()
-          youtubePlayer.loadVideoById(id)
-          youtubePlayer.playVideo()
-        catch e
-          errorsSvc.push(e)
+        youtubePlayer.cueVideoById(id, 0.5)
+        youtubePlayer.playVideo()
     set: (player) ->
       youtubePlayer = player

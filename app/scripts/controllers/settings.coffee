@@ -1,6 +1,6 @@
 angular.module('neoclassicApp')
 .controller 'SettingsCtrl', ($scope, Auth) ->
-    $scope.errors = {}
+    $scope.messages = {}
     $scope.changePassword = (form) ->
       $scope.submitted = true
       if form.$valid

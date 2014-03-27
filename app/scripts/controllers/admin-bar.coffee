@@ -1,11 +1,11 @@
 angular.module('neoclassicApp')
-  .controller 'AdminBarCtrl', ($scope, $location, Auth, errorsSvc) ->
+  .controller 'AdminBarCtrl', ($scope, $location, Auth, loggingSvc) ->
     $scope.logout = ->
       Auth.logout().then ->
         $location.path "/"
 
     $scope.$watch(->
-      errorsSvc.errors()
+      loggingSvc.messages()
     , (newVal, oldVal) ->
-      $scope.errors = newVal
+      $scope.messages = newVal
     )
