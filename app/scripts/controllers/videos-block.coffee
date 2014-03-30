@@ -9,8 +9,9 @@ angular.module('neoclassicApp')
         _($scope.videos).groupBy((video, i) ->
           parseInt(i / 4)
         ).toArray().value()
-      activeIndex = Math.min(previousActiveIndex, videosGroupedByFour.length)
-      #videosGroupedByFour[activeIndex].active = true
+      activeIndex = Math.min(previousActiveIndex, videosGroupedByFour.length - 1)
+      # carousel stop working after reinit https://github.com/angular-ui/bootstrap/issues/1513
+      # videosGroupedByFour[activeIndex].active = true
       $scope.videosGroupedByFour = videosGroupedByFour
 
     $http.get('/api/videos').success (videos) ->
