@@ -1,16 +1,22 @@
 angular.module('neoclassicApp')
   .controller 'VideosBlockCtrl', ($scope, $http, youtubePlayerSvc) ->
-#    todo shitty code ahead
-    populateVideos = (videos) ->
-#      if ($scope.videosGroupedByFour)
-      $scope.videosGroupedByFour =
-        _.groupBy(videos, (video, i) ->
-          parseInt(i / 4)
-        )
+    getActiveIndex = () ->
+      Math.max(_.findIndex($scope.videosGroupedByFour, (group) -> group.active), 0)
 
+    populateVideos = () ->
+      previousActiveIndex = getActiveIndex()
+      videosGroupedByFour =
+        _($scope.videos).groupBy((video, i) ->
+          parseInt(i / 4)
+        ).toArray().value()
+      activeIndex = Math.min(previousActiveIndex, videosGroupedByFour.length)
+      #videosGroupedByFour[activeIndex].active = true
+      $scope.videosGroupedByFour = videosGroupedByFour
+
+    $http.get('/api/videos').success (videos) ->
+      $scope.videos = videos
+      populateVideos()
     $scope.videoUrl = 'http://www.youtube.com/watch?v=Sii4WAZXEoo'
-    $scope.activeIndex = 0
-    $http.get('/api/videos').success populateVideos
 
     $scope.play = (id) ->
       youtubePlayerSvc.play(id)
@@ -20,23 +26,22 @@ angular.module('neoclassicApp')
         videoUrl: $scope.videoUrl
       ).success (savedVideo) ->
         $scope.videos.push(savedVideo)
-        active = 0
-        _.each($scope.videosGroupedByFour, (group, i) ->
-          active = i if group.active
-        )
-        $scope.videosGroupedByFour = groupByFour()
-        $scope.videosGroupedByFour[active].active = true
+        populateVideos()
 
-    $scope.move = (video, dir) ->
-      $http.put('/api/videos/' + video.id,
+    $scope.move = (videoToMove, dir) ->
+      $http.put('/api/videos/' + videoToMove.id,
         dir: dir
-      ).success -> 
-        console.log('LOLO')
+      ).success (result) ->
+        videoIndex =_.findIndex($scope.videos, (video) -> video.id == videoToMove.id)
+        swappedVideoIndex =_.findIndex($scope.videos, (video) -> video.id == result.swappedVideoId)
+        temp = $scope.videos[videoIndex]
+        $scope.videos[videoIndex] = $scope.videos[swappedVideoIndex]
+        $scope.videos[swappedVideoIndex] = temp
+        populateVideos()
 
-    $scope.delete = (video) ->
-      $http.delete('/api/videos/' + video.id)
+    $scope.delete = (videoToDelete) ->
+      $http.delete('/api/videos/' + videoToDelete.id)
       .success ->
-          console.log('DELETE')
-          
-#        $scope.videos.splice(index, 1)
-#        $scope.videos.push(savedVideo)
+        index =_.findIndex($scope.videos, (video) -> video.id == videoToDelete.id)
+        $scope.videos.splice(index, 1)
+        populateVideos()

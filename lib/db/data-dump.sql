@@ -44,15 +44,15 @@ SELECT pg_catalog.setval('users_id_seq', 1, true);
 -- Data for Name: videos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (0, '"Somebody That I Used To Know" cover by Dmitriy Yankovskiy', 'zscl0-RzPlI', 'https://i1.ytimg.com/vi/zscl0-RzPlI/mqdefault.jpg', 0);
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (1, 'Иванушки International - "Тучи" cover by Dmitriy Yankovskiy', '-nxfoM5gupQ', 'https://i1.ytimg.com/vi/-nxfoM5gupQ/mqdefault.jpg', 1);
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (2, '"The Show Must Go On" cover by Dmitriy Yankovskiy', 'sv8nOpisB9s', 'https://i1.ytimg.com/vi/sv8nOpisB9s/mqdefault.jpg', 2);
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (3, 'System Of A Down - Toxicity cover by Dmitriy Yankovskiy', 'w3WxP-SeQ7M', 'https://i1.ytimg.com/vi/w3WxP-SeQ7M/mqdefault.jpg', 3);
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (4, '"Лишь о тебе мечтая" cover by Dmitriy Yankovskiy', 'wsNO9PJYFeo', 'https://i1.ytimg.com/vi/wsNO9PJYFeo/mqdefault.jpg', 4);
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (5, 'Eurythmics - "Sweet Dreams" cover by Dmitriy Yankovskiy', 'Alehe8AV0Vk', 'https://i1.ytimg.com/vi/Alehe8AV0Vk/mqdefault.jpg', 5);
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (6, 'MAMMA MIA! - cover by Dmitriy Yankovskiy', '9e62_jv61JQ', 'https://i1.ytimg.com/vi/9e62_jv61JQ/mqdefault.jpg', 6);
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (7, '"Let It Be" cover by Dmitriy Yankovskiy', 'C9NIch3DhxY', 'https://i1.ytimg.com/vi/C9NIch3DhxY/mqdefault.jpg', 7);
-INSERT INTO videos (id, title, videoid, thumbnail_url, "position") VALUES (8, '"Parlami d''amore Mariù" cover by Dmitriy Yankovskiy', 'LXk_xlu7gTk', 'https://i1.ytimg.com/vi/LXk_xlu7gTk/mqdefault.jpg', 8);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (0, '"Somebody That I Used To Know" cover by Dmitriy Yankovskiy', 'zscl0-RzPlI', 'https://i1.ytimg.com/vi/zscl0-RzPlI/mqdefault.jpg', 0);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (1, 'Иванушки International - "Тучи" cover by Dmitriy Yankovskiy', '-nxfoM5gupQ', 'https://i1.ytimg.com/vi/-nxfoM5gupQ/mqdefault.jpg', 1);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (2, '"The Show Must Go On" cover by Dmitriy Yankovskiy', 'sv8nOpisB9s', 'https://i1.ytimg.com/vi/sv8nOpisB9s/mqdefault.jpg', 2);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (3, 'System Of A Down - Toxicity cover by Dmitriy Yankovskiy', 'w3WxP-SeQ7M', 'https://i1.ytimg.com/vi/w3WxP-SeQ7M/mqdefault.jpg', 3);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (4, '"Лишь о тебе мечтая" cover by Dmitriy Yankovskiy', 'wsNO9PJYFeo', 'https://i1.ytimg.com/vi/wsNO9PJYFeo/mqdefault.jpg', 4);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (5, 'Eurythmics - "Sweet Dreams" cover by Dmitriy Yankovskiy', 'Alehe8AV0Vk', 'https://i1.ytimg.com/vi/Alehe8AV0Vk/mqdefault.jpg', 5);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (6, 'MAMMA MIA! - cover by Dmitriy Yankovskiy', '9e62_jv61JQ', 'https://i1.ytimg.com/vi/9e62_jv61JQ/mqdefault.jpg', 6);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (7, '"Let It Be" cover by Dmitriy Yankovskiy', 'C9NIch3DhxY', 'https://i1.ytimg.com/vi/C9NIch3DhxY/mqdefault.jpg', 7);
+INSERT INTO videos (id, title, video_id, thumbnail_url, "position") VALUES (8, '"Parlami d''amore Mariù" cover by Dmitriy Yankovskiy', 'LXk_xlu7gTk', 'https://i1.ytimg.com/vi/LXk_xlu7gTk/mqdefault.jpg', 8);
 
 
 --

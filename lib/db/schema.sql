@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS videos;
 CREATE TABLE videos (
     id SERIAL PRIMARY KEY,
     title VARCHAR NOT NULL,
-    videoId VARCHAR NOT NULL,
+    video_id VARCHAR NOT NULL,
     thumbnail_url VARCHAR NOT NULL,
     position INTEGER NOT NULL
 );
