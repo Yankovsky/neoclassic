@@ -5,6 +5,6 @@
       div {{message}}
   a.login.hidden-link(href='/login', ng-hide='currentUser')
   .logged-in(ng-show='currentUser')
-    span {{ currentUser.name }}
+    span {{ currentUser.email }}
     a(href='/settings') сменить пароль
     a(href='', ng-click='logout()') выход

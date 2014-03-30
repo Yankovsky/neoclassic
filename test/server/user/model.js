@@ -1,12 +1,10 @@
-var should = require('should'),
-  mongoose = require('mongoose'),
-  User = mongoose.model('User')
+var should = require('should')
 
 var user
 
 describe('User Model', function() {
   before(function(done) {
-    user = new User({
+    user = new usersRepo({
       provider: 'local',
       name: 'Fake User',
       email: 'test@test.com',
@@ -14,17 +12,17 @@ describe('User Model', function() {
     })
 
     // Clear users before testing
-    User.remove().exec()
+    usersRepo.remove().exec()
     done()
   })
 
   afterEach(function(done) {
-    User.remove().exec()
+    usersRepo.remove().exec()
     done()
   })
 
   it('should begin with no users', function(done) {
-    User.find({}, function(err, users) {
+    usersRepo.find({}, function(err, users) {
       users.should.have.length(0)
       done()
     })
@@ -32,7 +30,7 @@ describe('User Model', function() {
 
   it('should fail when saving a duplicate user', function(done) {
     user.save()
-    var userDup = new User(user)
+    var userDup = new usersRepo(user)
     userDup.save(function(err) {
       should.exist(err)
       done()

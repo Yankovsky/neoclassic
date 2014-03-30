@@ -4,13 +4,14 @@
   "dependencies": {
     "express": "~3.4.3",
     "lodash": "~2.4.1",
-    "mongoose": "~3.8.8",
-    "connect-mongo": "~0.4.0",
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
     "jade": "~1.2.0",
-    "underscore": "~1.6.0",
-    "aws-sdk": "~2.0.0-rc13"
+    "aws-sdk": "~2.0.0-rc13",
+    "request": "~2.34.0",
+    "logfmt": "~1.1.2",
+    "pg": "^2.11.1",
+    "connect-mongo": "^0.4.0"
   },
   "devDependencies": {
     "optipng-bin": "0.3.1",

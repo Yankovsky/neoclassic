@@ -1,7 +1,7 @@
 article.slider(ng-controller='SliderCtrl')
-  carousel(interval='5000')
+  carousel(interval='8000')
     slide(ng-repeat='slide in slides', active='slide.active')
-      img(ng-src='{{slide.imageUrl}}')
+      img(ng-src='{{slide.image_url}}')
       p {{slide.text}}
       a(ng-href='{{slide.url}}') Подробнее
 div.background-white(ng-show='currentUser')

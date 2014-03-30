@@ -5,16 +5,18 @@ div(ng-controller='VideosBlockCtrl')
       slide(ng-repeat='(i, fourVideos) in videosGroupedByFour', active='fourVideos.active')
         ol.clearfix
           li(ng-repeat='video in fourVideos', tooltip='{{video.title}}', tooltip-trigger='click')
-            a(href='', ng-click='playVideo(video.id)')
-              img(ng-src='{{video.thumbnail}}', width='240', height='135')
+            a(href='', ng-click='play(video.videoid)')
+              img(ng-src='{{video.thumbnail_url}}', width='240', height='135')
   div.background-white(ng-show='currentUser')
-    form(name='newVideoForm', ng-submit='newVideoForm.$valid && addVideo()', novalidate)
-      input(name='videoUrl', type='text', ng-model='videoUrl', required, placeholder='скопируй ссылку с youtube сюда')
-      input(type='submit', value='добавить')
-  div.background-white
-    div userType = {{videoUrl}}
-    div userType = {{newVideoForm}}
-    div myForm.input.$valid = {{newVideoForm.videoUrl.$valid}}
-    div myForm.input.$error = {{newVideoForm.videoUrl.$error}}
-    div myForm.$valid = {{newVideoForm.$valid}}
-    div myForm.$error.required = {{!!newVideoForm.$error.required}}
+    ol
+      li(ng-repeat='(i, fourVideos) in videosGroupedByFour') {{i}}
+        ol
+          li(ng-repeat='video in fourVideos') {{video.title}}
+            a(href='', ng-click='delete(video)') X
+            a(href='', ng-click='move(video, -1)', ng-hide='$parent.$first && $first') ^
+            a(href='', ng-click='move(video, 1)', ng-hide='$parent.$last && $last') v
+    form(name='newVideoForm', ng-submit='newVideoForm.$valid && add()', novalidate)
+      input(name='videoUrl', type='text', ng-model='videoUrl', required, placehoder='скопируй ссылку с youtube сюда')
+      span.error(ng-show="!newVideoForm.videoUrl.$pristine && newVideoForm.videoUrl.$error.required").
+        ссылку то скопируй, так добавлять не буду
+      input(type='submit', ng-disabled='!newVideoForm.$valid', value='добавить')

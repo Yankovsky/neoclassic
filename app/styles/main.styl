@@ -2,7 +2,7 @@
 
 body
   font-family "Open Sans", "Arial", "Helvetica", sans-serif
-  overflow-y: scroll;
+  overflow-y scroll;
 
 .active
   pointer-events none
@@ -19,9 +19,15 @@ body
 ul, ol
   padding 0
   margin 0
+  list-style none
 
 input
   box-sizing border-box
+  &[type='text']
+    width 200px
+
+.error
+  color #ff7f50
 
 article
   margin-top 20px
@@ -46,7 +52,6 @@ header
     ul
       li
         display inline-block
-        list-style none
         padding-left 30px
         a
           text-decoration none
