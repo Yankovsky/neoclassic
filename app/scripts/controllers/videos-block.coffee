@@ -12,6 +12,8 @@ angular.module('neoclassicApp')
       activeIndex = Math.min(previousActiveIndex, videosGroupedByFour.length - 1)
       # carousel stop working after reinit https://github.com/angular-ui/bootstrap/issues/1513
       # videosGroupedByFour[activeIndex].active = true
+      # angular.element('.videos-block .carousel-indicators').scope().select(videosGroupedByFour[activeIndex])
+
       $scope.videosGroupedByFour = videosGroupedByFour
 
     $http.get('/api/videos').success (videos) ->

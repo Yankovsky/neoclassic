@@ -18,11 +18,7 @@ html.no-js
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    link(rel='stylesheet', type='text/css', href='styles/main.css')
-    link(rel='stylesheet', type='text/css', href='styles/admin-bar.css')
-    link(rel='stylesheet', type='text/css', href='styles/carousel.css')
-    link(rel='stylesheet', type='text/css', href='styles/slider.css')
-    link(rel='stylesheet', type='text/css', href='styles/videos-block.css')
+    link(rel='stylesheet', type='text/css', href='styles/index.css')
     <!-- endbuild -->
   body(ng-app="neoclassicApp")
     //[if lt IE 7]>
@@ -35,7 +31,7 @@ html.no-js
     // Add your site or application content here
     div.busy-indicator(ng-show='pageIsBusy', ng-controller='PageIsBusyCtrl')
     include partials/admin-bar
-    include partials/navbar
+    include partials/header
     div(class="container" ng-view)
     include partials/footer
     script.
@@ -59,13 +55,14 @@ html.no-js
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/navbar.js"></script>
+    <script src="scripts/controllers/header.js"></script>
     <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/videos-block.js"></script>
     <script src="scripts/controllers/slider.js"></script>
     <script src="scripts/controllers/settings.js"></script>
     <script src="scripts/controllers/admin-bar.js"></script>
     <script src="scripts/controllers/page-is-busy.js"></script>
+    <script src="scripts/controllers/schedule.js"></script>
     <script src="scripts/services/auth.js"></script>
     <script src="scripts/services/youtube-player-svc.js"></script>
     <script src="scripts/services/logging-svc.js"></script>

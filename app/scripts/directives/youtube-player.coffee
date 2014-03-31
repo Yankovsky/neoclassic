@@ -4,11 +4,12 @@ angular.module('neoclassicApp')
     restrict: 'E',
     scope: {},
     link: (scope, element, attrs) ->
+      # dimensions: 16/9, menu height = 30px
       scope.destroyed = false
       initYoutubePlayer = ->
         player = new YT.Player("youtube-player",
           height: "280"
-          width: "470"
+          width: "440"
           videoId: "-XCI25XoQxY"
           events:
             onReady: ->

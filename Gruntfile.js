@@ -56,7 +56,7 @@ module.exports = function(grunt) {
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.styl'],
-        tasks: ['newer:stylus', 'autoprefixer']
+        tasks: ['stylus', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= yeoman.app %>/styles',
-            src: '{,*/}*.styl',
+            src: 'index.styl',
             dest: '.tmp/styles/',
             ext: '.css'
           }
@@ -145,7 +145,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '.tmp/styles/',
-            src: '{,*/}*.css',
+            src: 'index.css',
             dest: '.tmp/styles/'
           }
         ]

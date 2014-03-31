@@ -1,14 +1,13 @@
-@import 'nib'
-
 .videos-block
-  color #fff
+  color white
   height 280px
+  margin-bottom $margin
   > *
     float left
-    width 50%
+  .youtube-player
+    margin-right $margin
   .carousel
-    height 100%
-    margin-bottom 20px
+    width 500px
     box-sizing border-box
 
     > .carousel-indicators
@@ -21,5 +20,27 @@
           float left
           display block
           width 50%
+          position relative
+          height 140px
+          &:hover
+            .tooltip
+              opacity 1
           img
-            width 100%
+            width 250px
+            height 140px
+          .play
+            margin auto
+            absolute left top right bottom
+            circle(30px)
+            background $light-green url('../images/play-small.png') no-repeat 10px 7px
+          .tooltip
+            absolute top -20px left right
+            margin auto
+            color white
+            font-size 12px
+            padding 2px
+            text-align center
+            width 150px
+            background $gray
+            opacity 0
+            transition opacity 0.2s ease-out

@@ -1,0 +1,42 @@
+header
+  height 60px
+  background $gray
+  margin-bottom $margin
+  *
+    height 60px
+    line-height 60px
+  .logo
+    background $dark-gray url('../images/logo.png') no-repeat center
+    width 155px
+    float left
+  nav
+    float left
+    ul
+      li
+        display inline-block
+        padding-left 25px
+        a
+          text-decoration none
+          color white
+          font-size 16px
+          &.active, &:hover
+            color $light-green
+  .radio
+    display none
+    background $dark-gray url('../images/radio.png') no-repeat left
+    width 235px
+    position relative
+    float right
+    .song
+      color #b9b9b9
+      font-size 12px
+    .play
+      display inline-block
+      circle(30px)
+      background $light-green url('../images/play-small.png') no-repeat center
+  .search-form
+    display none
+    width 55px
+    float right
+    input
+      background url('../images/search.png') no-repeat right center

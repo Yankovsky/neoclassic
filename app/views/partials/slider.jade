@@ -4,7 +4,7 @@ article.slider(ng-controller='SliderCtrl')
       img(ng-src='{{slide.image_url}}')
       p {{slide.text}}
       a(ng-href='{{slide.url}}') Подробнее
-div.background-white(ng-show='currentUser')
+div.background-white(ng-if='currentUser')
   form
     label текст
     textarea()

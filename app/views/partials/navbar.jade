@@ -1,9 +1,0 @@
-header(ng-controller='NavbarCtrl')
-  .menu-icon
-  nav
-    ul
-      li(ng-repeat='item in menu')
-        a(ng-href='{{item.link}}', ng-class='{active: isActive(item.link)}') {{item.title}}
-  //audio(id="radio-player", src="http://grooving.me:8017/stream")
-  form.search-form(name='search', ng-submit='search(form)', novalidate)
-    input(name='query', type='text', placeholder='search', value='')

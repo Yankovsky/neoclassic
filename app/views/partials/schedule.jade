@@ -1,0 +1,9 @@
+div.schedule(ng-controller='ScheduleCtrl')
+  article.calendar
+  article.news
+    .content-block
+      .article-icon
+      .content
+        h1 {{news.title}}
+        .text {{news.text}}
+    img(ng-src='{{news.imgUrl}}')

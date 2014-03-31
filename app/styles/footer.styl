@@ -1,0 +1,38 @@
+footer
+  height 225px
+  margin-bottom $margin
+  & > *
+    height 100%
+    float left
+  .contact-info
+    color white
+    box-sizing border-box
+    background $gray
+    width 715px
+    padding 40px 30px
+    font-size 14px
+    position relative
+    margin-right $margin
+    .contact
+      absolute top 50px
+    .phone
+      absolute top 100px
+      padding-left 50px
+      background url('../images/phone.png') no-repeat left center
+    .email
+      absolute top 150px
+      padding-left 50px
+      background url('../images/email.png') no-repeat left center
+      a
+        display block
+    .facebook
+      absolute right 100px top 150px
+      circle(30px)
+      background $light-green url('../images/facebook.png') no-repeat 10px 6px
+    .vk
+      absolute right 50px top 150px
+      circle(30px)
+      background $light-green url('../images/vk.png') no-repeat 10px 6px
+  .qr-code
+    width 225px
+    background $light-green url('../images/qr-code.png') no-repeat center

@@ -1,13 +1,15 @@
 div(ng-controller='VideosBlockCtrl')
   article.videos-block
-    youtube-player
+    youtube-player.youtube-player
     carousel(interval='-1')
       slide(ng-repeat='(i, fourVideos) in videosGroupedByFour', active='fourVideos.active')
         ol.clearfix
-          li(ng-repeat='video in fourVideos', tooltip='{{video.title}}', tooltip-trigger='click')
+          li(ng-repeat='video in fourVideos')
             a(href='', ng-click='play(video.videoId)')
-              img(ng-src='{{video.thumbnailUrl}}', width='240', height='135')
-  div.background-white(ng-show='currentUser')
+              img(ng-src='{{video.thumbnailUrl}}')
+              .play
+            .tooltip {{video.title}}
+  div.background-white(ng-if='currentUser')
     ol
       li(ng-repeat='(i, fourVideos) in videosGroupedByFour') {{i}}
         ol
