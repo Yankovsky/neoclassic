@@ -7,6 +7,7 @@
   .youtube-player
     margin-right $margin
   .carousel
+    height 100%
     width 500px
     box-sizing border-box
 
@@ -16,15 +17,16 @@
     > .carousel-inner
       > .item
         height 100%
+        &.active
+          li:hover
+            .tooltip
+              opacity 1
         ol li
           float left
           display block
           width 50%
           position relative
           height 140px
-          &:hover
-            .tooltip
-              opacity 1
           img
             width 250px
             height 140px
@@ -34,13 +36,13 @@
             circle(30px)
             background $light-green url('../images/play-small.png') no-repeat 10px 7px
           .tooltip
-            absolute top -20px left right
+            absolute top left right
             margin auto
             color white
             font-size 12px
             padding 2px
             text-align center
-            width 150px
-            background $gray
+            width 160px
+            background rgba($gray, 0.75)
             opacity 0
             transition opacity 0.2s ease-out

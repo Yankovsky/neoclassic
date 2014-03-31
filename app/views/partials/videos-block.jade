@@ -8,7 +8,7 @@ div(ng-controller='VideosBlockCtrl')
             a(href='', ng-click='play(video.videoId)')
               img(ng-src='{{video.thumbnailUrl}}')
               .play
-            .tooltip {{video.title}}
+              .tooltip {{video.title}}
   div.background-white(ng-if='currentUser')
     ol
       li(ng-repeat='(i, fourVideos) in videosGroupedByFour') {{i}}
