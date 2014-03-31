@@ -7,8 +7,17 @@ angular.module('neoclassicApp')
       title: 'Афиша'
       link: '/schedule'
     ,
+      title: 'Новости'
+      link: '/news'
+    ,
+      title: 'Биография'
+      link: '/bio'
+    ,
+      title: 'Гостевая'
+      link: '/guestbook'
+    ,
       title: 'Контакты'
-      link: '/contacts'
+      link: '/#contact-info'
     ]
 
     $scope.isActive = (route) ->

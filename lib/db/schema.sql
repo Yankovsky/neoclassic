@@ -33,4 +33,30 @@ CREATE TABLE users (
 DROP INDEX IF EXISTS users_lower_email_unique;
 CREATE UNIQUE INDEX users_lower_email_unique ON users (LOWER(email));
 
+DROP TABLE IF EXISTS events;
+CREATE TABLE events (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR NOT NULL,
+    text TEXT NOT NULL,
+    url_slug VARCHAR NOT NULL,
+    image_url VARCHAR NOT NULL,
+    thumbnail_url VARCHAR NOT NULL,
+    datetime TIMESTAMP NOT NULL
+);
+
+DROP INDEX IF EXISTS events_datetime_index;
+CREATE UNIQUE INDEX events_datetime_index ON events(datetime);
+
+DROP TABLE IF EXISTS news;
+CREATE TABLE news (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR NOT NULL,
+    text TEXT NOT NULL,
+    url_slug VARCHAR NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT(NOW())
+);
+
+DROP INDEX IF EXISTS news_created_at_index;
+CREATE UNIQUE INDEX news_created_at_index ON news(created_at);
+
 COMMIT;

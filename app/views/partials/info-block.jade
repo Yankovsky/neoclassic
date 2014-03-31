@@ -1,0 +1,8 @@
+div(ng-controller='LatestInfoCtrl')
+  .latest-news
+    ol
+      li(ng-repeat='item in news',  ng-class-even='"even"')
+        a(ng-href='{{item.url}}') {{item.title}}
+        div {{item.text}}
+    a(href='/news') посмотреть все новости
+  include event

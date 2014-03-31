@@ -1,6 +1,6 @@
 angular.module('neoclassicApp')
-  .controller 'ScheduleCtrl', ($scope, $http) ->
-    $scope.schedule = [
+  .controller 'EventsCtrl', ($scope, $http) ->
+    $scope.events = [
       {
         text: 'Среда, 2 апреля - Концерт в Эрарте',
         url: '/schedule/erarta'
