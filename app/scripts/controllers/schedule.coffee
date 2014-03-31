@@ -1,12 +1,20 @@
 angular.module('neoclassicApp')
   .controller 'ScheduleCtrl', ($scope, $http) ->
-    $scope.news = {
-      title: 'ДОЛГОЖДАННЫЙ КОНЦЕРТ'
-      text: '
-Внимание! Только один день в Музее современного искусства “Эрарта”
-состоится долгожданное выступление Дмитрия Янковского
-в сопровождении струнного квинтета Corelli. Билеты можно приобрести в кассе Музея...',
-      imgUrl: 'https://s3-eu-west-1.amazonaws.com/neoclassic/news/NeoClassic-Afisha-Erarta-(18safsf.jpg'
-    }
-#    $http.get('/api/news').success (news) ->
-#      $scope.awesomeThings = awesomeThings
+    $scope.schedule = [
+      {
+        text: 'Среда, 2 апреля - Концерт в Эрарте',
+        url: '/schedule/erarta'
+      }
+      {
+        text: 'Пятница, 4 апреля - Концерт в Другом месте',
+        url: '/schedule/drugoe'
+      }
+      {
+        text: 'Понедельник, 16 апреля - Опять концерт',
+        url: '/schedule/drugoe'
+      }
+      {
+        text: 'Суббота, 1 мая - Пыщ пыщ',
+        url: '/schedule/drugoe'
+      }
+    ]

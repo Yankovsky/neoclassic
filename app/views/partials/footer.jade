@@ -1,3 +1,17 @@
+div.schedule(ng-controller='ScheduleCtrl')
+  ol
+    li(ng-repeat='item in schedule',  ng-class-even='"even"')
+      a(ng-href='{{item.url}}') {{item.text}}
+  a(href='/schedule') посмотреть все события
+
+article.last-news(ng-controller='LastNewsCtrl')
+  .content-block
+    .article-icon
+    .content
+      h1 {{news.title}}
+      .text {{news.text}}
+  img(ng-src='{{news.imgUrl}}')
+
 footer
   .contact-info
     .contact Мария Кожамкулова арт-директор
