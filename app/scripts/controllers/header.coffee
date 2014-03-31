@@ -1,9 +1,6 @@
 angular.module('neoclassicApp')
 .controller 'NavbarCtrl', ($scope, $location) ->
     $scope.menu = [
-      title: 'Главная'
-      link: '/'
-    ,
       title: 'О проекте'
       link: '/about'
     ,
