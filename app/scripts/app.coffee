@@ -8,16 +8,20 @@ angular.module('neoclassicApp', [
 .config ($routeProvider, $locationProvider, $httpProvider, $anchorScrollProvider) ->
     $routeProvider
     .when '/',
-        templateUrl: 'partials/main'
+        templateUrl: 'partials/main',
+        reloadOnSearch: false
     .when '/login',
         templateUrl: 'partials/login'
-        controller: 'LoginCtrl'
+        controller: 'LoginCtrl',
+        reloadOnSearch: false
     .when '/settings',
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
-        authenticate: true
+        authenticate: true,
+        reloadOnSearch: false
     .when '/about',
-        templateUrl: 'partials/about'
+        templateUrl: 'partials/about',
+        reloadOnSearch: false
     .otherwise
         redirectTo: '/'
 

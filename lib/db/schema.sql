@@ -17,7 +17,6 @@ CREATE TABLE videos (
     thumbnail_url VARCHAR NOT NULL,
     position INTEGER NOT NULL
 );
-
 DROP INDEX IF EXISTS videos_position_index;
 CREATE INDEX videos_position_index ON videos (position);
 
@@ -29,7 +28,6 @@ CREATE TABLE users (
     hashed_password VARCHAR NOT NULL,
     salt VARCHAR NOT NULL
 );
-
 DROP INDEX IF EXISTS users_lower_email_unique;
 CREATE UNIQUE INDEX users_lower_email_unique ON users (LOWER(email));
 
@@ -43,7 +41,6 @@ CREATE TABLE events (
     thumbnail_url VARCHAR NOT NULL,
     datetime TIMESTAMP NOT NULL
 );
-
 DROP INDEX IF EXISTS events_datetime_index;
 CREATE UNIQUE INDEX events_datetime_index ON events(datetime);
 
@@ -55,7 +52,6 @@ CREATE TABLE news (
     url_slug VARCHAR NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT(NOW())
 );
-
 DROP INDEX IF EXISTS news_created_at_index;
 CREATE UNIQUE INDEX news_created_at_index ON news(created_at);
 
