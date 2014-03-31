@@ -1,5 +1,5 @@
 angular.module('neoclassicApp')
-.controller 'NavbarCtrl', ($scope, $location) ->
+.controller 'NavbarCtrl', ($scope, $location, $anchorScroll) ->
     $scope.menu = [
       title: 'О проекте'
       link: '/about'
@@ -15,10 +15,11 @@ angular.module('neoclassicApp')
     ,
       title: 'Гостевая'
       link: '/guestbook'
-    ,
-      title: 'Контакты'
-      link: '/#contact-info'
     ]
+
+    $scope.scrollToContacts = ->
+      $location.hash('contact-info')
+      $anchorScroll()
 
     $scope.isActive = (route) ->
       route is $location.path()

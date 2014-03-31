@@ -5,7 +5,7 @@ angular.module('neoclassicApp', [
   'ngRoute',
   'ui.bootstrap'
 ])
-.config ($routeProvider, $locationProvider, $httpProvider) ->
+.config ($routeProvider, $locationProvider, $httpProvider, $anchorScrollProvider) ->
     $routeProvider
     .when '/',
         templateUrl: 'partials/main'
@@ -32,6 +32,9 @@ angular.module('neoclassicApp', [
         else
           $q.reject response
     ]
+
+    $anchorScrollProvider.disableAutoScrolling()
+
 .run ($rootScope, $location, Auth) ->
   $rootScope.$on '$routeChangeStart', (event, next) ->
     $location.path '/login' if next.authenticate and not Auth.isLoggedIn() and false

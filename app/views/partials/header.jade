@@ -4,6 +4,8 @@ header(ng-controller='NavbarCtrl')
     ul
       li(ng-repeat='item in menu')
         a(ng-href='{{item.link}}', ng-class='{active: isActive(item.link)}') {{item.title}}
+      li
+        a(href='', ng-click='scrollToContacts()') Контакты
   form.search-form(name='search', ng-submit='search(form)', novalidate)
     input(name='query', type='text', placeholder='search', value='')
   .radio
