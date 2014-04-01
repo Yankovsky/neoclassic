@@ -66,4 +66,13 @@ CREATE TABLE pages (
 DROP INDEX IF EXISTS pages_lower_name_unique;
 CREATE UNIQUE INDEX pages_lower_name_unique ON pages (LOWER(name));
 
+DROP TABLE IF EXISTS replies;
+CREATE TABLE replies (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    email VARCHAR NOT NULL,
+    text TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT(NOW())
+);
+
 COMMIT;

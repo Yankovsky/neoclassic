@@ -1,0 +1,18 @@
+.guestbook(ng-controller='GuestbookCtrl')
+  ol
+    li(ng-repeat='reply in replies')
+      div {{reply.createdAt | date}}
+      div {{reply.name}}
+      div {{reply.text}}
+  form(name='newReplyForm', ng-submit='newReplyForm.$valid && create()', novalidate)
+    label Имя
+    input(type='text', name='name', ng-model='newReply.name', autofocus, required, placeholder='ваше имя')
+    span.error(ng-show="!newReplyForm.name.$pristine && newReplyForm.name.$error.required") Введите имя
+    label Email
+    input(type='email', name='email', ng-model='newReply.email', required, placeholder='email')
+    span.error(ng-show="!newReplyForm.email.$pristine && newReplyForm.email.$error.required") Введите email
+    span.error(ng-show="!newReplyForm.email.$pristine && newReplyForm.$error.email") Невалидный email
+    label Сообщение
+    textarea(name='text', ng-model='newReply.text', required, placeholder='текст сообщения')
+    span.error(ng-show="!newReplyForm.text.$pristine && newReplyForm.text.$error.required") Введите текст сообщения
+    input(type='submit', ng-disabled='!newReplyForm.$valid', value='добавить')

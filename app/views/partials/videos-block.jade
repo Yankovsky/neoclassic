@@ -19,6 +19,5 @@ div.margin-bottom(ng-controller='VideosBlockCtrl')
             a(href='', ng-click='move(video, 1)', ng-hide='$parent.$last && $last') v
     form(name='newVideoForm', ng-submit='newVideoForm.$valid && add()', novalidate)
       input(name='videoUrl', type='text', ng-model='videoUrl', required, placehoder='скопируй ссылку с youtube сюда')
-      span.error(ng-show="!newVideoForm.videoUrl.$pristine && newVideoForm.videoUrl.$error.required").
-        ссылку то скопируй, так добавлять не буду
+      span.error(ng-show="!newVideoForm.videoUrl.$pristine && newVideoForm.videoUrl.$error.required") ссылку то скопируй, так добавлять не буду
       input(type='submit', ng-disabled='!newVideoForm.$valid', value='добавить')

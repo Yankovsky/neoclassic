@@ -9,19 +9,31 @@ angular.module('neoclassicApp', [
     $routeProvider
     .when '/',
         templateUrl: 'partials/main',
-        reloadOnSearch: false
+        reloadOnSearch: false,
+        caseInsensitiveMatch: true
     .when '/login',
         templateUrl: 'partials/login'
         controller: 'LoginCtrl',
-        reloadOnSearch: false
+        reloadOnSearch: false,
+        caseInsensitiveMatch: true
     .when '/settings',
         templateUrl: 'partials/settings'
         controller: 'SettingsCtrl'
         authenticate: true,
-        reloadOnSearch: false
-    .when '/:pageName',
+        reloadOnSearch: false,
+        caseInsensitiveMatch: true
+    .when '/about',
         templateUrl: 'partials/page',
-        reloadOnSearch: false
+        reloadOnSearch: false,
+        caseInsensitiveMatch: true
+    .when '/biography',
+        templateUrl: 'partials/page',
+        reloadOnSearch: false,
+        caseInsensitiveMatch: true
+    .when '/guestbook',
+        templateUrl: 'partials/guestbook',
+        reloadOnSearch: false,
+        caseInsensitiveMatch: true
     .otherwise
         redirectTo: '/'
 
