@@ -1,4 +1,4 @@
-article.slider(ng-controller='SliderCtrl')
+article.slider.margin-bottom(ng-controller='SliderCtrl')
   carousel(interval='8000')
     slide(ng-repeat='slide in slides', active='slide.active')
       img(ng-src='{{slide.image_url}}')

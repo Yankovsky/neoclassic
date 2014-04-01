@@ -1,42 +1,46 @@
 footer
   height 225px
-  margin-bottom $margin
-  & > *
+  color white
+  font-size 14px
+  line-height 16px
+  > *
     height 100%
     float left
-  .contact-info
-    color white
-    box-sizing border-box
+    > *
+      padding-left 35px
+      margin-bottom 15px
+  .copyright
     background $gray
-    width 715px
-    padding 40px 30px
-    font-size 14px
-    position relative
-    margin-right $margin
-    .contact
-      absolute top 50px
-      font-size 16px
-    .phone
-      absolute top 100px
-      padding-left 50px
-      background url('../images/phone.png') no-repeat left center
-    .email
-      absolute top 150px
-      padding-left 50px
-      background url('../images/email.png') no-repeat left 5px
+    width 300px
+    padding 70px 55px 10px 20px
+    .a2
+      background url('../images/a2.png') left 4px
+  .contact-info
+    padding 25px 30px 10px 20px
+    background $dark-gray
+    width 395px
+    .social
       a
-        color white
-        display block
+        float left
+        margin-right 25px
+        circle(30px)
+        background $light-green 10px 6px
         &:hover
-          color $light-green
-    .facebook
-      absolute right 100px top 150px
-      circle(30px)
-      background $light-green url('../images/facebook.png') no-repeat 10px 6px
-    .vk
-      absolute right 50px top 150px
-      circle(30px)
-      background $light-green url('../images/vk.png') no-repeat 10px 6px
+          background-color $blue
+      .facebook
+        background-image url('../images/facebook-gray.png')
+        &:hover
+          background-image url('../images/facebook-white.png')
+      .vk
+        background-image url('../images/vk-gray.png')
+        &:hover
+          background-image url('../images/vk-white.png')
+    .phone
+      background url('../images/phone.png') left center
+    .email
+      background url('../images/email.png') left center
+    .contact
+      background url('../images/contact.png') left center
   .qr-code
     width 225px
-    background $light-green url('../images/qr-code.png') no-repeat center
+    background $light-green url('../images/qr-code.png') center

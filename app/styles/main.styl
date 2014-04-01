@@ -5,6 +5,26 @@ body
   font-family "Open Sans", "Arial", "Helvetica", sans-serif
   overflow-y scroll;
 
+sup
+  line-height 0
+  vertical-align super
+  font-size 10px
+  
+*
+  box-sizing border-box
+  background-repeat no-repeat !important
+a
+  color white
+  display block
+  &:hover
+    color $light-green
+
+.margin-bottom
+  margin-bottom $margin
+
+.margin-right
+  margin-right $margin
+
 .active
   pointer-events none
   cursor default
@@ -23,7 +43,6 @@ ul, ol
   list-style none
 
 input
-  box-sizing border-box
   &[type='text']
     width 200px
 

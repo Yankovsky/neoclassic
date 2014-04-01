@@ -1,5 +1,5 @@
-div(ng-controller='LatestInfoCtrl').clearfix
-  .latest-news
+div.margin-bottom(ng-controller='LatestInfoCtrl').clearfix
+  .latest-news.margin-right
     ol
       li(ng-repeat='item in news',  ng-class-even='"even"')
         a(ng-href='{{item.url}}') {{item.title}}
