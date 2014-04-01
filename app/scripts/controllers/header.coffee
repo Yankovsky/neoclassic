@@ -11,7 +11,7 @@ angular.module('neoclassicApp')
       link: '/news'
     ,
       title: 'Биография'
-      link: '/bio'
+      link: '/biography'
     ,
       title: 'Гостевая'
       link: '/guestbook'

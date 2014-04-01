@@ -19,8 +19,8 @@ angular.module('neoclassicApp', [
         controller: 'SettingsCtrl'
         authenticate: true,
         reloadOnSearch: false
-    .when '/about',
-        templateUrl: 'partials/about',
+    .when '/:pageName',
+        templateUrl: 'partials/page',
         reloadOnSearch: false
     .otherwise
         redirectTo: '/'

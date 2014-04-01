@@ -55,4 +55,15 @@ CREATE TABLE news (
 DROP INDEX IF EXISTS news_created_at_index;
 CREATE UNIQUE INDEX news_created_at_index ON news(created_at);
 
+DROP TABLE IF EXISTS pages;
+CREATE TABLE pages (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    text TEXT NOT NULL,
+    top_image_url VARCHAR,
+    right_image_url VARCHAR
+);
+DROP INDEX IF EXISTS pages_lower_name_unique;
+CREATE UNIQUE INDEX pages_lower_name_unique ON pages (LOWER(name));
+
 COMMIT;

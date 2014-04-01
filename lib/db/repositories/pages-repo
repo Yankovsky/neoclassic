@@ -1,0 +1,17 @@
+var db = require('./../db')
+
+exports.get = function(name, callback) {
+  db.single({
+    name: 'get_page_by_name',
+    text: 'SELECT text, top_image_url as "topImageUrl", right_image_url as "rightImageUrl" FROM pages WHERE LOWER(name) = $1',
+    values: [name]
+  }, callback)
+}
+
+exports.update = function(name, text, topImageUrl, rightImageUrl, callback) {
+  db.single({
+    name: 'update_page',
+    text: 'UPDATE pages SET text = $2, top_image_url = $3, right_image_url = $4 WHERE LOWER(name) = $1',
+    values: [name, text, topImageUrl, rightImageUrl]
+  }, callback)
+}
