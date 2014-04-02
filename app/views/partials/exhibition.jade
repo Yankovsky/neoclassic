@@ -1,0 +1,6 @@
+img(ng-src='https://s3-eu-west-1.amazonaws.com/neoclassic/news/exhibition.png', style='margin-bottom: 20px')
+.slider(ng-controller='ExhibitionCtrl')
+  carousel(interval='8000', style='height: 540px; margin-bottom: 20px')
+    slide(ng-repeat='slide in slides', active='slide.active')
+      div {{slide}}
+      img(ng-src='{{slide.imageUrl}}')
