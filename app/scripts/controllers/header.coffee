@@ -3,18 +3,18 @@ angular.module('neoclassicApp')
     $scope.menu = [
       title: 'О проекте'
       link: '/about'
-    ,
-      title: 'Афиша'
-      link: '/schedule'
-    ,
-      title: 'Новости'
-      link: '/news'
+#    ,
+#      title: 'Афиша'
+#      link: '/schedule'
+#    ,
+#      title: 'Новости'
+#      link: '/news'
     ,
       title: 'Биография'
       link: '/biography'
-    ,
-      title: 'Гостевая'
-      link: '/guestbook'
+#    ,
+#      title: 'Гостевая'
+#      link: '/guestbook'
     ]
 
     $scope.scrollToContacts = ->

@@ -30,10 +30,18 @@ angular.module('neoclassicApp', [
         templateUrl: 'partials/page',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
-    .when '/guestbook',
-        templateUrl: 'partials/guestbook',
+    .when '/news/exhibition',
+        templateUrl: 'partials/exhibition',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
+    .when '/events/erarta',
+        templateUrl: 'partials/erarta',
+        reloadOnSearch: false,
+        caseInsensitiveMatch: true
+#    .when '/guestbook',
+#        templateUrl: 'partials/guestbook',
+#        reloadOnSearch: false,
+#        caseInsensitiveMatch: true
     .otherwise
         redirectTo: '/'
 

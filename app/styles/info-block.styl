@@ -2,6 +2,33 @@
   width 300px
   height 300px
   float left
-  background white
-  ol li.even
-    background #ddd
+  background $light-green
+  color white
+  font-size 14px
+  position relative
+  .news-icon
+    absolute top 40px
+    width 40px
+    height 40px
+    background white url('../images/news.png') center
+  .content
+    > *
+      padding 0 30px 0 60px
+    ol, a.all-news
+      border-top 1px solid #bbce5f
+    header
+      padding-top 42px
+      height 105px
+      font-size 24px
+    ol li
+      height 135px
+      padding-top 20px
+      .date, a
+        color $gray
+      a:hover
+        color white
+    a.all-news
+      height 60px
+      line-height 60px
+      &:hover
+        color $gray

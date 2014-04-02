@@ -4,7 +4,7 @@
       div {{reply.createdAt | date}}
       div {{reply.name}}
       div {{reply.text}}
-  form(name='newReplyForm', ng-submit='newReplyForm.$valid && create()', novalidate)
+  form(name='newReplyForm', ng-submit='newReplyForm.$valid && create() && newReplyForm.$setPristine()', novalidate)
     label Имя
     input(type='text', name='name', ng-model='newReply.name', autofocus, required, placeholder='ваше имя')
     span.error(ng-show="!newReplyForm.name.$pristine && newReplyForm.name.$error.required") Введите имя

@@ -9,4 +9,3 @@ angular.module('neoclassicApp')
       $http.post('/api/replies', newReply).success () ->
         $scope.replies.unshift(newReply)
         $scope.newReply = {}
-        $scope.newReplyForm.$setPristine()

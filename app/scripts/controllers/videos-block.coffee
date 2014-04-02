@@ -16,18 +16,20 @@ angular.module('neoclassicApp')
 
       $scope.videosGroupedByFour = videosGroupedByFour
 
+    $scope.newVideo = {}
+
     $http.get('/api/videos').success (videos) ->
       $scope.videos = videos
       populateVideos()
-    $scope.videoUrl = 'http://www.youtube.com/watch?v=Sii4WAZXEoo'
 
     $scope.play = (id) ->
       youtubePlayerSvc.play(id)
 
     $scope.add = ->
       $http.post('/api/videos',
-        videoUrl: $scope.videoUrl
+        videoUrl: $scope.newVideo.url
       ).success (savedVideo) ->
+        $scope.newVideo = {}
         $scope.videos.push(savedVideo)
         populateVideos()
 

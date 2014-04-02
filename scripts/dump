@@ -1,0 +1,1 @@
+pg_dump -Fc --no-acl --no-owner -h localhost -Upostgres neoclassicdev > mydb.dump

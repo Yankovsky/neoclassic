@@ -36,6 +36,7 @@ CREATE TABLE events (
     id SERIAL PRIMARY KEY,
     title VARCHAR NOT NULL,
     text TEXT NOT NULL,
+    short_text TEXT NOT NULL,
     url_slug VARCHAR NOT NULL,
     image_url VARCHAR NOT NULL,
     thumbnail_url VARCHAR NOT NULL,
@@ -49,6 +50,7 @@ CREATE TABLE news (
     id SERIAL PRIMARY KEY,
     title VARCHAR NOT NULL,
     text TEXT NOT NULL,
+    short_text TEXT NOT NULL,
     url_slug VARCHAR NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT(NOW())
 );
