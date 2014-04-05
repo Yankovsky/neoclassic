@@ -348,6 +348,7 @@ module.exports = function(grunt) {
               'yandex_61e86b214024b0ce.html',
               'wmail_dceb78114afc4bde.html',
               'sitemap.xml',
+              'BingSiteAuth.xml',
               'bower_components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/**/*'
