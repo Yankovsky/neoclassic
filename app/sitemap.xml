@@ -1,0 +1,22 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://www.neoclassic.pro/about</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.neoclassic.pro/events/erarta</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.neoclassic.pro/news/exhibition</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.neoclassic.pro/biography</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://www.neoclassic.pro/</loc>
+        <changefreq>daily</changefreq>
+    </url>
+</urlset>

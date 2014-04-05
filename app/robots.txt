@@ -3,3 +3,4 @@
 User-agent: *
 Disallow: /login
 Host: www.neoclassic.pro
+Sitemap: http://www.neoclassic.pro/sitemap.xml
