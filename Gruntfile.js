@@ -346,6 +346,7 @@ module.exports = function(grunt) {
               '.htaccess',
               'google9959b1fe52391372.html',
               'yandex_61e86b214024b0ce.html',
+              'wmail_.html',
               'bower_components/**/*',
               'images/{,*/}*.{webp}',
               'fonts/**/*'

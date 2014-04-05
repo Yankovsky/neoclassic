@@ -17,6 +17,7 @@ html.no-js(ng-app="neoclassicApp")
     meta(name='keywords', content='кроссовер синтез музыка опера')
     meta(name='fragment', content='!')
     meta(name="viewport", content="width=device-width")
+    meta(name='yandex-verification', content='70674d9f35060f83')
     // Place favicon.ico and apple-touch-icon.png in the root directory
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <!-- build:css(app) styles/vendor.css -->
@@ -48,6 +49,13 @@ html.no-js(ng-app="neoclassicApp")
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
           ga('create', 'UA-49275990-1', 'neoclassic.pro');
       ga('send', 'pageview');
+    // Yandex.Metrika counter
+    script(type='text/javascript').
+      (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter24556697 = new Ya.Metrika({id:24556697, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+    noscript
+      div
+        img(src='//mc.yandex.ru/watch/24556697', style='position: absolute; left: -9999px;', alt='')
+    //Yandex.Metrika counter
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/lodash/dist/lodash.js"></script>
