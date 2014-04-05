@@ -1,0 +1,101 @@
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at Cursor.nextObject (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/scope.js:22:20)
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at Db._executeQueryCommand (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/db.js:1802:21)
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at MongoStore.get (/app/node_modules/connect-mongo/lib/connect-mongo.js:211:10)
+2014-04-04T12:50:56.990015+00:00 app[web.1]: Error: no open connections
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at Collection.findOne (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/collection/query.js:145:10)
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at Cursor.nextObject (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/cursor.js:729:13)
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at /app/node_modules/connect-mongo/lib/connect-mongo.js:212:18
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at MongoStore._get_collection (/app/node_modules/connect-mongo/lib/connect-mongo.js:148:21)
+2014-04-04T12:50:56.992678+00:00 heroku[router]: at=info method=GET path=/ host=neoclassic.herokuapp.com request_id=92da9f25-39f1-4446-bd39-ef31f08f21a8 fwd="93.100.12.157" dyno=web.1 connect=1ms service=4ms status=500 bytes=206
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at Object.session [as handle] (/app/node_modules/express/node_modules/connect/lib/middleware/session.js:311:11)
+2014-04-04T12:50:56.990263+00:00 app[web.1]:     at Object.cookieParser [as handle] (/app/node_modules/express/node_modules/connect/lib/middleware/cookieParser.js:65:5)
+2014-04-04T12:50:56.990263+00:00 app[web.1]: [90mGET / [31m500 [90m2ms - 21b[0m
+2014-04-04T12:50:56.990015+00:00 app[web.1]:     at next (/app/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+2014-04-04T12:51:26.091861+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=669efd81-c8e4-49a2-81df-cbd13167b1be fwd="93.100.12.157" dyno=web.1 connect=1ms service=4ms status=500 bytes=206
+2014-04-04T12:51:26.088036+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T12:51:57.319282+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=fc0bc317-8df1-4351-bcbe-f54f13cb7855 fwd="93.100.12.157" dyno=web.1 connect=10ms service=5ms status=500 bytes=206
+2014-04-04T12:51:57.314209+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T12:52:07.032093+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=3e5d4646-0df3-442a-9154-f07d9ad7efce fwd="93.100.12.157" dyno=web.1 connect=1ms service=4ms status=500 bytes=206
+2014-04-04T12:52:07.028149+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T12:52:16.776078+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=1766be8e-7027-49a5-a091-08f3f42bf4a7 fwd="93.100.12.157" dyno=web.1 connect=2ms service=4ms status=500 bytes=206
+2014-04-04T12:52:16.772899+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T12:56:05.875136+00:00 app[web.1]: Error: no open connections
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at Db._executeQueryCommand (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/db.js:1802:21)
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at Collection.findOne (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/collection/query.js:145:10)
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at Cursor.nextObject (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/cursor.js:729:13)
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at MongoStore.get (/app/node_modules/connect-mongo/lib/connect-mongo.js:211:10)
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at Cursor.nextObject (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/scope.js:22:20)
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at Object.session [as handle] (/app/node_modules/express/node_modules/connect/lib/middleware/session.js:311:11)
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at next (/app/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at /app/node_modules/connect-mongo/lib/connect-mongo.js:212:18
+2014-04-04T12:56:05.875136+00:00 app[web.1]:     at MongoStore._get_collection (/app/node_modules/connect-mongo/lib/connect-mongo.js:148:21)
+2014-04-04T12:56:05.875305+00:00 app[web.1]:     at Object.cookieParser [as handle] (/app/node_modules/express/node_modules/connect/lib/middleware/cookieParser.js:65:5)
+2014-04-04T12:56:05.886561+00:00 heroku[router]: at=info method=GET path=/ host=neoclassic.herokuapp.com request_id=1f4e1cbe-93da-48ca-b3a2-0f27730f6335 fwd="93.100.12.157" dyno=web.1 connect=61ms service=15ms status=500 bytes=206
+2014-04-04T12:56:05.875761+00:00 app[web.1]: [90mGET / [31m500 [90m1ms - 21b[0m
+2014-04-04T12:56:06.235214+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=1a86cf10-ce62-4c16-9d5b-7d368b8400d6 fwd="93.100.12.157" dyno=web.1 connect=1ms service=3ms status=500 bytes=206
+2014-04-04T12:56:06.228858+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T12:56:26.760213+00:00 heroku[api]: Scale to web=0 by yankovskyandrey@gmail.com
+2014-04-04T12:56:26.910408+00:00 heroku[web.1]: State changed from up to down
+2014-04-04T12:56:29.544038+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2014-04-04T12:56:31.573593+00:00 heroku[web.1]: Process exited with status 143
+2014-04-04T12:56:32.571038+00:00 heroku[api]: Scale to web=1 by yankovskyandrey@gmail.com
+2014-04-04T12:56:35.704828+00:00 heroku[web.1]: Starting process with command `node server.js`
+2014-04-04T12:56:37.034245+00:00 app[web.1]: Express server listening on port 45553 in production mode
+2014-04-04T12:56:37.574189+00:00 heroku[web.1]: State changed from starting to up
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at /app/node_modules/connect-mongo/lib/connect-mongo.js:161:23
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at /app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/db.js:1806:9
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at /app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/db.js:1404:28
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at __executeQueryCommand (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/db.js:1636:44)
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at /app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/db.js:1542:30
+2014-04-04T12:56:38.017058+00:00 app[web.1]: Error: Error setting TTL index on collection : sessions
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at /app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/cursor.js:159:22
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at commandHandler (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/cursor.js:678:48)
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at Cursor.nextObject (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/cursor.js:729:13)
+2014-04-04T12:56:38.017058+00:00 app[web.1]:     at Db._executeQueryCommand (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/db.js:1805:7)
+2014-04-04T12:56:38.017339+00:00 app[web.1]:     at Cursor.toArray (/app/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/cursor.js:158:10)
+2014-04-04T12:56:38.020038+00:00 heroku[router]: at=info method=GET path=/ host=neoclassic.herokuapp.com request_id=c2fd5d80-e8b9-42de-95f5-3dad2eab521d fwd="93.100.12.157" dyno=web.1 connect=2ms service=23ms status=500 bytes=206
+2014-04-04T12:56:38.928443+00:00 app[web.1]: db connection open
+2014-04-04T12:56:38.020705+00:00 app[web.1]: [90mGET / [31m500 [90m17ms - 21b[0m
+2014-04-04T12:56:39.242952+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T12:56:39.243845+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=2e738fc7-6279-4a4b-b70f-da704e91a74f fwd="93.100.12.157" dyno=web.1 connect=2ms service=4ms status=500 bytes=206
+2014-04-04T12:57:58.307807+00:00 heroku[router]: at=info method=GET path=/ host=neoclassic.herokuapp.com request_id=246268f8-0ae4-464d-9d68-3d4f8629ed20 fwd="93.100.12.157" dyno=web.1 connect=13ms service=510ms status=200 bytes=2531
+2014-04-04T12:57:58.308698+00:00 app[web.1]: [90mGET / [32m200 [90m501ms[0m
+2014-04-04T12:57:58.538843+00:00 heroku[router]: at=info method=GET path=/styles/701fd917.main.css host=neoclassic.herokuapp.com request_id=74cc5202-a65f-49c6-b084-d1e6eac3a698 fwd="93.100.12.157" dyno=web.1 connect=2ms service=9ms status=200 bytes=2640
+2014-04-04T12:57:58.677502+00:00 heroku[router]: at=info method=GET path=/scripts/6f38aadd.scripts.js host=neoclassic.herokuapp.com request_id=bafd89a9-f92c-4c95-8ec5-335eb3b8c905 fwd="93.100.12.157" dyno=web.1 connect=1ms service=11ms status=200 bytes=4222
+2014-04-04T12:57:58.701918+00:00 heroku[router]: at=info method=GET path=/images/4eea6170.logo.png host=neoclassic.herokuapp.com request_id=9e0d9f7e-4e93-4869-8904-98b2f6f78a11 fwd="93.100.12.157" dyno=web.1 connect=3ms service=10ms status=200 bytes=5478
+2014-04-04T12:57:58.810755+00:00 heroku[router]: at=info method=GET path=/images/3fbaf5a3.radio.png host=neoclassic.herokuapp.com request_id=d08688ca-f2b5-4084-bbb5-0a7ed96d1361 fwd="93.100.12.157" dyno=web.1 connect=2ms service=5ms status=200 bytes=761
+2014-04-04T12:57:58.863000+00:00 heroku[router]: at=info method=GET path=/images/452b8fbe.calendar.png host=neoclassic.herokuapp.com request_id=69ed8f9f-68fc-42bd-9530-86feb900cf79 fwd="93.100.12.157" dyno=web.1 connect=2ms service=3ms status=200 bytes=600
+2014-04-04T12:57:58.864915+00:00 heroku[router]: at=info method=GET path=/images/d46c1b01.news.png host=neoclassic.herokuapp.com request_id=ef609a8f-4a11-43dc-96b0-1e6b707e930e fwd="93.100.12.157" dyno=web.1 connect=2ms service=4ms status=200 bytes=625
+2014-04-04T12:57:58.885762+00:00 heroku[router]: at=info method=GET path=/images/c715be87.vk-gray.png host=neoclassic.herokuapp.com request_id=60f4a2ad-2f15-4a91-9cf3-142c7334cd86 fwd="93.100.12.157" dyno=web.1 connect=2ms service=5ms status=200 bytes=518
+2014-04-04T12:57:58.828016+00:00 heroku[router]: at=info method=GET path=/images/650ba5d5.facebook-gray.png host=neoclassic.herokuapp.com request_id=0438d028-6133-4b8a-b7bb-47dc9656edbe fwd="93.100.12.157" dyno=web.1 connect=1ms service=4ms status=200 bytes=478
+2014-04-04T12:57:58.952768+00:00 heroku[router]: at=info method=GET path=/images/cc0a58e4.contact.png host=neoclassic.herokuapp.com request_id=5b0942d7-1788-464e-a3f8-f66980be7a10 fwd="93.100.12.157" dyno=web.1 connect=1ms service=4ms status=200 bytes=1024
+2014-04-04T12:57:58.967624+00:00 heroku[router]: at=info method=GET path=/images/5b79409e.arrow-green.png host=neoclassic.herokuapp.com request_id=63449da3-2b1c-4a9d-9073-65751e201d06 fwd="93.100.12.157" dyno=web.1 connect=1ms service=5ms status=200 bytes=665
+2014-04-04T12:57:59.124323+00:00 heroku[router]: at=info method=GET path=/images/b07061c6.email.png host=neoclassic.herokuapp.com request_id=c10d5d12-7663-4f61-bc09-6564a19872d0 fwd="93.100.12.157" dyno=web.1 connect=1ms service=5ms status=200 bytes=664
+2014-04-04T12:57:59.135991+00:00 heroku[router]: at=info method=GET path=/images/2bdde1c7.phone.png host=neoclassic.herokuapp.com request_id=107d526b-4c42-419d-bf2d-6f7d97ff95d8 fwd="93.100.12.157" dyno=web.1 connect=2ms service=6ms status=200 bytes=735
+2014-04-04T12:57:59.132599+00:00 heroku[router]: at=info method=GET path=/images/0db27da7.qr-code.png host=neoclassic.herokuapp.com request_id=09099414-bcdb-412c-b650-013617696727 fwd="93.100.12.157" dyno=web.1 connect=3ms service=5ms status=200 bytes=2983
+2014-04-04T12:57:59.197656+00:00 heroku[router]: at=info method=GET path=/images/6a8a9ed5.a2.png host=neoclassic.herokuapp.com request_id=5b39c022-1a0d-4792-9e6c-31f9bd49c18d fwd="93.100.12.157" dyno=web.1 connect=0ms service=67ms status=200 bytes=905
+2014-04-04T12:57:59.794862+00:00 heroku[router]: at=info method=GET path=/partials/main host=neoclassic.herokuapp.com request_id=ae675d2f-bb60-44b0-85db-6464dc257b2f fwd="93.100.12.157" dyno=web.1 connect=2ms service=94ms status=200 bytes=1077
+2014-04-04T12:57:59.785294+00:00 app[web.1]: [90mGET /partials/main [32m200 [90m80ms[0m
+2014-04-04T12:58:00.009624+00:00 heroku[router]: at=info method=GET path=/images/3eb2aba0.right-arrow-gray.png host=neoclassic.herokuapp.com request_id=1a5fd635-74a6-4e09-923a-1788e57c28f6 fwd="93.100.12.157" dyno=web.1 connect=13ms service=5ms status=200 bytes=461
+2014-04-04T12:58:00.060846+00:00 heroku[router]: at=info method=GET path=/images/968aeeb9.left-arrow-gray.png host=neoclassic.herokuapp.com request_id=e3155fdb-2544-4963-b0c5-ce664873f981 fwd="93.100.12.157" dyno=web.1 connect=35ms service=49ms status=200 bytes=463
+2014-04-04T12:58:00.566666+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=7ae4ff77-2d78-4e03-ae1a-6b6017f57ef2 fwd="93.100.12.157" dyno=web.1 connect=4ms service=6ms status=500 bytes=206
+2014-04-04T12:58:00.785175+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=a3eb8504-1f75-465a-8e0e-5a75c6a85a70 fwd="93.100.12.157" dyno=web.1 connect=6ms service=6ms status=500 bytes=206
+2014-04-04T12:58:00.560072+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T12:58:00.781009+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T12:58:04.351162+00:00 heroku[router]: at=info method=GET path=/api/videos host=neoclassic.herokuapp.com request_id=946fea82-2169-4ada-8ff0-4ac6ce0646ae fwd="93.100.12.157" dyno=web.1 connect=1ms service=4389ms status=200 bytes=918
+2014-04-04T12:58:04.352182+00:00 heroku[router]: at=info method=GET path=/api/slides host=neoclassic.herokuapp.com request_id=12937f83-3a3f-430a-baa1-0d9e61598096 fwd="93.100.12.157" dyno=web.1 connect=2ms service=4391ms status=200 bytes=948
+2014-04-04T12:58:04.583885+00:00 heroku[router]: at=info method=GET path=/images/c0c3c4f3.play-small.png host=neoclassic.herokuapp.com request_id=3ebed71b-2398-409e-bbe7-930b5a7fafa4 fwd="93.100.12.157" dyno=web.1 connect=3ms service=5ms status=200 bytes=507
+2014-04-04T12:58:04.635791+00:00 heroku[router]: at=info method=GET path=/images/45e69712.logo-big.jpg host=neoclassic.herokuapp.com request_id=9b89b8b0-0679-41d0-a119-d2a641d9d087 fwd="93.100.12.157" dyno=web.1 connect=7ms service=19ms status=200 bytes=17703
+2014-04-04T12:58:04.350334+00:00 app[web.1]: [90mGET /api/videos [32m200 [90m4386ms[0m
+2014-04-04T12:58:04.351647+00:00 app[web.1]: [90mGET /api/slides [32m200 [90m4388ms[0m
+2014-04-04T12:57:58.705463+00:00 heroku[router]: at=info method=GET path=/scripts/3fbaed81.vendor.js host=neoclassic.herokuapp.com request_id=5e16956e-8445-48db-be2c-b62daa7de6d8 fwd="93.100.12.157" dyno=web.1 connect=3ms service=33ms status=200 bytes=101298
+2014-04-04T13:02:24.674989+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=neoclassic.herokuapp.com request_id=f90db355-c497-421f-9a5c-794ac08beee3 fwd="5.18.64.5" dyno=web.1 connect=5ms service=5ms status=500 bytes=206
+2014-04-04T13:02:24.672224+00:00 app[web.1]: Error: ENOENT, open '/app/public/favicon.ico'
+2014-04-04T13:03:19.555059+00:00 heroku[api]: Starting process with command `ping_website` by scheduler@addons.heroku.com
+2014-04-04T13:03:21.852315+00:00 heroku[scheduler.9109]: Starting process with command `ping_website`
+2014-04-04T13:03:22.402222+00:00 heroku[scheduler.9109]: State changed from starting to up
+2014-04-04T13:03:23.355169+00:00 app[web.1]: [90mGET / [32m200 [90m55ms - 5kb[0m
+2014-04-04T13:03:23.358823+00:00 app[scheduler.9109]: request home page to awake dyno
+2014-04-04T13:03:23.355113+00:00 heroku[router]: at=info method=GET path=/ host=neoclassic.herokuapp.com request_id=943ad0a6-c7e1-4aee-8509-f4104ff19489 fwd="54.227.61.113" dyno=web.1 connect=3ms service=64ms status=200 bytes=5446
+2014-04-04T13:03:24.510644+00:00 heroku[scheduler.9109]: Process exited with status 0
+2014-04-04T13:03:24.522595+00:00 heroku[scheduler.9109]: State changed from up to complete

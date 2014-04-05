@@ -11,7 +11,8 @@
     "request": "~2.34.0",
     "logfmt": "~1.1.2",
     "pg": "^2.11.1",
-    "connect-mongo": "^0.4.0"
+    "connect-mongo": "^0.4.0",
+    "prerender-node": "^1.0.0"
   },
   "devDependencies": {
     "optipng-bin": "0.3.1",
