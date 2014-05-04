@@ -3,7 +3,7 @@ div.margin-bottom(ng-controller='VideosBlockCtrl')
     youtube-player.margin-right
     carousel(interval='-1')
       slide(ng-repeat='(i, fourVideos) in videosGroupedByFour', active='fourVideos.active')
-        ol.clearfix
+        ol.list-style-none.clearfix
           li(ng-repeat='video in fourVideos')
             a(href='', ng-click='play(video.videoId)')
               img(ng-src='{{video.thumbnailUrl}}')
@@ -11,8 +11,8 @@ div.margin-bottom(ng-controller='VideosBlockCtrl')
               .tooltip {{video.title}}
   .admin(ng-if='currentUser')
     ol
-      li(ng-repeat='(i, fourVideos) in videosGroupedByFour') {{i}}
-        ol
+      li(ng-repeat='(i, fourVideos) in videosGroupedByFour')
+        ol.list-style-none
           li(ng-repeat='video in fourVideos') {{video.title}}
             a(href='', ng-click='delete(video)') X
             a(href='', ng-click='move(video, -1)', ng-hide='$parent.$first && $first') ^

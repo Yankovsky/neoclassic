@@ -1,7 +1,7 @@
 header.header.margin-bottom(ng-controller='NavbarCtrl')
   a.logo(href='/')
   nav.clearfix
-    ul
+    ul.list-style-none
       li(ng-repeat='item in menu')
         a(ng-href='{{item.link}}', ng-class='{active: isActive(item.link)}') {{item.title}}
       li

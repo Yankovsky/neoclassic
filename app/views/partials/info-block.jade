@@ -3,10 +3,10 @@ div.margin-bottom.clearfix(ng-controller='InfoBlockCtrl')
     .news-icon
     .content
       header НОВОСТИ
-      ol
+      ol.list-style-none
         li(ng-repeat='item in news')
           .date {{item.createdAt | date:"dd MMMM y"}}
           .title {{item.title}}
           a(ng-href='/news/{{item.urlSlug}}') подробнее...
-      //a.all-news(href='/news') ВСЕ НОВОСТИ
+      a.all-news(href='/news') ВСЕ НОВОСТИ
   include event

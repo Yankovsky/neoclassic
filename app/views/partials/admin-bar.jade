@@ -1,6 +1,6 @@
 .admin-bar(ng-controller='AdminBarCtrl')
   a.errors-link.hidden-link(href='', ng-click='showErrors = !showErrors')
-  ul.errors.admin(ng-show='showErrors')
+  ul.list-style-none.errors.admin(ng-show='showErrors')
     li(ng-repeat='message in messages track by $index')
       div {{message}}
   a.login.hidden-link(href='/login', ng-hide='currentUser')

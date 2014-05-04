@@ -3,7 +3,8 @@ angular.module('neoclassicApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.tinymce'
 ])
 .config ($routeProvider, $locationProvider, $httpProvider, $anchorScrollProvider) ->
     $routeProvider
@@ -22,20 +23,20 @@ angular.module('neoclassicApp', [
         authenticate: true,
         reloadOnSearch: false,
         caseInsensitiveMatch: true
-    .when '/about',
-        templateUrl: 'partials/page',
+    .when '/events',
+        templateUrl: 'partials/events',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
-    .when '/biography',
-        templateUrl: 'partials/page',
+    .when '/news',
+        templateUrl: 'partials/news',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
-    .when '/news/exhibition',
-        templateUrl: 'partials/exhibition',
+    .when '/:entryType/:urlSlug',
+        templateUrl: 'partials/entry',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
-    .when '/events/erarta',
-        templateUrl: 'partials/erarta',
+    .when '/:urlSlug',
+        templateUrl: 'partials/entry',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
 #    .when '/guestbook',
@@ -52,6 +53,16 @@ angular.module('neoclassicApp', [
       responseError: (response) ->
         if response.status is 401
           $location.path '/login'
+          $q.reject response
+        else
+          $q.reject response
+    ]
+
+    # Intercept 404s and redirect you home page
+    $httpProvider.interceptors.push ['$q', '$location', ($q, $location) ->
+      responseError: (response) ->
+        if response.status is 404
+          $location.path '/'
           $q.reject response
         else
           $q.reject response

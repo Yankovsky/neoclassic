@@ -1,5 +1,5 @@
 .guestbook(ng-controller='GuestbookCtrl')
-  ol
+  ol.list-style-none
     li(ng-repeat='reply in replies')
       div {{reply.createdAt | date}}
       div {{reply.name}}
