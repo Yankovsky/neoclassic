@@ -1,1 +1,1 @@
-pg_dump -Upostgres --data-only --column-inserts neoclassicdev > data.dump
+pg_dump -Upostgres --data-only --column-inserts neoclassicdev > lib/db/data.dump
