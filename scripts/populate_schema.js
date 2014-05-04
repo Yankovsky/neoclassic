@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var db = require('../lib/db/db'),
     fs = require('fs'),
     path = require('path')

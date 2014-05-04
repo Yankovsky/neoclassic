@@ -1,0 +1,4 @@
+#!/bin/sh
+
+psql -Upostgres -c 'DROP DATABASE neoclassicdev;'
+psql -Upostgres -c 'CREATE DATABASE neoclassicdev;'

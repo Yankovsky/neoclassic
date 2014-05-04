@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var exec = require('child_process').exec
 
 exec('heroku pgbackups --app=neoclassic', function(error, stdout, stderr) {

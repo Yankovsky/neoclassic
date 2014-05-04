@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var sys = require('sys'),
     exec = require('child_process').exec,
     s3 = require('../lib/s3'),
