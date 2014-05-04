@@ -5,24 +5,21 @@ doctype html
 // [if gt IE 8]><!
 html.no-js(ng-app="neoclassicApp")
   //<![endif]
-  head
+  head(ng-controller='SeoCtrl')
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     base(href="/")
-    //title {{page.title}} - neoclassic
-    //meta(name='description', content='{{page.description}}')
-    //meta(name='keywords', content='{{page.keywords}}')
-    title Проект NeoClassic
-    meta(name='description', content='Официальный сайт проекта Дмитрия Янковского "NeoClassic" - NeoClassic.pro')
-    meta(name='keywords', content='Проект Дмитрия Янковского "NeoClassic", NeoClassic, NeoClassic.pro, Дмитрий Янковский, Dmitriy Yankovskiy, Noviegolosa.ru, Проект, Новые голоса, cover, кавер, opera, опера, singer, певец, солист, вокалист, артист, Геликон, Мюзикл,Красавица и Чудовище, MAMMA MIA!, crossover, кроссовер, classicalcrossover, классический, живой звук, Live, Sound, новая классика, синтез, совмещение, "Beauty and the Beast", Стейдж Энтертейнмент, Beast, Stage Entertainment, баритон, baritone, квинтет, квинтет Corelli, обработка, аранжировка, музыка, опера')
+    title {{seo.title()}}
+    meta(name='description', content='{{seo.description()}}')
+    meta(name='keywords', content='{{seo.keywords()}}')
     meta(name='fragment', content='!')
     meta(name="viewport", content="width=device-width")
     meta(name='yandex-verification', content='70674d9f35060f83')
     // Place favicon.ico and apple-touch-icon.png in the root directory
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <!-- build:css(app) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
+    // bower:css
+    // endbower
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     link(rel='stylesheet', type='text/css', href='styles/index.css')
@@ -56,38 +53,42 @@ html.no-js(ng-app="neoclassicApp")
       div
         img(src='//mc.yandex.ru/watch/24556697', style='position: absolute; left: -9999px;', alt='')
     //Yandex.Metrika counter
-    <!-- build:js(app) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/lodash/dist/lodash.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="/bower_components/angular-i18n/angular-locale_ru-ru.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/page-is-busy.js"></script>
-    <script src="scripts/controllers/admin-bar.js"></script>
-    <script src="scripts/controllers/login.js"></script>
-    <script src="scripts/controllers/settings.js"></script>
-    <script src="scripts/controllers/header.js"></script>
-    <script src="scripts/controllers/slider.js"></script>
-    <script src="scripts/controllers/videos-block.js"></script>
-    <script src="scripts/controllers/info-block.js"></script>
-    <script src="scripts/controllers/page.js"></script>
-    <script src="scripts/controllers/events.js"></script>
-    <script src="scripts/controllers/news.js"></script>
-    <script src="scripts/controllers/exhibition.js"></script>
-    <script src="scripts/controllers/guestbook.js"></script>
-    <script src="scripts/services/auth.js"></script>
-    <script src="scripts/services/youtube-player-svc.js"></script>
-    <script src="scripts/services/logging-svc.js"></script>
-    <script src="scripts/services/page-is-busy.js"></script>
-    <script src="scripts/directives/mongooseError.js"></script>
-    <script src="scripts/directives/youtube-player.js"></script>
+    <!-- build:js(.tmp,app) scripts/scripts.js -->
+    script(src='/third-party/tinymce/js/tinymce/tinymce.min.js')
+    script(src='/third-party/tinymce/js/tinymce/langs/ru.js')
+    // bower:js
+    script(src='../bower_components/jquery/dist/jquery.js')
+    script(src='../bower_components/es5-shim/es5-shim.js')
+    script(src='../bower_components/angular/angular.js')
+    script(src='../bower_components/json3/lib/json3.min.js')
+    script(src='../bower_components/angular-resource/angular-resource.js')
+    script(src='../bower_components/angular-cookies/angular-cookies.js')
+    script(src='../bower_components/angular-sanitize/angular-sanitize.js')
+    script(src='../bower_components/angular-route/angular-route.js')
+    script(src='../bower_components/lodash/dist/lodash.compat.js')
+    script(src='../bower_components/angular-bootstrap/ui-bootstrap-tpls.js')
+    script(src='../bower_components/angular-ui-tinymce/src/tinymce.js')
+    // endbower
+    script(src='/bower_components/angular-i18n/angular-locale_ru-ru.js')
+    script(src='scripts/app.js')
+    script(src='scripts/controllers/page-is-busy.js')
+    script(src='scripts/controllers/admin-bar.js')
+    script(src='scripts/controllers/login.js')
+    script(src='scripts/controllers/settings.js')
+    script(src='scripts/controllers/header.js')
+    script(src='scripts/controllers/slider.js')
+    script(src='scripts/controllers/videos-block.js')
+    script(src='scripts/controllers/info-block.js')
+    script(src='scripts/controllers/entry.js')
+    script(src='scripts/controllers/events.js')
+    script(src='scripts/controllers/news.js')
+    script(src='scripts/controllers/exhibition.js')
+    script(src='scripts/controllers/seo.js')
+    script(src='scripts/controllers/guestbook.js')
+    script(src='scripts/services/auth.js')
+    script(src='scripts/services/youtube-player-svc.js')
+    script(src='scripts/services/logging-svc.js')
+    script(src='scripts/services/page-is-busy.js')
+    script(src='scripts/services/seo.js')
+    script(src='scripts/directives/youtube-player.js')
     <!-- endbuild -->

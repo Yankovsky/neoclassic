@@ -2,10 +2,11 @@ article.slider.margin-bottom(ng-controller='SliderCtrl')
   carousel(interval='8000')
     slide(ng-repeat='slide in slides', active='slide.active')
       img(ng-src='{{slide.imageUrl}}')
-      p {{slide.text}}
+      p {{slide.html}}
       a(ng-href='{{slide.url}}') Подробнее
   .admin(ng-if='currentUser')
     form
+      //TODO TINY MCE HERE
       label текст
       textarea()
       label файл

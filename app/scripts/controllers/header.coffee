@@ -3,12 +3,12 @@ angular.module('neoclassicApp')
     $scope.menu = [
       title: 'О проекте'
       link: '/about'
-#    ,
-#      title: 'Афиша'
-#      link: '/schedule'
-#    ,
-#      title: 'Новости'
-#      link: '/news'
+    ,
+      title: 'Афиша'
+      link: '/events'
+    ,
+      title: 'Новости'
+      link: '/news'
     ,
       title: 'Биография'
       link: '/biography'
