@@ -31,12 +31,8 @@ angular.module('neoclassicApp', [
         templateUrl: 'partials/news',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
-    .when '/:entryType/:urlSlug',
-        templateUrl: 'partials/entry',
-        reloadOnSearch: false,
-        caseInsensitiveMatch: true
-    .when '/:urlSlug',
-        templateUrl: 'partials/entry',
+    .when '/:slug',
+        templateUrl: 'partials/page',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
 #    .when '/guestbook',

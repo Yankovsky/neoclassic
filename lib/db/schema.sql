@@ -31,23 +31,43 @@ CREATE TABLE users (
 DROP INDEX IF EXISTS users_lower_email_unique;
 CREATE UNIQUE INDEX users_lower_email_unique ON users(LOWER(email));
 
-DROP TABLE IF EXISTS entries;
-CREATE TABLE entries (
+DROP TABLE IF EXISTS pages;
+CREATE TABLE pages (
     id SERIAL PRIMARY KEY,
-    url_slug VARCHAR NOT NULL,
-    title VARCHAR NOT NULL,
-    description TEXT NOT NULL,
-    keywords TEXT NOT NULL,
-    html TEXT NOT NULL,
-    short_text TEXT,
-    datetime TIMESTAMP,
-    thumbnail_url VARCHAR,
-    type VARCHAR NOT NULL
+    slug VARCHAR NOT NULL,
+    html TEXT NOT NULL
 );
-DROP INDEX IF EXISTS entries_lower_url_slug_and_type_unique;
-CREATE UNIQUE INDEX entries_lower_url_slug_and_type_unique ON entries(LOWER(url_slug), type);
-DROP INDEX IF EXISTS entries_type;
-CREATE INDEX entries_type ON entries(type);
+DROP INDEX IF EXISTS pages_lower_slug_unique;
+CREATE UNIQUE INDEX pages_lower_slug_unique ON pages(LOWER(slug));
+
+DROP TABLE IF EXISTS news;
+CREATE TABLE news (
+    id SERIAL PRIMARY KEY,
+    slug VARCHAR NOT NULL,
+    title VARCHAR NOT NULL,
+    html TEXT NOT NULL,
+    short_text TEXT NOT NULL,
+    datetime TIMESTAMP NOT NULL
+);
+DROP INDEX IF EXISTS news_lower_slug_unique;
+CREATE UNIQUE INDEX news_lower_slug_unique ON news(LOWER(slug));
+DROP INDEX IF EXISTS news_datetime;
+CREATE UNIQUE INDEX news_datetime ON news(datetime);
+
+DROP TABLE IF EXISTS events;
+CREATE TABLE events (
+    id SERIAL PRIMARY KEY,
+    slug VARCHAR NOT NULL,
+    title VARCHAR NOT NULL,
+    html TEXT NOT NULL,
+    short_text TEXT NOT NULL,
+    datetime TIMESTAMP NOT NULL,
+    thumbnail_url VARCHAR NOT NULL
+);
+DROP INDEX IF EXISTS events_lower_slug_unique;
+CREATE UNIQUE INDEX events_lower_slug_unique ON events(LOWER(slug));
+DROP INDEX IF EXISTS events_datetime;
+CREATE UNIQUE INDEX events_datetime ON events(datetime);
 
 DROP TABLE IF EXISTS replies;
 CREATE TABLE replies (
@@ -62,9 +82,11 @@ DROP TABLE IF EXISTS seo;
 CREATE TABLE seo (
     id SERIAL PRIMARY KEY,
     url VARCHAR NOT NULL,
-    email VARCHAR NOT NULL,
-    text TEXT NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT(NOW())
+    title VARCHAR NOT NULL,
+    description TEXT NOT NULL,
+    keywords TEXT NOT NULL
 );
+DROP INDEX IF EXISTS seo_lower_url_unique;
+CREATE UNIQUE INDEX seo_lower_url_unique ON seo(LOWER(url));
 
 COMMIT;

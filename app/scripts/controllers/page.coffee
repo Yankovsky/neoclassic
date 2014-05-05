@@ -1,19 +1,18 @@
 angular.module('neoclassicApp')
-.controller 'EntryCtrl', ($scope, seo, $http, $routeParams, $sce) ->
-    entryType = $routeParams.entryType || 'pages'
-    urlSlug = $routeParams.urlSlug
+.controller 'PageCtrl', ($scope, seo, $http, $routeParams, $sce) ->
+    slug = $routeParams.slug
 
-    $scope.entry = {}
+    $scope.page = {}
 
-    $http.get('/api/' + entryType + '/' + urlSlug).success (entry) ->
-      $scope.entry = entry
-      seo.set(entry)
+    $http.get('/api/pages/' + slug).success (page) ->
+      $scope.page = page
+      seo.set(page)
 
     $scope.trustedHtml = ->
-      $sce.trustAsHtml($scope.entry.html) if $scope.entry
+      $sce.trustAsHtml($scope.page.html) if $scope.page
 
     $scope.update = ->
-      $http.put('/api/' + entryType + '/' + urlSlug, $scope.entry)
+      $http.put('/api/pages/' + $scope.page.id, $scope.page)
       .success () ->
         alert('Сохранено')
       .error () ->
@@ -24,7 +23,7 @@ angular.module('neoclassicApp')
       plugins: [
         "advlist autolink lists link image charmap print preview hr anchor pagebreak",
         "searchreplace wordcount visualblocks visualchars code fullscreen",
-        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "insertdatetime media table contextmenu directionality",
         "emoticons template paste textcolor"
       ]
       toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
