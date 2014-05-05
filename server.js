@@ -14,11 +14,7 @@ db.connectionString = config.pg.uri
 var passport = require('./lib/config/passport')
 
 var app = express()
-
-// Express settings
 require('./lib/config/express')(app)
-
-// Routing
 require('./lib/routes')(app)
 
 // Start server
