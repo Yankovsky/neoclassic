@@ -33,6 +33,7 @@ angular.module('neoclassicApp', [
         caseInsensitiveMatch: true
     .when '/:slug',
         templateUrl: 'partials/page',
+        controller: 'PageCtrl',
         reloadOnSearch: false,
         caseInsensitiveMatch: true
 #    .when '/guestbook',
@@ -44,28 +45,26 @@ angular.module('neoclassicApp', [
 
     $locationProvider.html5Mode true
 
-    # Intercept 401s and redirect you to login
     $httpProvider.interceptors.push ['$q', '$location', ($q, $location) ->
       responseError: (response) ->
         if response.status is 401
           $location.path '/login'
-          $q.reject response
-        else
-          $q.reject response
+        $q.reject response
     ]
 
-    # Intercept 404s and redirect you home page
-    $httpProvider.interceptors.push ['$q', '$location', ($q, $location) ->
-      responseError: (response) ->
-        if response.status is 404
-          $location.path '/'
-          $q.reject response
-        else
-          $q.reject response
-    ]
+#    $httpProvider.interceptors.push ['$q', '$location', ($q, $location) ->
+#      responseError: (response) ->
+#        if response.status is 404
+#          $location.path '/'
+#          $q.reject response
+#        else
+#          $q.reject response
+#    ]
 
     $anchorScrollProvider.disableAutoScrolling()
 
-.run ($rootScope, $location, Auth) ->
+.run ($rootScope, $location, Auth, seo) ->
   $rootScope.$on '$routeChangeStart', (event, next) ->
     $location.path '/login' if next.authenticate and not Auth.isLoggedIn() and false
+  $rootScope.$on '$routeChangeSuccess', () ->
+    seo.set($location.path())

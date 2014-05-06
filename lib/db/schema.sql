@@ -81,12 +81,12 @@ CREATE TABLE replies (
 DROP TABLE IF EXISTS seo;
 CREATE TABLE seo (
     id SERIAL PRIMARY KEY,
-    url VARCHAR NOT NULL,
+    path VARCHAR NOT NULL,
     title VARCHAR NOT NULL,
     description TEXT NOT NULL,
     keywords TEXT NOT NULL
 );
-DROP INDEX IF EXISTS seo_lower_url_unique;
-CREATE UNIQUE INDEX seo_lower_url_unique ON seo(LOWER(url));
+DROP INDEX IF EXISTS seo_lower_path_unique;
+CREATE UNIQUE INDEX seo_lower_path_unique ON seo(LOWER(path));
 
 COMMIT;

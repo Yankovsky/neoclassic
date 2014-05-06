@@ -1,12 +1,15 @@
 angular.module('neoclassicApp')
-.controller 'PageCtrl', ($scope, seo, $http, $routeParams, $sce) ->
+.controller 'PageCtrl', ($scope, $http, $routeParams, $sce, $location) ->
     slug = $routeParams.slug
 
     $scope.page = {}
 
-    $http.get('/api/pages/' + slug).success (page) ->
+    $http.get('/api/pages/' + slug)
+    .success (page) ->
       $scope.page = page
-      seo.set(page)
+    .error (data, status) ->
+      if status is 404
+        $location.path '/'
 
     $scope.trustedHtml = ->
       $sce.trustAsHtml($scope.page.html) if $scope.page

@@ -34,7 +34,7 @@ angular.module('neoclassicApp')
         populateVideos()
 
     $scope.move = (videoToMove, dir) ->
-      $http.put('/api/videos/' + videoToMove.id,
+      $http.post('/api/videos/' + videoToMove.id,
         dir: dir
       ).success (result) ->
         videoIndex =_.findIndex($scope.videos, (video) -> video.id == videoToMove.id)

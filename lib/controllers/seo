@@ -1,0 +1,63 @@
+var seoRepo = require('./../db/repositories/seo-repo'),
+  _ = require('lodash'),
+  typicalController = require('./../utils/typical-controller')
+
+var UNIQUE_VIOLATION = 23505;
+
+function validate(req) {
+  var errors = {}
+  var reqBody = req.body
+  if (!reqBody.title) {
+    if (!errors.title)
+      errors.title = []
+    errors.title.push('required')
+  }
+  if (!reqBody.description) {
+    if (!errors.description)
+      errors.description = []
+    errors.description.push('required')
+  }
+  if (!reqBody.keywords) {
+    if (!errors.keywords)
+      errors.keywords = []
+    errors.keywords.push('required')
+  }
+  return errors
+}
+
+exports.createOrUpdate = function(req, res) {
+  var reqBody = req.body,
+    path = req.params.path
+  var errors = validate(req)
+  if (!path) errors.path = ['required']
+  if (!_.isEmpty(errors))
+    return res.send(400, errors)
+  return seoRepo.create(path, reqBody, function(err) {
+    if (err)
+      if (err.code == UNIQUE_VIOLATION)
+        return seoRepo.update(path, reqBody, function(err, data, result) {
+          if (err) return res.send(500, err)
+          if (!result.rowCount) return res.send(404, 'seo with path ' + path + ' not found')
+          return res.send()
+        })
+      else
+        return res.send(500, err)
+    return res.send(201)
+  })
+}
+
+exports.all = typicalController.all(seoRepo.all)
+
+exports.get = typicalController.get(seoRepo.get)
+
+exports.getByPath = function(req, res) {
+  var path = req.params.path
+  if (!path) return res.send(400, {path: ['required']})
+  return seoRepo.getByPath(path, function(err, data) {
+    if (err) return res.send(500, err)
+    if (!data) return res.send(404, 'seo with path ' + path + ' not found')
+    return res.send(data)
+  })
+}
+
+exports.remove = typicalController.remove(seoRepo.remove)

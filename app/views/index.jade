@@ -9,9 +9,9 @@ html.no-js(ng-app="neoclassicApp")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     base(href="/")
-    title {{seo.title()}}
-    meta(name='description', content='{{seo.description()}}')
-    meta(name='keywords', content='{{seo.keywords()}}')
+    title {{seo.title}}
+    meta(name='description', content='{{seo.description}}')
+    meta(name='keywords', content='{{seo.keywords}}')
     meta(name='fragment', content='!')
     meta(name="viewport", content="width=device-width")
     meta(name='yandex-verification', content='70674d9f35060f83')
@@ -37,6 +37,7 @@ html.no-js(ng-app="neoclassicApp")
     include partials/admin-bar
     include partials/header
     div(class="container" ng-view)
+    include partials/seo
     include partials/info-block
     include partials/footer
     script.

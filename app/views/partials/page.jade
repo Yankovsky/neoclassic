@@ -1,4 +1,4 @@
-div.margin-bottom(ng-controller='PageCtrl')
+div.margin-bottom
   article.details.clearfix()
     .text(ng-bind-html='trustedHtml()')
   form(name='editPageForm', ng-submit='editPageForm.$valid && update()', novalidate, ng-if='currentUser')
@@ -9,16 +9,6 @@ div.margin-bottom(ng-controller='PageCtrl')
       div
         label(for='urlSlug') Url
         input(type='text', name='urlSlug', ng-model='page.urlSlug', required)
-      div
-        label(for='title') Title
-        input(type='text', name='title', ng-model='page.title', required)
-      div
-        label(for='description') Description
-        textarea(name='description', ng-model='page.description', required)
-      div
-        label(for='keywords') Keywords
-        textarea(name='keywords', ng-model='page.keywords', required)
-
 
       //only news and events
       div(ng-if='page.type != "pages"')
