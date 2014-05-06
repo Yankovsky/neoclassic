@@ -44,8 +44,8 @@ DROP TABLE IF EXISTS news;
 CREATE TABLE news (
     id SERIAL PRIMARY KEY,
     slug VARCHAR NOT NULL,
-    title VARCHAR NOT NULL,
     html TEXT NOT NULL,
+    title VARCHAR NOT NULL,
     short_text TEXT NOT NULL,
     datetime TIMESTAMP NOT NULL
 );
@@ -58,8 +58,8 @@ DROP TABLE IF EXISTS events;
 CREATE TABLE events (
     id SERIAL PRIMARY KEY,
     slug VARCHAR NOT NULL,
-    title VARCHAR NOT NULL,
     html TEXT NOT NULL,
+    title VARCHAR NOT NULL,
     short_text TEXT NOT NULL,
     datetime TIMESTAMP NOT NULL,
     thumbnail_url VARCHAR NOT NULL

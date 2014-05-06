@@ -11,9 +11,6 @@ angular.module('neoclassicApp')
       if status is 404
         $location.path '/'
 
-    $scope.trustedHtml = ->
-      $sce.trustAsHtml($scope.page.html) if $scope.page
-
     $scope.update = ->
       $http.put('/api/pages/' + $scope.page.id, $scope.page)
       .success () ->

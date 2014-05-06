@@ -1,27 +1,13 @@
 div.margin-bottom
   article.details.clearfix()
-    .text(ng-bind-html='trustedHtml()')
+    .text(ng-bind-html='page.html | unsafe')
   form(name='editPageForm', ng-submit='editPageForm.$valid && update()', novalidate, ng-if='currentUser')
     .admin
       textarea(ng-model='page.html', ui-tinymce='tinymceOptions', required)
       span.error(ng-show="!editPageForm.html.$pristine && editPageForm.html.$error.required").
         напиши здесь текст, а то не сохраню
       div
-        label(for='urlSlug') Url
-        input(type='text', name='urlSlug', ng-model='page.urlSlug', required)
+        label(for='slug') slug
+        input(type='text', name='slug', ng-model='page.slug', required)
 
-      //only news and events
-      div(ng-if='page.type != "pages"')
-        label(for='shortText') Короткое описание
-        textarea(name='shortText', ng-model='page.shortText', required)
-      div(ng-if='page.type != "pages"')
-        label(for='datetime') Дата
-        input(type='date', name='datetime', ng-model='page.datetime', required)
-
-      //only events
-      div(ng-if='page.type == "events"')
-        label(for='thumbnailUrl') ссылка на маленькую картинку
-        input(type='text', name='thumbnailUrl', ng-model='page.thumbnailUrl', required)
-
-      input(type='hidden', name='type', value='{{page.type}}')
       input(type='submit', ng-disabled='!editPageForm.$valid', value='сохранить изменения')

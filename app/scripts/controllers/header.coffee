@@ -4,9 +4,9 @@ angular.module('neoclassicApp')
       title: 'О проекте'
       link: '/about'
     ,
-      title: 'Афиша'
-      link: '/events'
-    ,
+#      title: 'Афиша'
+#      link: '/events'
+#    ,
       title: 'Новости'
       link: '/news'
     ,

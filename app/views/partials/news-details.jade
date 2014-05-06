@@ -1,0 +1,5 @@
+div.margin-bottom
+  article.details.clearfix()
+    .text(ng-bind-html='news.html | unsafe')
+
+news-form(news='news', submit='update()', ng-if='currentUser')
