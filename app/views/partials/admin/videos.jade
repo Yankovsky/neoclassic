@@ -1,0 +1,25 @@
+.page-header Редактирование блока видео
+
+div(ng-controller='AdminVideosCtrl')
+  form(name='newVideoForm', role='form', ng-submit='add()', novalidate)
+    .form-group.has-feedback(ng-class='{"has-success": newVideoForm.videoUrl.$valid, "has-error": newVideoForm.videoUrl.$dirty && newVideoForm.videoUrl.$invalid}')
+      label.control-label(for='videoUrl') Ссылка с Youtube
+      input#videoUrl.form-control(name='videoUrl', type='videoUrl', placeholder='Введите ссылку с Youtube', autofocus, ng-model='newVideo.videoUrl', required, ng-model-options='{updateOn: "blur"}', server-error)
+      span.glyphicon.form-control-feedback(ng-class='{"glyphicon-ok": newVideoForm.videoUrl.$valid, "glyphicon-warning-sign": newVideoForm.videoUrl.$dirty && newVideoForm.videoUrl.$invalid}')
+      p.help-block(ng-show="newVideoForm.videoUrl.$dirty && newVideoForm.videoUrl.$error.required") Вставьте ссылку с Youtube
+      p.help-block(ng-show="newVideoForm.videoUrl.$dirty && newVideoForm.videoUrl.$error.server") {{serverErrors.password}}
+    button.btn.btn-default(type='submit', ng-disabled="newVideoForm.$invalid") Добавить
+
+  .row(ng-repeat='(i, fourVideos) in videosGroupedByFour')
+    .col-sm-6.col-md-3(ng-repeat='video in fourVideos')
+      .thumbnail
+        .caption
+          h6 {{video.title}}
+          .btn-group
+            button.btn.btn-default(ng-click='move(video, -1)', ng-hide='$parent.$first && $first')
+              span.glyphicon.glyphicon-arrow-left
+            button.btn.btn-default(ng-click='move(video, 1)', ng-hide='$parent.$last && $last')
+              span.glyphicon.glyphicon-arrow-right
+            button.btn.btn-default(ng-click='delete(video)')
+              span.glyphicon.glyphicon-remove
+        img(ng-src='{{video.thumbnailUrl}}')

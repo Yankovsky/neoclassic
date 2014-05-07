@@ -47,7 +47,7 @@ module.exports = function(grunt) {
     },
     watch: {
       coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        files: ['<%= yeoman.app %>/scripts/**/*.{coffee,litcoffee,coffee.md}'],
         tasks: ['newer:coffee:dist']
       },
       coffeeTest: {
@@ -63,10 +63,10 @@ module.exports = function(grunt) {
       },
       livereload: {
         files: [
-          '<%= yeoman.app %>/views/{,*//*}*.{html,jade}',
-          '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.styl',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
-          '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= yeoman.app %>/views/**/*.{html,jade}',
+          '{.tmp,<%= yeoman.app %>}/styles/**/*.styl',
+          '{.tmp,<%= yeoman.app %>}/scripts/**/*.js',
+          '<%= yeoman.app %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ],
 
         options: {
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= yeoman.app %>/styles',
-            src: 'index.styl',
+            src: ['index.styl', 'admin-index.styl'],
             dest: '.tmp/styles/',
             ext: '.css'
           }
@@ -190,7 +190,12 @@ module.exports = function(grunt) {
     bowerInstall: {
       target: {
         src: [
-          '<%= yeoman.app %>/views/index.jade'
+          '<%= yeoman.app %>/views/index.jade',
+          '<%= yeoman.app %>/views/admin.jade'
+        ],
+        exclude: [
+          'tinymce',
+          'bootstrap-css-only'
         ]
       }
     },
@@ -206,7 +211,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '<%= yeoman.app %>/scripts',
-            src: '{,*/}*.coffee',
+            src: '**/*.coffee',
             dest: '.tmp/scripts',
             ext: '.js'
           }

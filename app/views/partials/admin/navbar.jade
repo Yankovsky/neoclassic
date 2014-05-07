@@ -1,0 +1,21 @@
+header.navbar.navbar-inverse.navbar-fixed-top(role='navigation', ng-controller='AdminNavbarCtrl', ng-show='currentUser')
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/admin') Админка
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li(ng-repeat='item in items', ng-class='{active: helpers.isLocationPath(item.path)}')
+          a(ng-href='{{item.path}}') {{item.title}}
+        li
+          a(href='/', target='_self') На сайт
+      ul.nav.navbar-nav.navbar-right
+        p.navbar-text {{currentUser.email}}
+        li(ng-class='{active: helpers.isLocationPath("/admin/settings")}')
+          a(href='/admin/settings') Cменить пароль
+        li
+          a(href='', ng-click='logout()', ng-controller='LogoutCtrl') Выход

@@ -1,4 +1,4 @@
-div.margin-bottom(ng-controller='VideosBlockCtrl')
+div.margin-bottom(ng-controller='VideosCtrl')
   article.videos-block
     youtube-player.margin-right
     carousel(interval='-1')
@@ -9,15 +9,3 @@ div.margin-bottom(ng-controller='VideosBlockCtrl')
               img(ng-src='{{video.thumbnailUrl}}')
               .play
               .tooltip {{video.title}}
-  .admin(ng-if='currentUser')
-    ol
-      li(ng-repeat='(i, fourVideos) in videosGroupedByFour')
-        ol.list-style-none
-          li(ng-repeat='video in fourVideos') {{video.title}}
-            a(href='', ng-click='delete(video)') X
-            a(href='', ng-click='move(video, -1)', ng-hide='$parent.$first && $first') ^
-            a(href='', ng-click='move(video, 1)', ng-hide='$parent.$last && $last') v
-    form(name='newVideoForm', ng-submit='newVideoForm.$valid && add() && newVideoForm.$setPristine()', novalidate)
-      input(name='videoUrl', type='text', ng-model='newVideo.url', required, placehoder='скопируй ссылку с youtube сюда')
-      span.error(ng-show="!newVideoForm.videoUrl.$pristine && newVideoForm.videoUrl.$error.required") ссылку то скопируй, так добавлять не буду
-      input(type='submit', ng-disabled='!newVideoForm.$valid', value='добавить')

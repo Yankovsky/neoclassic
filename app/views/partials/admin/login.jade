@@ -1,0 +1,16 @@
+.page-header Вход
+form(name='loginForm', role='form', ng-submit='login()', novalidate)
+  .form-group.has-feedback(ng-class='{"has-success": loginForm.email.$valid, "has-error": loginForm.email.$dirty && loginForm.email.$invalid}')
+    label.control-label(for='email') Email
+    input#email.form-control(name='email', type='email', placeholder='Введите email', autofocus, ng-model='user.email', required, ng-model-options='{updateOn: "blur"}', server-error)
+    span.glyphicon.form-control-feedback(ng-class='{"glyphicon-ok": loginForm.email.$valid, "glyphicon-warning-sign": loginForm.email.$dirty && loginForm.email.$invalid}')
+    p.help-block(ng-show="loginForm.email.$dirty && loginForm.email.$error.required") Введите email
+    p.help-block(ng-show="loginForm.email.$dirty && loginForm.email.$error.email") Не похоже на email
+    p.help-block(ng-show="loginForm.email.$dirty && loginForm.email.$error.server") {{serverErrors.email}}
+  .form-group.has-feedback(ng-class='{"has-success": loginForm.password.$valid, "has-error": loginForm.password.$dirty && loginForm.password.$invalid}')
+    label.control-label(for='password') Пароль
+    input#password.form-control(name='password', type='password', placeholder='Введите пароль', ng-model='user.password', required, ng-model-options='{updateOn: "blur"}', server-error)
+    span.glyphicon.form-control-feedback(ng-class='{"glyphicon-ok": loginForm.password.$valid, "glyphicon-warning-sign": loginForm.password.$dirty && loginForm.password.$invalid}')
+    p.help-block(ng-show="loginForm.password.$dirty && loginForm.password.$error.required") Введите пароль
+    p.help-block(ng-show="loginForm.password.$dirty && loginForm.password.$error.server") {{serverErrors.password}}
+  button.btn.btn-default(type='submit', ng-disabled="loginForm.$invalid") Войти
