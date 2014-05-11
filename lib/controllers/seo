@@ -27,7 +27,7 @@ function validate(req) {
 
 exports.createOrUpdate = function(req, res) {
   var reqBody = req.body,
-    path = req.params.path
+    path = req.params[0]
   var errors = validate(req)
   if (!path) errors.path = ['required']
   if (!_.isEmpty(errors))
@@ -51,7 +51,7 @@ exports.all = typicalController.all(seoRepo.all)
 exports.get = typicalController.get(seoRepo.get)
 
 exports.getByPath = function(req, res) {
-  var path = req.params.path
+  var path = req.params[0]
   if (!path) return res.send(400, {path: ['required']})
   return seoRepo.getByPath(path, function(err, data) {
     if (err) return res.send(500, err)

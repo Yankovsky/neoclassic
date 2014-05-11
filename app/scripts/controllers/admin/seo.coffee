@@ -1,5 +1,5 @@
 angular.module('neoclassicApp')
-.controller 'SeoCtrl', ($scope, seo) ->
+.controller 'AdminSeoCtrl', ($scope, seo) ->
     $scope.$watch(
       () -> seo.get()
       (newVal) ->

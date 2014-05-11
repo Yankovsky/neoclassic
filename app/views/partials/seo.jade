@@ -1,13 +1,13 @@
-form(ng-controller='SeoCtrl', name='seoForm', ng-submit='seoForm.$valid && save()', novalidate, ng-if='currentUser')
+form(ng-controller='AdminSeoCtrl', name='seoForm', ng-submit='seoForm.$valid && save()', novalidate, ng-if='currentUser')
   .admin
     div
-      label(for='title') Title
+      label(for='title') Заголовок
       input(type='text', name='title', ng-model='seo.title', required)
     div
-      label(for='description') Description
+      label(for='description') Описание
       textarea(name='description', ng-model='seo.description', required)
     div
-      label(for='keywords') Keywords
+      label(for='keywords') Ключевые слова
       textarea(name='keywords', ng-model='seo.keywords', required)
 
     input(type='submit', ng-disabled='!seoForm.$valid', value='сохранить изменения')

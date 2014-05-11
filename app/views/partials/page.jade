@@ -1,13 +1,3 @@
 div.margin-bottom
   article.details.clearfix()
     .text(ng-bind-html='page.html | unsafe')
-  form(name='editPageForm', ng-submit='editPageForm.$valid && update()', novalidate, ng-if='currentUser')
-    .admin
-      textarea(ng-model='page.html', ui-tinymce='tinymceOptions', required)
-      span.error(ng-show="!editPageForm.html.$pristine && editPageForm.html.$error.required").
-        напиши здесь текст, а то не сохраню
-      div
-        label(for='slug') slug
-        input(type='text', name='slug', ng-model='page.slug', required)
-
-      input(type='submit', ng-disabled='!editPageForm.$valid', value='сохранить изменения')

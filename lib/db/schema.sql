@@ -35,7 +35,8 @@ DROP TABLE IF EXISTS pages;
 CREATE TABLE pages (
     id SERIAL PRIMARY KEY,
     slug VARCHAR NOT NULL,
-    html TEXT NOT NULL
+    html TEXT NOT NULL,
+    title VARCHAR NOT NULL
 );
 DROP INDEX IF EXISTS pages_lower_slug_unique;
 CREATE UNIQUE INDEX pages_lower_slug_unique ON pages(LOWER(slug));

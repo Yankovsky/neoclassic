@@ -20,6 +20,9 @@ angular.module('neoclassicApp', [
     .when '/admin/videos',
         templateUrl: 'partials/admin/videos'
         controller: 'VideosCtrl'
+    .when '/admin/slides',
+        templateUrl: 'partials/admin/slides'
+        controller: 'SlidesCtrl'
     .when '/admin/pages',
         templateUrl: 'partials/admin/pages'
         controller: 'AdminPagesCtrl'

@@ -1,11 +1,14 @@
 angular.module('neoclassicApp')
-.controller 'NavbarCtrl', ($scope, helpers) ->
-    $scope.items = [
-      {title: 'О проекте', path: '/about'}
-#      {title: 'Афиша', path: '/events'}
-      {title: 'Новости', path: '/news'}
-      {title: 'Биография', path: '/biography'}
+.controller 'NavbarCtrl', ($scope, $http, helpers) ->
+    $http.get('/api/pages')
+    .success (pages) ->
+      $scope.items = [
+#        {title: 'Афиша', path: '/events'}
+        {title: 'Новости', path: '/news'}
+      ].concat(
+        _.map(pages, (page) -> {title: page.title, path: '/' + page.slug})
+      ).concat(
 #      {title: 'Гостевая', path: '/guestbook'}
-    ]
+      )
 
     $scope.helpers = helpers

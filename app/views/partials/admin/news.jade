@@ -1,0 +1,29 @@
+.row.well
+  .col-md-3
+    ul.nav.nav-pills.nav-stacked
+      li
+        a(href='', ng-click='newPage()')
+          span.glyphicon.glyphicon-plus Создать
+      li(ng-repeat='page in pages', ng-class='{active: selectedPage == page}')
+        a(href='', ng-click='selectPage(page)') {{page.title}}
+        button(ng-click='delete(page)') DELETE
+  .col-md-9
+    form(name='pageForm', ng-submit='pageForm.$valid && submit()', novalidate)
+      .admin
+        textarea(ng-model='selectedPage.html', ui-tinymce='tinymceOptions', required)
+        span.error(ng-show="!pageForm.html.$pristine && pageForm.html.$error.required").
+          напиши здесь текст, а то не сохраню
+        div
+          label(for='slug') slug
+          input(type='text', name='slug', ng-model='selectedPage.slug', required)
+        div
+          label(for='title') Заголовок
+          input(type='text', name='title', ng-model='selectedPage.title', required)
+        div
+          label(for='shortText') Короткое описание
+          textarea(name='shortText', ng-model='selectedPage.shortText', required)
+        div
+          label(for='datetime') Дата
+          input(type='text', name='datetime', ng-model='selectedPage.datetime', required)
+
+        input(type='submit', ng-disabled='!pageForm.$valid', value='сохранить изменения')

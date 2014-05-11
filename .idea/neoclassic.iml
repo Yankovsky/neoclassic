@@ -5,6 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/app/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/app/third-party" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
       <excludeFolder url="file://$MODULE_DIR$/node_modules" />
     </content>

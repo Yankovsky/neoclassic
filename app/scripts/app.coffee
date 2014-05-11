@@ -11,6 +11,10 @@ angular.module('neoclassicApp', [
         templateUrl: 'partials/main'
         reloadOnSearch: false
         caseInsensitiveMatch: true
+    .when '/events/erarta',
+        templateUrl: 'partials/erarta'
+        reloadOnSearch: false,
+        caseInsensitiveMatch: true
     .when '/events',
         templateUrl: 'partials/events'
         controller: 'EventsCtrl'

@@ -1,9 +1,3 @@
-div(ng-if='currentUser')
-  div.margin-bottom
-    article.details.clearfix()
-      .text(ng-bind-html='newNews.html | unsafe')
-  news-form(news='newNews', submit='save()')
-
 div
   div(ng-repeat='item in news | orderBy : "datetime" : reverse')
     a(ng-href='/news/{{item.slug}}') {{item.title}}
