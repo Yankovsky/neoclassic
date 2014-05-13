@@ -1,4 +1,0 @@
-div
-  div(ng-repeat='item in news | orderBy : "datetime" : reverse')
-    a(ng-href='/news/{{item.slug}}') {{item.title}}
-    div {{item.shortText}}

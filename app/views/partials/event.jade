@@ -1,9 +1,0 @@
-.event
-  .article-icon
-  .content-block
-    .content
-      .date {{event.datetime | date:"dd MMMM y"}}
-      h1 {{event.title}}
-      .text {{event.shortText}}
-      a(ng-href='/events/{{event.slug}}') подробнее
-  img(ng-src='{{event.thumbnailUrl}}')
