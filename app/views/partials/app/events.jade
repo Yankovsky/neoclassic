@@ -1,3 +1,9 @@
-ol
-  li.margin-bottom(ng-repeat='event in entries')
-    {{event.title}}
+.events.margin-bottom
+  .calendar-icon
+  .content
+    header АФИША
+    ol.list-style-none
+      li(ng-repeat='event in entries')
+        span.date {{event.datetime | date:"dd MMMM y в HH:mm"}}
+        span.where {{event.shortText}}
+        a.title(ng-href='/events/{{event.slug}}') {{event.title}}

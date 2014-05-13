@@ -1,3 +1,10 @@
-ol
+ol.news-list.list-style-none.margin-bottom
   li.margin-bottom(ng-repeat='news in entries')
-    {{news.title}}
+    .news.margin-bottom.clearfix
+      .article-icon
+      .content.left
+        .date {{news.datetime | date:"dd MMMM y"}}
+        header {{news.title | uppercase}}
+        .text {{news.shortText}}
+        a(ng-href='/news/{{news.slug}}') подробнее
+      img.left(ng-src='{{news.thumbnailUrl}}')

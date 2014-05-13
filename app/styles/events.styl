@@ -1,0 +1,35 @@
+.events
+  font-size 14px
+  background white
+  position relative
+  .calendar-icon
+    absolute top 40px
+    width 40px
+    height 40px
+    background $light-green url('../images/calendar.png') center
+  .content
+    padding 40px 30px 40px 60px
+    header
+      font-size 24px
+    ol
+      margin-top 20px
+      li
+        margin-bottom 10px
+        .date
+          color $light-green
+          margin-right 4px
+        .where
+          color $light-gray
+        a
+          color $gray
+          display block
+          &:hover
+            color $l
+    a.all-events
+      width 192px
+      display block
+      color $light-green
+      line-height 21px
+      background url("../images/arrow-green.png") right center
+      &:hover
+        color $gray

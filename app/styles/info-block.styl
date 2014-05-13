@@ -1,23 +1,20 @@
 .info-block
-  font-size 14px
-  article
-    position relative
-    .icon
-      absolute top 40px
-      width 40px
-      height 40px
-    header
-      font-size 24px
   .latest-news
+    font-size 14px
     width 300px
     height 620px
     background $light-green
     color white
+    position relative
     .news-icon
+      absolute top 40px
+      width 40px
+      height 40px
       background white url('../images/news.png') center
     header, ol li
       border-bottom 1px solid #bbce5f
     header
+      font-size 24px
       height 105px
       padding 40px 0 0 65px
     ol li, .all-news
@@ -37,58 +34,11 @@
       width 270px
       &:hover
         color $gray
-  .featured-news
+  .news
     width 640px
     height 300px
-    background white
-    .article-icon
-      background $light-green url('../images/date.png') center
     .content
-      padding 22px 30px 40px 60px
       width 415px
-      .date
-        color $light-green
-      .text
-        margin-top 20px
-        color #484848
-        margin-bottom 10px
-      a
-        color $light-green
-        width 105px
-        display block
-        background url("../images/arrow-green.png") right center
-        &:hover
-          color $gray
-    img
-      width 225px
-      padding 12px 15px 13px 15px
   .events
     width 640px
     height 300px
-    background white
-    .calendar-icon
-      background $light-green url('../images/calendar.png') center
-    .content
-      padding 40px 30px 40px 60px
-      ol
-        margin-top 20px
-        li
-          margin-bottom 10px
-          .date
-            color $light-green
-            margin-right 4px
-          .where
-            color $light-gray
-          a
-            color $gray
-            display block
-            &:hover
-              color $l
-      a.all-events
-        width 192px
-        display block
-        color $light-green
-        line-height 21px
-        background url("../images/arrow-green.png") right center
-        &:hover
-          color $gray

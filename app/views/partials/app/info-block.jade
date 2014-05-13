@@ -1,6 +1,6 @@
 div.info-block.margin-bottom.clearfix(ng-controller='InfoBlockCtrl')
   article.latest-news.margin-right.left
-    .icon.news-icon
+    .news-icon
     header
       span НОВОСТИ
     ol.list-style-none
@@ -9,8 +9,8 @@ div.info-block.margin-bottom.clearfix(ng-controller='InfoBlockCtrl')
         .title {{news.title}}
         a(ng-href='/news/{{news.slug}}') подробнее...
     a.all-news(href='/news') ПОСМОТРЕТЬ ВСЕ НОВОСТИ
-  article.featured-news.left.margin-bottom
-    .icon.article-icon
+  article.news.left.margin-bottom
+    .article-icon
     .content.left
       .date {{featuredNews.datetime | date:"dd MMMM y"}}
       header {{featuredNews.title | uppercase}}
@@ -18,7 +18,7 @@ div.info-block.margin-bottom.clearfix(ng-controller='InfoBlockCtrl')
       a(ng-href='/news/{{featuredNews.slug}}') подробнее
     img.left(ng-src='{{featuredNews.thumbnailUrl}}')
   article.events.left
-    .icon.calendar-icon
+    .calendar-icon
     .content
       header АФИША
       ol.list-style-none

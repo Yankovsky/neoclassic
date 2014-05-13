@@ -1,8 +1,8 @@
 angular.module('neoclassicApp')
 .controller 'AdminEntriesCtrl', ($scope, $http, $routeParams, $location) ->
-    type = $routeParams.type
+    $scope.type = $routeParams.type
 
-    $http.get('/api/entries/' + type)
+    $http.get('/api/entries/' + $scope.type)
     .success (entries) ->
         $scope.entries = entries
     .error (data, status) ->
@@ -21,16 +21,16 @@ angular.module('neoclassicApp')
       $scope.selectedEntry = entry
 
     $scope.submit = ->
-      $scope.selectedEntry.type = type
+      $scope.selectedEntry.type = $scope.type
       if (creation)
-        $http.post('/api/entries/' + type, $scope.selectedEntry)
+        $http.post('/api/entries/' + $scope.type, $scope.selectedEntry)
         .success () ->
             alert('Сохранено, страницу обнови')
         .error () ->
             alert('Ошибка')
             throw JSON.stringify(arguments)
       else
-        $http.put('/api/entries/' + type + '/' + $scope.selectedEntry.id, $scope.selectedEntry)
+        $http.put('/api/entries/' + $scope.type + '/' + $scope.selectedEntry.id, $scope.selectedEntry)
         .success () ->
             alert('Сохранено, страницу обнови')
         .error () ->
@@ -38,7 +38,7 @@ angular.module('neoclassicApp')
             throw JSON.stringify(arguments)
 
     $scope.delete = (entry) ->
-      $http.delete('/api/entries/' + type + '/' + entry.id)
+      $http.delete('/api/entries/' + $scope.type + '/' + entry.id)
       .success () ->
           alert('Сохранено, страницу обнови')
       .error () ->

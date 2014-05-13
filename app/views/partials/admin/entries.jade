@@ -20,12 +20,12 @@
           label(for='title') Заголовок
           input(type='text', name='title', ng-model='selectedEntry.title', required)
         div(ng-if='type != "pages"')
-          label(for='shortText') Короткое описание
+          label(for='shortText') {{type == 'news' ? 'Короткое описание' : 'Где проходит (например "в Москве")'}}
           textarea(name='shortText', ng-model='selectedEntry.shortText')
         div(ng-if='type != "pages"')
           label(for='datetime') Дата (в формате гггг-мм-дд)
           input(type='text', name='datetime', ng-model='selectedEntry.datetime')
-        div(ng-if='type != "pages"')
+        div(ng-if='type == "news"')
           label(for='thumbnailUrl') ссылка на картинку
           input(type='text', name='thumbnailUrl', ng-model='selectedEntry.thumbnailUrl')
 
