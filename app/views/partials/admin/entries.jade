@@ -1,0 +1,32 @@
+.row.well
+  .col-md-3
+    ul.nav.nav-pills.nav-stacked
+      li
+        a(href='', ng-click='newEntry()')
+          span.glyphicon.glyphicon-plus Создать
+      li(ng-repeat='entry in entries', ng-class='{active: selectedEntry == entry}')
+        a(href='', ng-click='selectEntry(entry)') {{entry.title}}
+        button(ng-click='delete(entry)') DELETE
+  .col-md-9
+    form(name='entryForm', ng-submit='entryForm.$valid && submit()', novalidate)
+      .admin
+        textarea(ng-model='selectedEntry.html', ui-tinymce='tinymceOptions', required)
+        span.error(ng-show="!entryForm.html.$pristine && entryForm.html.$error.required").
+          напиши здесь текст, а то не сохраню
+        div
+          label(for='slug') slug (типа erarta или stas-mihailov)
+          input(type='text', name='slug', ng-model='selectedEntry.slug', required)
+        div
+          label(for='title') Заголовок
+          input(type='text', name='title', ng-model='selectedEntry.title', required)
+        div(ng-if='type != "pages"')
+          label(for='shortText') Короткое описание
+          textarea(name='shortText', ng-model='selectedEntry.shortText')
+        div(ng-if='type != "pages"')
+          label(for='datetime') Дата (в формате гггг-мм-дд)
+          input(type='text', name='datetime', ng-model='selectedEntry.datetime')
+        div(ng-if='type != "pages"')
+          label(for='thumbnailUrl') ссылка на картинку
+          input(type='text', name='thumbnailUrl', ng-model='selectedEntry.thumbnailUrl')
+
+        input(type='submit', ng-disabled='!entryForm.$valid', value='сохранить изменения')

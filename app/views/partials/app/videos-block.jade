@@ -1,7 +1,7 @@
 div.margin-bottom(ng-controller='VideosCtrl')
   article.videos-block
-    youtube-player.margin-right
-    carousel(interval='-1')
+    youtube-player.margin-right.left
+    carousel.left(interval='-1')
       slide(ng-repeat='(i, fourVideos) in videosGroupedByFour', active='fourVideos.active')
         ol.list-style-none.clearfix
           li(ng-repeat='video in fourVideos')
