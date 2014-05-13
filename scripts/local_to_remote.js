@@ -15,8 +15,7 @@ exec("pg_dump -Fc --no-acl --no-owner -h localhost -Upostgres neoclassicdev > " 
             Body: data
         }, function(error, data) {
             if (error) return console.log(error)
-            console.log("heroku pgbackups:restore --app=neoclassic DATABASE '" + s3.getPublicUrl(fileName) + "'")
-            exec("heroku pgbackups:restore DATABASE '" + s3.getPublicUrl(fileName) + "'", function(error, stdout, stderr) {
+            exec("heroku pgbackups:restore --app=neoclassic --confirm neoclassic DATABASE '" + s3.getPublicUrl(fileName) + "'", function(error, stdout, stderr) {
                 if (error) return console.log(error)
                 s3.deleteObject({
                     Key: fileName
