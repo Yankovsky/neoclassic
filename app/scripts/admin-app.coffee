@@ -23,18 +23,12 @@ angular.module('neoclassicApp', [
     .when '/admin/slides',
         templateUrl: 'partials/admin/slides'
         controller: 'SlidesCtrl'
-    .when '/admin/pages',
-        templateUrl: 'partials/admin/pages'
-        controller: 'AdminPagesCtrl'
-    .when '/admin/events',
-        templateUrl: 'partials/admin/events'
-        controller: 'AdminEventsCtrl'
-    .when '/admin/news',
-        templateUrl: 'partials/admin/news'
-        controller: 'AdminNewsCtrl'
     .when '/admin/seo',
         templateUrl: 'partials/admin/seo'
         controller: 'AdminSeoCtrl'
+    .when '/admin/:type',
+        templateUrl: 'partials/admin/entries'
+        controller: 'AdminEntriesCtrl'
     .otherwise
         redirectTo: '/admin'
 

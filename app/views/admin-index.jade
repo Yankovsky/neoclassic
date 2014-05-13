@@ -6,61 +6,10 @@ html(ng-app="neoclassicApp")
     base(href="/")
     title Admin Panel
     meta(name="viewport", content="width=device-width")
-    <!-- build:css(app) styles/admin.css -->
-    link(rel='stylesheet', href='/bower_components/bootstrap-css-only/css/bootstrap.css')
-    link(rel='stylesheet', href='/styles/admin-index.css')
-    <!-- endbuild -->
+    include partials/admin/admin-styles
   body
     include partials/admin/navbar
     .container(ng-view)
-    <!-- build:js(.tmp,app) scripts/vendor.js -->
-    // bower:js
-    script(src='../bower_components/jquery/dist/jquery.js')
-    script(src='../bower_components/es5-shim/es5-shim.js')
-    script(src='../bower_components/angular/angular.js')
-    script(src='../bower_components/json3/lib/json3.min.js')
-    script(src='../bower_components/angular-resource/angular-resource.js')
-    script(src='../bower_components/angular-cookies/angular-cookies.js')
-    script(src='../bower_components/angular-sanitize/angular-sanitize.js')
-    script(src='../bower_components/angular-route/angular-route.js')
-    script(src='../bower_components/lodash/dist/lodash.compat.js')
-    script(src='../bower_components/angular-bootstrap/ui-bootstrap-tpls.js')
-    // endbower
-    <!-- endbuild -->
-    <!-- build:js(.tmp,app) scripts/admin.js -->
-    script(src='/third-party/tinymce.min.js')
-    script(src='/third-party/langs/ru.js')
-    script(src='/bower_components/angular-ui-tinymce/src/tinymce.js')
-    script(src='/scripts/admin-app.js')
-    script(src='/scripts/controllers/admin/navbar.js')
-    script(src='/scripts/controllers/admin/settings.js')
-    script(src='/scripts/controllers/admin/videos.js')
-    script(src='/scripts/controllers/admin/login-form.js')
-    script(src='/scripts/controllers/admin/pages.js')
-    script(src='/scripts/controllers/admin/news.js')
-    <!-- endbuild -->
-    <!-- build:js(.tmp,app) scripts/main.js -->
-    script(src='/scripts/controllers/admin/seo.js')
-    script(src='/bower_components/angular-i18n/angular-locale_ru-ru.js')
-    script(src='/scripts/controllers/page-is-busy.js')
-    script(src='/scripts/controllers/logging.js')
-    script(src='/scripts/controllers/common/logout.js')
-    script(src='/scripts/controllers/common/slides.js')
-    script(src='/scripts/controllers/videos.js')
-    script(src='/scripts/controllers/info-block.js')
-    script(src='/scripts/controllers/page.js')
-    script(src='/scripts/controllers/news.js')
-    script(src='/scripts/controllers/news-details.js')
-    script(src='/scripts/controllers/exhibition.js')
-    script(src='/scripts/controllers/guestbook.js')
-    script(src='/scripts/services/auth.js')
-    script(src='/scripts/services/youtube-player-svc.js')
-    script(src='/scripts/services/logging-svc.js')
-    script(src='/scripts/services/page-is-busy.js')
-    script(src='/scripts/services/seo.js')
-    script(src='/scripts/services/helpers.js')
-    script(src='/scripts/services/form.js')
-    script(src='/scripts/directives/youtube-player.js')
-    script(src='/scripts/directives/server-error.js')
-    script(src='/scripts/filters/unsafe.js')
-    <!-- endbuild -->
+    include partials/vendor-scripts
+    include partials/admin/admin-scripts
+    include partials/common-scripts

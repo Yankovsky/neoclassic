@@ -8,40 +8,36 @@ angular.module('neoclassicApp', [
 .config ($routeProvider, $locationProvider, $httpProvider, $anchorScrollProvider) ->
     $routeProvider
     .when '/',
-        templateUrl: 'partials/main'
-        reloadOnSearch: false
-        caseInsensitiveMatch: true
-    .when '/events/erarta',
-        templateUrl: 'partials/erarta'
-        reloadOnSearch: false,
-        caseInsensitiveMatch: true
-    .when '/events',
-        templateUrl: 'partials/events'
-        controller: 'EventsCtrl'
-        reloadOnSearch: false,
-        caseInsensitiveMatch: true
-    .when '/news',
-        templateUrl: 'partials/news'
-        controller: 'NewsCtrl'
+        templateUrl: 'partials/app/main'
         reloadOnSearch: false
         caseInsensitiveMatch: true
     .when '/news/exhibition',
-        templateUrl: 'partials/exhibition'
+        templateUrl: 'partials/app/exhibition'
         controller: 'ExhibitionCtrl'
         reloadOnSearch: false
         caseInsensitiveMatch: true
-    .when '/news/:slug',
-        templateUrl: 'partials/news-details'
-        controller: 'NewsDetailsCtrl'
+    .when '/news',
+        templateUrl: 'partials/app/news'
+        controller: 'EntriesCtrl'
+        reloadOnSearch: false
+        caseInsensitiveMatch: true
+    .when '/events',
+        templateUrl: 'partials/app/events'
+        controller: 'EntriesCtrl'
+        reloadOnSearch: false
+        caseInsensitiveMatch: true
+    .when '/:type/:slug',
+        templateUrl: 'partials/app/entry'
+        controller: 'EntryCtrl'
         reloadOnSearch: false
         caseInsensitiveMatch: true
     .when '/:slug',
-        templateUrl: 'partials/page'
-        controller: 'PageCtrl'
+        templateUrl: 'partials/app/entry'
+        controller: 'EntryCtrl'
         reloadOnSearch: false
         caseInsensitiveMatch: true
 #    .when '/guestbook',
-#        templateUrl: 'partials/guestbook',
+#        templateUrl: 'partials/app/guestbook',
 #        reloadOnSearch: false,
 #        caseInsensitiveMatch: true
     .otherwise

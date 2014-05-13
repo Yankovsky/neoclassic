@@ -186,20 +186,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Automatically inject Bower components into the app
-    bowerInstall: {
-      target: {
-        src: [
-          '<%= yeoman.app %>/views/index.jade',
-          '<%= yeoman.app %>/views/admin.jade'
-        ],
-        exclude: [
-          'tinymce',
-          'bootstrap-css-only'
-        ]
-      }
-    },
-
     // Compiles CoffeeScript to JavaScript
     coffee: {
       options: {
@@ -238,7 +224,7 @@ module.exports = function(grunt) {
             '<%= yeoman.dist %>/public/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/public/styles/{,*/}*.css',
             '<%= yeoman.dist %>/public/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-            '<%= yeoman.dist %>/public/styles/fonts/*'
+            '<%= yeoman.dist %>/public/fonts/*'
           ]
         }
       }
@@ -248,8 +234,14 @@ module.exports = function(grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: ['<%= yeoman.app %>/views/index.html',
-        '<%= yeoman.app %>/views/index.jade'],
+      html: [
+        '<%= yeoman.app %>/views/partials/vendor-scripts.jade',
+        '<%= yeoman.app %>/views/partials/common-scripts.jade',
+        '<%= yeoman.app %>/views/partials/app/app-scripts.jade',
+        '<%= yeoman.app %>/views/partials/app/app-styles.jade',
+        '<%= yeoman.app %>/views/partials/admin/admin-scripts.jade',
+        '<%= yeoman.app %>/views/partials/admin/admin-styles.jade'
+      ],
       options: {
         dest: '<%= yeoman.dist %>/public'
       }
@@ -257,8 +249,7 @@ module.exports = function(grunt) {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/views/{,*/}*.html',
-        '<%= yeoman.dist %>/views/{,*/}*.jade'],
+      html: ['<%= yeoman.dist %>/views/**/*.jade'],
       css: ['<%= yeoman.dist %>/public/styles/{,*/}*.css'],
       options: {
         assetsDirs: ['<%= yeoman.dist %>/public', '<%= yeoman.dist %>/public/images']
@@ -322,7 +313,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: '.tmp/concat/scripts',
-            src: '*.js',
+            src: '**/*.js',
             dest: '.tmp/concat/scripts'
           }
         ]
@@ -355,8 +346,15 @@ module.exports = function(grunt) {
               'BingSiteAuth.xml',
               'bower_components/**/*',
               'images/{,*/}*.{webp}',
-              'fonts/**/*'
+              'third-party/**/*'
             ]
+          },
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>/bower_components/bootstrap-css-only/fonts/',
+            dest: '<%= yeoman.dist %>/public/fonts',
+            src: '*'
           },
           {
             expand: true,
@@ -484,7 +482,6 @@ module.exports = function(grunt) {
     if (target === 'debug') {
       return grunt.task.run([
         'clean:server',
-        'bowerInstall',
         'concurrent:server',
         'autoprefixer',
         'concurrent:debug'
@@ -493,7 +490,6 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:server',
-      'bowerInstall',
       'concurrent:server',
       'autoprefixer',
       'express:dev',
@@ -536,7 +532,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'bowerInstall',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',

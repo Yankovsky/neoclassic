@@ -1,38 +1,44 @@
 angular.module('neoclassicApp')
-.controller 'AdminNewsCtrl', ($scope, $http, $routeParams, $location) ->
-    $http.get('/api/news')
-    .success (pages) ->
-      $scope.pages = pages
+.controller 'AdminEntriesCtrl', ($scope, $http, $routeParams, $location) ->
+    type = $routeParams.type
+
+    $http.get('/api/entries/' + type)
+    .success (entries) ->
+        $scope.entries = entries
+    .error (data, status) ->
+        if status is 404
+          $location.path '/admin'
 
     creation = true
-    $scope.selectedPage = {}
+    $scope.selectedEntry = {}
 
-    $scope.newPage = ->
+    $scope.newEntry = ->
       creation = true
-      $scope.selectedPage = {}
+      $scope.selectedEntry = {}
 
-    $scope.selectPage = (page) ->
+    $scope.selectEntry = (entry) ->
       creation = false
-      $scope.selectedPage = page
+      $scope.selectedEntry = entry
 
     $scope.submit = ->
+      $scope.selectedEntry.type = type
       if (creation)
-        $http.post('/api/news/', $scope.selectedPage)
+        $http.post('/api/entries/' + type, $scope.selectedEntry)
         .success () ->
             alert('Сохранено, страницу обнови')
         .error () ->
             alert('Ошибка')
             throw JSON.stringify(arguments)
       else
-        $http.put('/api/news/' + $scope.selectedPage.id, $scope.selectedPage)
+        $http.put('/api/entries/' + type + '/' + $scope.selectedEntry.id, $scope.selectedEntry)
         .success () ->
             alert('Сохранено, страницу обнови')
         .error () ->
             alert('Ошибка')
             throw JSON.stringify(arguments)
 
-    $scope.delete = (page) ->
-      $http.delete('/api/news/' + page.id)
+    $scope.delete = (entry) ->
+      $http.delete('/api/entries/' + type + '/' + entry.id)
       .success () ->
           alert('Сохранено, страницу обнови')
       .error () ->

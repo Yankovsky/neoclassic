@@ -17,11 +17,7 @@ html.no-js(ng-app="neoclassicApp")
     meta(name='yandex-verification', content='70674d9f35060f83')
     // Place favicon.ico and apple-touch-icon.png in the root directory
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <!-- build:css({.tmp,app}) styles/main.css -->
-    // bower:css
-    // endbower
-    link(rel='stylesheet', type='text/css', href='/styles/index.css')
-    <!-- endbuild -->
+    include partials/app/app-styles
   body
     //[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -32,67 +28,12 @@ html.no-js(ng-app="neoclassicApp")
       <![endif]
     // Add your site or application content here
     div.busy-indicator(ng-show='pageIsBusy', ng-controller='PageIsBusyCtrl')
-    include partials/admin-bar
-    include partials/navbar
+    include partials/app/admin-bar
+    include partials/app/navbar
     div(class="container" ng-view)
-    include partials/seo
-    include partials/info-block
-    include partials/footer
-    <!-- build:js(.tmp,app) scripts/vendor.js -->
-    // bower:js
-    script(src='../bower_components/jquery/dist/jquery.js')
-    script(src='../bower_components/es5-shim/es5-shim.js')
-    script(src='../bower_components/angular/angular.js')
-    script(src='../bower_components/json3/lib/json3.min.js')
-    script(src='../bower_components/angular-resource/angular-resource.js')
-    script(src='../bower_components/angular-cookies/angular-cookies.js')
-    script(src='../bower_components/angular-sanitize/angular-sanitize.js')
-    script(src='../bower_components/angular-route/angular-route.js')
-    script(src='../bower_components/lodash/dist/lodash.compat.js')
-    script(src='../bower_components/angular-bootstrap/ui-bootstrap-tpls.js')
-    // endbower
-    <!-- endbuild -->
-    <!-- build:js(.tmp,app) scripts/app.js -->
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-          ga('create', 'UA-49275990-1', 'neoclassic.pro');
-      ga('send', 'pageview');
-    // Yandex.Metrika counter
-    script(type='text/javascript').
-      (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter24556697 = new Ya.Metrika({id:24556697, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
-    noscript
-      div
-        img(src='//mc.yandex.ru/watch/24556697', style='position: absolute; left: -9999px;', alt='')
-    //Yandex.Metrika counter
-    script(src='/scripts/app.js')
-    script(src='/scripts/controllers/app/navbar.js')
-    script(src='/scripts/controllers/app/seo.js')
-    <!-- endbuild -->
-    <!-- build:js(.tmp,app) scripts/main.js -->
-    script(src='/scripts/controllers/admin/seo.js')
-    script(src='/bower_components/angular-i18n/angular-locale_ru-ru.js')
-    script(src='/scripts/controllers/page-is-busy.js')
-    script(src='/scripts/controllers/logging.js')
-    script(src='/scripts/controllers/common/logout.js')
-    script(src='/scripts/controllers/common/slides.js')
-    script(src='/scripts/controllers/videos.js')
-    script(src='/scripts/controllers/info-block.js')
-    script(src='/scripts/controllers/page.js')
-    script(src='/scripts/controllers/news.js')
-    script(src='/scripts/controllers/news-details.js')
-    script(src='/scripts/controllers/exhibition.js')
-    script(src='/scripts/controllers/guestbook.js')
-    script(src='/scripts/services/auth.js')
-    script(src='/scripts/services/youtube-player-svc.js')
-    script(src='/scripts/services/logging-svc.js')
-    script(src='/scripts/services/page-is-busy.js')
-    script(src='/scripts/services/seo.js')
-    script(src='/scripts/services/helpers.js')
-    script(src='/scripts/services/form.js')
-    script(src='/scripts/directives/youtube-player.js')
-    script(src='/scripts/directives/server-error.js')
-    script(src='/scripts/filters/unsafe.js')
-    <!-- endbuild -->
+    include partials/app/seo
+    include partials/app/info-block
+    include partials/app/footer
+    include partials/vendor-scripts
+    include partials/app/app-scripts
+    include partials/common-scripts
