@@ -18,7 +18,7 @@ html.no-js(ng-app="neoclassicApp")
     // Place favicon.ico and apple-touch-icon.png in the root directory
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     include partials/app/app-styles
-  body
+  body(ng-cloak)
     //[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
       <![endif]

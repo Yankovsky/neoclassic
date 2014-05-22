@@ -4,7 +4,8 @@ angular.module('neoclassicApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'ui.tinymce'
+  'ui.tinymce',
+  'ui.bootstrap.datetimepicker'
 ])
 .config ($routeProvider, $locationProvider, $httpProvider) ->
     $routeProvider

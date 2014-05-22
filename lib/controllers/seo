@@ -1,8 +1,14 @@
 var seoRepo = require('./../db/repositories/seo-repo'),
   _ = require('lodash'),
-  typicalController = require('./../utils/typical-controller')
+  typicalController = require('./../utils/typical-controller'),
+  prerenderCache = require('./../utils/prerender-cache')
 
 var UNIQUE_VIOLATION = 23505;
+
+function url(path, req) {
+  if (path == 'homepage') path = ''
+  return req.protocol + '://' + req.get('host') + '/' + path
+}
 
 function validate(req) {
   var errors = {}
@@ -38,11 +44,15 @@ exports.createOrUpdate = function(req, res) {
         return seoRepo.update(path, reqBody, function(err, data, result) {
           if (err) return res.send(500, err)
           if (!result.rowCount) return res.send(404, 'seo with path ' + path + ' not found')
-          return res.send()
+          return prerenderCache.recache(url(path), function(error, response, body) {
+            return res.send(error)
+          })
         })
       else
         return res.send(500, err)
-    return res.send(201)
+    return prerenderCache.recache(url(path, req), function(error, response, body) {
+      return res.send(201, error)
+    })
   })
 }
 

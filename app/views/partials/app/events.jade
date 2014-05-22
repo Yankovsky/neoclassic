@@ -3,7 +3,8 @@
   .content
     header АФИША
     ol.list-style-none
-      li(ng-repeat='event in entries')
-        span.date {{event.datetime | date:"dd MMMM y в HH:mm"}}
+      li(ng-repeat='event in events')
+        span.date {{event.datetime | utc | date:"dd MMMM y в HH:mm"}}
         span.where {{event.shortText}}
-        a.title(ng-href='/events/{{event.slug}}') {{event.title}}
+        span.title(ng-if='!event.slug') {{event.title}}
+        a.title(ng-href='/events/{{event.slug}}', ng-if='event.slug') {{event.title}}

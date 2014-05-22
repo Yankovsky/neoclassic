@@ -30,15 +30,15 @@ CREATE TYPE entry_type AS ENUM ('pages', 'news', 'events');
 
 CREATE TABLE entries (
     id SERIAL PRIMARY KEY,
-    slug VARCHAR NOT NULL,
+    slug VARCHAR,
     title VARCHAR NOT NULL,
-    html TEXT NOT NULL,
+    html TEXT,
     short_text TEXT,
     datetime TIMESTAMP,
     thumbnail_url VARCHAR,
     type entry_type NOT NULL
 );
-CREATE UNIQUE INDEX entries_type_and_lower_slug_unique ON entries(type, LOWER(slug));
+CREATE UNIQUE INDEX entries_type_and_lower_slug_unique ON entries(type, LOWER(slug)) WHERE slug IS NOT NULL;
 
 CREATE TABLE replies (
     id SERIAL PRIMARY KEY,

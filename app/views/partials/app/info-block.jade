@@ -1,29 +1,30 @@
-div.info-block.margin-bottom.clearfix(ng-controller='InfoBlockCtrl')
+div.info-block.margin-bottom.clearfix(ng-controller='NewsCtrl')
   article.latest-news.margin-right.left
     .news-icon
     header
       span НОВОСТИ
     ol.list-style-none
-      li(ng-repeat='news in latestNews')
-        .date {{news.datetime | date:"dd MMMM y"}}
+      li(ng-repeat='news in newsList | limitTo:3')
+        .date {{news.datetime | utc | date:"dd MMMM y"}}
         .title {{news.title}}
         a(ng-href='/news/{{news.slug}}') подробнее...
     a.all-news(href='/news') ПОСМОТРЕТЬ ВСЕ НОВОСТИ
   article.news.left.margin-bottom
     .article-icon
     .content.left
-      .date {{featuredNews.datetime | date:"dd MMMM y"}}
-      header {{featuredNews.title | uppercase}}
-      .text {{featuredNews.shortText}}
-      a(ng-href='/news/{{featuredNews.slug}}') подробнее
-    img.left(ng-src='{{featuredNews.thumbnailUrl}}')
-  article.events.left
+      .date {{newsList[0].datetime | utc | date:"dd MMMM y"}}
+      header {{newsList[0].title | uppercase}}
+      .text {{newsList[0].shortText}}
+      a(ng-href='/news/{{newsList[0].slug}}') подробнее
+    img.left(ng-src='{{newsList[0].thumbnailUrl}}')
+  article.events.left(ng-controller='EventsCtrl')
     .calendar-icon
     .content
       header АФИША
       ol.list-style-none
-        li(ng-repeat='event in events')
-          span.date {{event.datetime | date:"dd MMMM y в HH:mm"}}
+        li(ng-repeat='event in events | limitTo:3')
+          span.date {{event.datetime | utc | date:"dd MMMM y в HH:mm"}}
           span.where {{event.shortText}}
-          a.title(ng-href='/events/{{event.slug}}') {{event.title}}
+          span.title(ng-if='!event.slug') {{event.title}}
+          a.title(ng-href='/events/{{event.slug}}', ng-if='event.slug') {{event.title}}
       a.all-events(href='/events') Посмотреть всю афишу

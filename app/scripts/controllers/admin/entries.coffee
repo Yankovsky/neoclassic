@@ -1,36 +1,46 @@
 angular.module('neoclassicApp')
-.controller 'AdminEntriesCtrl', ($scope, $http, $routeParams, $location) ->
+.controller 'AdminEntriesCtrl', ($scope, $http, $routeParams, $location, $filter) ->
     $scope.type = $routeParams.type
 
     $http.get('/api/entries/' + $scope.type)
     .success (entries) ->
+        _.each entries, (entry) ->
+          entry.simplified = true if ($scope.type == 'events' && !entry.slug && !entry.html)
+          entry.datetime = new Date($filter('utc')(entry.datetime))
         $scope.entries = entries
     .error (data, status) ->
         if status is 404
           $location.path '/admin'
 
     creation = true
-    $scope.selectedEntry = {}
-
     $scope.newEntry = ->
       creation = true
       $scope.selectedEntry = {}
+      $scope.selectedEntry.simplified = true if ($scope.type == 'events')
+
+    $scope.newEntry()
 
     $scope.selectEntry = (entry) ->
       creation = false
       $scope.selectedEntry = entry
 
     $scope.submit = ->
-      $scope.selectedEntry.type = $scope.type
+      entry = _.clone($scope.selectedEntry)
+      entry.type = $scope.type
+      entry.datetime = new Date(entry.datetime.getTime() - new Date().getTimezoneOffset() * 60 * 1000)
+      if (entry.type == 'events' && entry.simplified)
+        entry.slug = null
+        entry.html = null
       if (creation)
-        $http.post('/api/entries/' + $scope.type, $scope.selectedEntry)
+        $http.post('/api/entries/' + $scope.type, entry)
         .success () ->
             alert('Сохранено, страницу обнови')
+            creation = false
         .error () ->
             alert('Ошибка')
             throw JSON.stringify(arguments)
       else
-        $http.put('/api/entries/' + $scope.type + '/' + $scope.selectedEntry.id, $scope.selectedEntry)
+        $http.put('/api/entries/' + $scope.type + '/' + entry.id, entry)
         .success () ->
             alert('Сохранено, страницу обнови')
         .error () ->

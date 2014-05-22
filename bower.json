@@ -14,7 +14,7 @@
     "angular-i18n": "~1.2.15",
     "angular-ui-tinymce": "git://github.com/Yankovsky/ui-tinymce.git#65901ffb11df1f8b5cc1b07efe5e7fd7936fa8b0",
     "angular-bootstrap": "~0.11.0",
-    "bootstrap-css-only": "~3.1.1"
+    "angular-bootstrap-datetimepicker": "latest"
   },
   "devDependencies": {
     "angular-mocks": "1.2.11",

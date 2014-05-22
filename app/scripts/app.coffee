@@ -18,12 +18,12 @@ angular.module('neoclassicApp', [
         caseInsensitiveMatch: true
     .when '/news',
         templateUrl: 'partials/app/news'
-        controller: 'EntriesCtrl'
+        controller: 'NewsCtrl'
         reloadOnSearch: false
         caseInsensitiveMatch: true
     .when '/events',
         templateUrl: 'partials/app/events'
-        controller: 'EntriesCtrl'
+        controller: 'EventsCtrl'
         reloadOnSearch: false
         caseInsensitiveMatch: true
     .when '/:type/:slug',
