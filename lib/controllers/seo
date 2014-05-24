@@ -44,7 +44,7 @@ exports.createOrUpdate = function(req, res) {
         return seoRepo.update(path, reqBody, function(err, data, result) {
           if (err) return res.send(500, err)
           if (!result.rowCount) return res.send(404, 'seo with path ' + path + ' not found')
-          return prerenderCache.recache(url(path), function(error, response, body) {
+          return prerenderCache.recache(url(path, req), function(error, response, body) {
             return res.send(error)
           })
         })
