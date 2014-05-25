@@ -23,9 +23,11 @@
         div
           label(for='title') Заголовок
           input(type='text', name='title', ng-model='selectedEntry.title', required)
+          Символов в заголовке {{selectedEntry.title.length}}
         div(ng-if='type != "pages"')
           label(for='shortText') {{type == 'news' ? 'Короткое описание' : 'Где проходит (например "в Москве")'}}
           textarea(name='shortText', ng-model='selectedEntry.shortText')
+          Символов в коротком описании {{selectedEntry.shortText.length}}
         div(ng-if='type != "pages"')
           label(for='datetime') Дата и время
           .dropdown
