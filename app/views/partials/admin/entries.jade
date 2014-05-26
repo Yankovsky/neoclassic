@@ -5,8 +5,9 @@
         a(href='', ng-click='newEntry()')
           span.glyphicon.glyphicon-plus Создать
       li(ng-repeat='entry in entries', ng-class='{active: selectedEntry == entry}')
-        a(href='', ng-click='selectEntry(entry)') {{entry.title}}
+        a(href='', ng-click='selectEntry(entry)') {{entry.title}} {{entry.datetime | date:"dd MMMM y в HH:mm"}}
         button(ng-click='delete(entry)') DELETE
+        button(ng-click='copy(entry)') СКОПИРОВАТЬ
   .col-md-9
     form(name='entryForm', ng-submit='entryForm.$valid && submit()', novalidate)
       .admin

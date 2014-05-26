@@ -1,12 +1,7 @@
-админку на отдельную страницу всё же
 typical-controller
 tinymce plugins
 
-news events create
 slides create
-
-admin script
-all other script
 
 login separate page
 
@@ -20,8 +15,6 @@ handle errors in form like alerts
 
 validation
 
-limit to sql
-
 значок у последнего события
 
 может сделать не последнее а featured
@@ -31,9 +24,6 @@ limit to sql
 
 вконтакте надо заделать
 
-
 http://hypercomments.com/ru
 
 добавить кнопки расшарить вк фейсбук
-
-Сколько написал символов в заголовке и кратком описании
