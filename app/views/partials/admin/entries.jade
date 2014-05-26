@@ -20,14 +20,14 @@
             напиши здесь текст, а то не сохраню
         div(ng-if='!(type == "events" && selectedEntry.simplified)')
           label(for='slug') slug (типа erarta или stas-mihailov)
-          input(type='text', name='slug', ng-model='selectedEntry.slug', required)
+          input(type='text', name='slug', ng-model='selectedEntry.slug', required, style='width: 500px;')
         div
           label(for='title') Заголовок
-          input(type='text', name='title', ng-model='selectedEntry.title', required)
+          input(type='text', name='title', ng-model='selectedEntry.title', required, style='width: 500px;')
           Символов в заголовке {{selectedEntry.title.length}}
         div(ng-if='type != "pages"')
           label(for='shortText') {{type == 'news' ? 'Короткое описание' : 'Где проходит (например "в Москве")'}}
-          textarea(name='shortText', ng-model='selectedEntry.shortText')
+          textarea(name='shortText', ng-model='selectedEntry.shortText', style='width: 500px;')
           Символов в коротком описании {{selectedEntry.shortText.length}}
         div(ng-if='type != "pages"')
           label(for='datetime') Дата и время
