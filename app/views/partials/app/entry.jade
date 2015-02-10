@@ -1,3 +1,8 @@
 div.margin-bottom
   article.entry.clearfix()
     .text(ng-bind-html='entry.html | unsafe')
+    .share-buttons
+      .share-button#vk-share-button
+      script(type="text/javascript").
+        document.getElementById('vk-share-button').innerHTML = VK.Share.button({url: document.location.href + '?_escaped_fragment_'},{type: "round_nocount", text: "Поделиться"})
+      .share-button.fb-share-button(data-type='button')

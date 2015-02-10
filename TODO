@@ -1,29 +1,19 @@
 typical-controller
 tinymce plugins
-
-slides create
-
 login separate page
-
 server side validation
-
 довести до ума форму
-
 navbar collapse angular ui bootstrap
-
 handle errors in form like alerts
-
 validation
-
 значок у последнего события
-
 может сделать не последнее а featured
 
-определиться где в инфо блоке ставим стрелочки и подчёркиваем ссылки а где нет
-
-
-вконтакте надо заделать
-
+{{}} убрать
+slides CRUD
+добавить кнопки расшарить фейсбук
 http://hypercomments.com/ru
-
-добавить кнопки расшарить вк фейсбук
+Админка: Отсортировать новости по дате и вообще красоту навести
+Вводить сео текст при создании страницы
+<meta property="og:video" content="http://www.youtube.com/v/62_ntEum_0Q">
+Сделать возможность выбора дефолтного видео в плеере
