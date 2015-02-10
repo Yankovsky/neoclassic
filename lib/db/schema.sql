@@ -26,7 +26,7 @@ CREATE TABLE users (
 );
 CREATE UNIQUE INDEX users_lower_email_unique ON users(LOWER(email));
 
-CREATE TYPE entry_type AS ENUM ('pages', 'news', 'events');
+CREATE TYPE entry_type AS ENUM ('pages', 'news', 'events', 'posts');
 
 CREATE TABLE entries (
     id SERIAL PRIMARY KEY,

@@ -5,6 +5,7 @@ angular.module('neoclassicApp')
       $scope.items = [
         {title: 'Афиша', path: '/events'}
         {title: 'Новости', path: '/news'}
+        {title: 'Блог', path: '/posts'}
       ].concat(
         _.map(pages, (page) -> {title: page.title, path: '/' + page.slug})
       ).concat(

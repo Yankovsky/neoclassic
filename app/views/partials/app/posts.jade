@@ -1,0 +1,10 @@
+ol.news-list.list-style-none.margin-bottom
+    li.margin-bottom(ng-repeat='post in posts')
+        .news.margin-bottom.clearfix
+            .article-icon
+            .content.left
+                .date {{post.datetime | utc | date:"dd MMMM y"}}
+                header {{post.title | uppercase}}
+                .text {{post.shortText}}
+                a(ng-href='/posts/{{post.slug}}') подробнее
+            img.left(ng-src='{{post.thumbnailUrl}}')

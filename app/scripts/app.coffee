@@ -26,6 +26,11 @@ angular.module('neoclassicApp', [
         controller: 'EventsCtrl'
         reloadOnSearch: false
         caseInsensitiveMatch: true
+    .when '/posts',
+        templateUrl: 'partials/app/posts'
+        controller: 'PostsCtrl'
+        reloadOnSearch: false
+        caseInsensitiveMatch: true
     .when '/:type/:slug',
         templateUrl: 'partials/app/entry'
         controller: 'EntryCtrl'

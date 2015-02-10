@@ -6,6 +6,7 @@ angular.module('neoclassicApp')
       {title: 'Страницы', path: '/admin/pages'}
       {title: 'События', path: '/admin/events'}
       {title: 'Новости', path: '/admin/news'}
+      {title: 'Блог', path: '/admin/posts'}
 #      {title: 'SEO', path: '/admin/seo'}
     ]
 

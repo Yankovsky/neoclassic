@@ -26,7 +26,7 @@
           input(type='text', name='title', ng-model='selectedEntry.title', required, style='width: 500px;')
           Символов в заголовке {{selectedEntry.title.length}}
         div(ng-if='type != "pages"')
-          label(for='shortText') {{type == 'news' ? 'Короткое описание' : 'Где проходит (например "в Москве")'}}
+          label(for='shortText') {{type == 'events' ? 'Где проходит (например "в Москве")' : 'Короткое описание'}}
           textarea(name='shortText', ng-model='selectedEntry.shortText', style='width: 500px;')
           Символов в коротком описании {{selectedEntry.shortText.length}}
         div(ng-if='type != "pages"')
@@ -39,7 +39,7 @@
                   i.glyphicon.glyphicon-calendar
             ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
               datetimepicker(ng-model='selectedEntry.datetime', datetimepicker-config='{dropdownSelector: "#dLabel", weekStart: 1}', on-set-time='onTimeSet')
-        div(ng-if='type == "news"')
+        div(ng-if='type == "news" || type == "posts"')
           label(for='thumbnailUrl') ссылка на картинку
           input(type='text', name='thumbnailUrl', ng-model='selectedEntry.thumbnailUrl')
 
