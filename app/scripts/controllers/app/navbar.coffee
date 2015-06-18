@@ -1,5 +1,5 @@
 angular.module('neoclassicApp')
-.controller 'NavbarCtrl', ($scope, $http, helpers) ->
+.controller 'NavbarCtrl', ($scope, $http, helpers, $location, $timeout) ->
     $http.get('/api/entries/pages')
     .success (pages) ->
       $scope.items = [
@@ -11,5 +11,11 @@ angular.module('neoclassicApp')
       ).concat(
 #      {title: 'Гостевая', path: '/guestbook'}
       )
+
+    $scope.navigateToHomePageAndScrollToVideos = ->
+      $location.path('/')
+      $timeout ->
+        helpers.scrollTo('videos')
+      , 500
 
     $scope.helpers = helpers

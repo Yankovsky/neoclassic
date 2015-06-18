@@ -5,6 +5,8 @@ header.header.margin-bottom(ng-controller='NavbarCtrl')
       li(ng-repeat='item in items')
         a(ng-href='{{item.path}}', ng-class='{active: helpers.isLocationPath(item.path)}') {{item.title}}
       li
+        a(href='', ng-click='navigateToHomePageAndScrollToVideos()') Видео
+      li
         a(href='', ng-click='helpers.scrollTo("contact-info")') Контакты
   form.search-form(name='search', ng-submit='search(form)', novalidate)
     input(name='query', type='text', placeholder='search', value='')
