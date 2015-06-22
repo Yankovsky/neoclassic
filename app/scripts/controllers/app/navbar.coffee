@@ -15,7 +15,11 @@ angular.module('neoclassicApp')
     $scope.navigateToHomePageAndScrollToVideos = ->
       $location.path('/')
       $timeout ->
-        helpers.scrollTo('videos')
+        videosElement = $('#videos')
+        videosElementOffsetTop = videosElement.offset().top
+        videosElementHeight = videosElement.height()
+        windowHeight = $(window).height()
+        $('body').scrollTop(videosElementOffsetTop - windowHeight / 2 + videosElementHeight / 2)
       , 500
 
     $scope.helpers = helpers
