@@ -1,5 +1,5 @@
 angular.module('neoclassicApp')
-.controller 'NavbarCtrl', ($scope, $http, helpers, $location, $timeout) ->
+.controller 'NavbarCtrl', ($scope, $http, helpers, navSvc) ->
     $http.get('/api/entries/pages')
     .success (pages) ->
       $scope.items = [
@@ -12,14 +12,6 @@ angular.module('neoclassicApp')
 #      {title: 'Гостевая', path: '/guestbook'}
       )
 
-    $scope.navigateToHomePageAndScrollToVideos = ->
-      $location.path('/')
-      $timeout ->
-        videosElement = $('#videos')
-        videosElementOffsetTop = videosElement.offset().top
-        videosElementHeight = videosElement.height()
-        windowHeight = $(window).height()
-        $('body').scrollTop(videosElementOffsetTop - windowHeight / 2 + videosElementHeight / 2)
-      , 500
+    $scope.navigateToHomePageAndScrollToVideos = navSvc.navigateToHomePageAndScrollToVideos
 
     $scope.helpers = helpers

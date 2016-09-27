@@ -1,9 +1,11 @@
 article.slider.margin-bottom(ng-controller='SlidesCtrl')
   carousel(interval='8000')
     slide(ng-repeat='slide in slides', active='slide.active')
-      img(ng-src='{{slide.imageUrl}}')
-      p {{slide.html}}
-      a(ng-href='{{slide.url}}') Подробнее
+      .slide-content(ng-class='slide.slideType', ng-style='{{getSlideStyle(slide)}}')
+        h3(ng-if='slide.title') {{slide.title}}
+        img(ng-src='{{slide.imageUrl}}' ng-if='slide.slideType === "black"')
+        p(ng-bind-html='slide.html')
+        a(ng-href='{{slide.url}}' ng-click='!slide.url && navigateToVideos()') {{slide.buttonText}}
   //.admin(ng-if='currentUser')
   //  form
   //    //TODO TINY MCE HERE

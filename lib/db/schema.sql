@@ -2,9 +2,12 @@ BEGIN;
 
 CREATE TABLE slides (
     id SERIAL PRIMARY KEY,
+    title VARCHAR,
     html TEXT NOT NULL,
     image_url VARCHAR NOT NULL,
     url VARCHAR,
+    button_text VARCHAR,
+    slide_type VARCHAR,
     position INTEGER UNIQUE NOT NULL
 );
 
