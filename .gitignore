@@ -9,3 +9,4 @@ dist
 .idea
 *.dump
 design
+.DS_Store

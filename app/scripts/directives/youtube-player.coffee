@@ -10,7 +10,7 @@ angular.module('neoclassicApp')
         player = new YT.Player("youtube-player",
           height: "280"
           width: "440"
-          videoId: "tKaTkK0QGRg"
+          videoId: "4vGko_apPME"
           events:
             onReady: ->
               youtubePlayerSvc.set player if !scope.destroyed
