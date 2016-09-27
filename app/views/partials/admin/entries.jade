@@ -38,7 +38,7 @@
                 span.input-group-addon
                   i.glyphicon.glyphicon-calendar
             ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
-              datetimepicker(ng-model='selectedEntry.datetime', datetimepicker-config='{dropdownSelector: "#dLabel", weekStart: 1}', on-set-time='onTimeSet')
+              datetimepicker(ng-model='selectedEntry.datetime', datetimepicker-config='{dropdownSelector: "#dLabel"}', on-set-time='onTimeSet')
         div(ng-if='type == "news" || type == "posts"')
           label(for='thumbnailUrl') ссылка на картинку
           input(type='text', name='thumbnailUrl', ng-model='selectedEntry.thumbnailUrl')
